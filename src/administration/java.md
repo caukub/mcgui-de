@@ -99,4 +99,4 @@ The `java` command only runs the executable. You can find out where this file is
 If the path to the Java executable file contains a space (e.g. on a Windows operating system because of the '_Program Files_' folder), you need to enclose it in quotes. Otherwise, an error such as `C:\Program is not recognized as an internal or external command.` will occur.
 
 ## Other {#java-other}
-If using the 32-bit version of Java, a maximum of 4 GB of RAM can be used.
+When using the 32-bit version of Java, a maximum of 4 GB of RAM can be used.
