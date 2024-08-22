@@ -60,8 +60,8 @@ Following tools must be installed:
 - Typst
 - exiftool
 ## Contributing
-More information about contributing can be found [here](/appendix.md#contributing)
+More information about contributing can be found [here](/src/appendix.md#contributing).
 
 ## License
-License can be found [here](/appendix.md#license).
+License can be found [here](/src/appendix.md#license).
 

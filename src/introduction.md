@@ -5,7 +5,7 @@ This book is for _everyone_. It serves as a knowledge base for anyone who knows 
 
 If you are a complete beginner in Minecraft server management, the [Getting Started](quickstart.md) chapter will likely be useful for you, as it introduces the very basics of managing a Minecraft server. More advanced users should find it relatively easy to navigate through this book, although it may be harder at first due to the size of this book. The search function at the top left can help.
 
-## Support {#support}
+## Support me {#support}
 If you value my work on this book, you can support me through:
 
 <a href='https://ko-fi.com/V7V2YKN8Z' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
