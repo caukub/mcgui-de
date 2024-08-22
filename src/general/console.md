@@ -13,4 +13,4 @@ As noted [here](commands.md#commands-console), commands in the console are by de
 A console-related concept that is important to understand is [command-executor](commands.md#command-executor).
 
 ## Console spam {#console-spam}
-In the case where the console is spamming errors, you have to fix these errors. Definitely do not use plugins like ConsoleSpamFix as a patch. See [here](#how-to-deal-with-issues) to learn how to deal with such errors.
+In the case where the console is spamming errors, you have to fix these errors. Definitely do not use plugins like ConsoleSpamFix as a patch. See [here](../problem-solving/how-to-deal-with-issues.md) to learn how to deal with such errors.

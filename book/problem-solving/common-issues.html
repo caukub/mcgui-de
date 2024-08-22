@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "mocha";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -264,7 +264,7 @@
 </ol>
 <p>(highlighted) information, such as the minimum required version of Java</p>
 <h2 id="bad-plugin-version"><a class="header" href="#bad-plugin-version">Bad plugin version/bad mod version</a></h2>
-<p>Read more about this issue on the plugin server <a href="#bad-plugin-version">here</a> and on the mod server <a href="../mods.html#bad-mod-version">here</a>.</p>
+<p>Read more about this issue on the plugin server <a href="../plugins/basics.html#bad-plugin-version">here</a> and on the mod server <a href="../mods.html#bad-mod-version">here</a>.</p>
 <h2 id="missing-dependency"><a class="header" href="#missing-dependency">Missing dependencies</a></h2>
 <p>In the case where a plugin is missing a dependency, the plugin will not enable (exceptionally, the whole server may crash (shut down)). In the case of a missing mod dependency, the server will almost certainly crash.</p>
 <p>You can read more about this problem on the plugin server <a href="../mods.html#mods-missing-dependency">here</a> and on the modded server <a href="../mods.html#mods-missing-dependency">here</a>.</p>
@@ -458,7 +458,7 @@ org.bukkit.plugin.InvalidPluginException: Unsupported API version 1.20
 	at java.lang.Thread.run(Unknown Source) ~[?:?]
 </code></pre>
 <h2 id="plugin-not-mentioned-in-log"><a class="header" href="#plugin-not-mentioned-in-log">Plugin is not mentioned in the log</a></h2>
-<p>In the case where the plugin doesn’t even try to enable (there is no mention of it in the <a href="logs.html#log">log</a>, it means the following (<a href="#plugin-platforms">assuming you are using a platform that supports plugins</a>): In order for the plugin to attempt to enable, it must meet the following:</p>
+<p>In the case where the plugin doesn’t even try to enable (there is no mention of it in the <a href="logs.html#log">log</a>), it means the following (<a href="../general/platforms.html#plugin-platforms">assuming you are using a platform that supports plugins</a>): In order for the plugin to attempt to enable, it must meet the following:</p>
 <ul>
 <li>the plugi filen must be in the <code>/plugins/</code> folder</li>
 <li>the plugin file must have a <em>.jar</em> extension</li>

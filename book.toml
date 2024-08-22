@@ -12,6 +12,7 @@ create-missing = false
 additional-css = ["theme/ko-fi.css", "theme/hints.css", "./theme/catppuccin.css", "./theme/catppuccin-admonish.css"]
 additional-js = ["theme/ko-fi.js", "theme/hints.js"]
 default-theme = "mocha"
+preferred-dark-theme = "mocha"
 mathjax-support = false
 no-section-label = false
 smart-punctuation = true

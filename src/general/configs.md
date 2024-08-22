@@ -257,7 +257,7 @@ Although no error may be visible at first glance, the YAML is not valid due to t
 boss-bar: <rainbow>&lPINATA: '%hit%HIT%S% LEFT
 ```
 
-YML is not valid here. If the text contains special characters, it is a good idea to wrap the text in quotes (but be careful if the text already contains a quote and you want to use the same type of quotes to wrap it, see [here](#yaml-escape)).
+YML is not valid here. If the text contains special characters, it is a good idea to wrap the text in quotes (but be careful if the text already contains a quote and you want to use the same type of quotes to wrap it, see [here](../general/configs.md#yaml-escape)).
 
 ### JSON {#json}
 JSON is another common format. While JSON is not a format intended for configuration files (although some use it that way), you may need to edit the JSON file manually (e.g.

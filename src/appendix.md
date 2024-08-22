@@ -11,6 +11,7 @@ You can contribute to this project on [GitHub](https://github.com/caukub/mcgui-d
 ### Conventions {#contributing-conventions}
 - instead of underscores and dots, dashes should be used in filenames and labels
 - every header must have a label
+- every image must have description
 - file names and labels must be in English
 
 ## License {#license}

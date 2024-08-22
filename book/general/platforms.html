@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "mocha";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -279,7 +279,7 @@
 The optimizations significantly improve the server performance.</p>
 <p>Nowadays most servers with plugin support runs Paper (<a href="https://bstats.org/global/bukkit#serverSoftware">see here</a>)</p>
 <h3 id="pufferfish"><a class="header" href="#pufferfish">Pufferfish</a></h3>
-<p><a href="https://pufferfish.host/downloads">Pufferfish</a> is a <a href="#forks">fork</a> of Paper that mainly adds more optimizations. This is especially useful for large servers trying to keep as many players as possible, or when server performance is not sufficient. However, it’s not panacea in this regard. <a href="#performance-optimization">There are many factors that have much more significant impact on the server performance</a>, but Pufferfish can somehow help a little bit.</p>
+<p><a href="https://pufferfish.host/downloads">Pufferfish</a> is a <a href="#forks">fork</a> of Paper that mainly adds more optimizations. This is especially useful for large servers trying to keep as many players as possible, or when server performance is not sufficient. However, it’s not panacea in this regard. <a href="../general/performance.html">There are many factors that have much more significant impact on the server performance</a>, but Pufferfish can somehow help a little bit.</p>
 <h3 id="purpur"><a class="header" href="#purpur">Purpur</a></h3>
 <p><a href="https://purpurmc.org/">Purpur</a> is a <a href="#forks">fork</a> of Pufferfish that adds a large number of options for configuring many aspects of the game and new features.</p>
 <p>This includes the <code>ping</code> command, mob riding, AFK system, TPS bar, silk touch spawners <a href="https://purpurmc.org/docs/purpur/">and much more</a>.</p>
@@ -301,7 +301,7 @@ but there’s probably no reason for you to use them.</p>
 <h3 id="spongeforge"><a class="header" href="#spongeforge">SpongeForge</a></h3>
 <p>SpongeForge is not really a platform like the others listed, but it is approached as such, even though it is only a Forge mod.</p>
 <p>SpongeForge is the only “platform” that allows Forge mods and plugins at the same time stably. However, SpongeForge <a href="#hybrids">unfortunately</a> supports <a href="https://spongepowered.org/downloads/spongeforge">only some version of Minecraft (Forge)</a>.</p>
-<p>However, SpongeForge does not allow running <a href="#bukkit-plugins">Bukkit plugins</a> (= “classic” plugins). The plugins have to support directly Sponge. Fortunately, many well-known plugins are supported by Sponge. These include LuckPerms, TAB, SkinsRestorer, LibertyBans and many others. For those that do not support Sponge, you can often find an alternative (e.g. <a href="https://ore.spongepowered.org/Nucleus/Nucleus">Nucleus</a> instead of EssentialsX).</p>
+<p>However, SpongeForge does not allow running <a href="../plugins/basics.html#bukkit-plugins">Bukkit plugins</a> (= “classic” plugins). The plugins have to support directly Sponge. Fortunately, many well-known plugins are supported by Sponge. These include LuckPerms, TAB, SkinsRestorer, LibertyBans and many others. For those that do not support Sponge, you can often find an alternative (e.g. <a href="https://ore.spongepowered.org/Nucleus/Nucleus">Nucleus</a> instead of EssentialsX).</p>
 <h4 id="spongeforge-plugins-installation"><a class="header" href="#spongeforge-plugins-installation">Installing SpongeForge and Sponge plugins</a></h4>
 <p>SpongeForge is a Forge mod you can <a href="../mods.html#installation">install like any other mod</a>, so by uploading it to the <code>/mods/</code> folder and then restarting the server. On startup a <code>/plugins/</code> folder is created which you can treat like on a regular Spigot server, i.e. the plugin is installed by uploading the plugin (<code>.jar</code> file) to the <code>/plugins/</code> folder and a restart. The plugin configuration files are located in the <code>/plugins/</code> folder.</p>
 <h2 id="hybrids"><a class="header" href="#hybrids">Hybrid platforms</a></h2>

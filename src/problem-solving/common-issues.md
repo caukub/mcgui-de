@@ -15,7 +15,7 @@ If the plugin needs another plugin to work (which is quite common), this will be
 (highlighted) information, such as the minimum required version of Java
 
 ## Bad plugin version/bad mod version {#bad-plugin-version}
-Read more about this issue on the plugin server [here](#bad-plugin-version) and on the mod server [here](../mods.md#bad-mod-version).
+Read more about this issue on the plugin server [here](../plugins/basics.md#bad-plugin-version) and on the mod server [here](../mods.md#bad-mod-version).
 
 ## Missing dependencies {#missing-dependency}
 In the case where a plugin is missing a dependency, the plugin will not enable (exceptionally, the whole server may crash (shut down)). In the case of a missing mod dependency, the server will almost certainly crash.
@@ -251,7 +251,7 @@ org.bukkit.plugin.InvalidPluginException: Unsupported API version 1.20
 ```
 
 ## Plugin is not mentioned in the log {#plugin-not-mentioned-in-log}
-In the case where the plugin doesn't even try to enable (there is no mention of it in the [log](logs.md#log), it means the following ([assuming you are using a platform that supports plugins](#plugin-platforms)): In order for the plugin to attempt to enable, it must meet the following:
+In the case where the plugin doesn't even try to enable (there is no mention of it in the [log](logs.md#log)), it means the following ([assuming you are using a platform that supports plugins](../general/platforms.md#plugin-platforms)): In order for the plugin to attempt to enable, it must meet the following:
 
 - the plugi filen must be in the `/plugins/` folder
 - the plugin file must have a *.jar* extension

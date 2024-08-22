@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "mocha";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -316,7 +316,7 @@ RAM usage.</p>
 <p>If the plugin supports PAPI, you are using the correct format, and there is no further information in the documentation as to why the placeholder might not work (e.g. need to enable PAPI support in the config), contact the plugin author or support.</p>
 <h4 id="troubleshooting-is-not-working"><a class="header" href="#troubleshooting-is-not-working">Placeholder itself does not work</a></h4>
 <p>In the case where the placeholder itself is displayed instead of its value, do the following.</p>
-<p>If the placeholder is provided by an expansion, make sure you <a href="#papi-expansion-installation">have the expansion installed</a> (for a list of installed expansions, use the <code>papi list</code> <a href="../general/commands.html#commands">command</a>). If not, you can install the expansion using the <code>papi ecloud download &lt;expansion&gt;</code> command, or by uploading the expansion manually to <code>/plugins/PlaceholderAPI/expansions/</code>. Remember that you need to reload the plugin with <code>papi reload</code> or restart the server to reflect the changes.</p>
+<p>If the placeholder is provided by an expansion, make sure you have the expansion installed (for a list of installed expansions, use the <code>papi list</code> <a href="../general/commands.html#commands">command</a>). If not, you can install the expansion using the <code>papi ecloud download &lt;expansion&gt;</code> command, or by uploading the expansion manually to <code>/plugins/PlaceholderAPI/expansions/</code>. Remember that you need to reload the plugin with <code>papi reload</code> or restart the server to reflect the changes.</p>
 <p>In case you have the expansion installed, make sure you are using the current version of the expansion and there are no multiple versions of the same expansion installed in <code>/plugins/PlaceholderAPI/expansions/</code>.</p>
 <p>Make sure you have a version of PlaceholderAPI that is compatible with the server version, and that the PlaceholderAPI plugin does not throw any errors (which you can see in the server <a href="../problem-solving/logs.html">log</a>), and that the placeholder you are trying to use exists.</p>
 <h4 id="troubleshooting-outdated-info"><a class="header" href="#troubleshooting-outdated-info">Placeholder works, but returns incorrect information</a></h4>

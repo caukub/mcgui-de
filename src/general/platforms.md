@@ -44,7 +44,7 @@ The optimizations significantly improve the server performance.
 Nowadays most servers with plugin support runs Paper ([see here](https://bstats.org/global/bukkit#serverSoftware))
 
 ### Pufferfish {#pufferfish}
-[Pufferfish](https://pufferfish.host/downloads) is a [fork](#forks) of Paper that mainly adds more optimizations. This is especially useful for large servers trying to keep as many players as possible, or when server performance is not sufficient. However, it's not panacea in this regard. [There are many factors that have much more significant impact on the server performance](#performance-optimization), but Pufferfish can somehow help a little bit.
+[Pufferfish](https://pufferfish.host/downloads) is a [fork](#forks) of Paper that mainly adds more optimizations. This is especially useful for large servers trying to keep as many players as possible, or when server performance is not sufficient. However, it's not panacea in this regard. [There are many factors that have much more significant impact on the server performance](../general/performance.md), but Pufferfish can somehow help a little bit.
 
 ### Purpur {#purpur}
 [Purpur](https://purpurmc.org/) is a [fork](#forks) of Pufferfish that adds a large number of options for configuring many aspects of the game and new features.
@@ -80,7 +80,7 @@ SpongeForge is not really a platform like the others listed, but it is approache
 
 SpongeForge is the only "platform" that allows Forge mods and plugins at the same time stably. However, SpongeForge [unfortunately](#hybrids) supports [only some version of Minecraft (Forge)](https://spongepowered.org/downloads/spongeforge).
 
-However, SpongeForge does not allow running [Bukkit plugins](#bukkit-plugins) (= "classic" plugins). The plugins have to support directly Sponge. Fortunately, many well-known plugins are supported by Sponge. These include LuckPerms, TAB, SkinsRestorer, LibertyBans and many others. For those that do not support Sponge, you can often find an alternative (e.g. [Nucleus](https://ore.spongepowered.org/Nucleus/Nucleus) instead of EssentialsX).
+However, SpongeForge does not allow running [Bukkit plugins](../plugins/basics.md#bukkit-plugins) (= "classic" plugins). The plugins have to support directly Sponge. Fortunately, many well-known plugins are supported by Sponge. These include LuckPerms, TAB, SkinsRestorer, LibertyBans and many others. For those that do not support Sponge, you can often find an alternative (e.g. [Nucleus](https://ore.spongepowered.org/Nucleus/Nucleus) instead of EssentialsX).
 
 #### Installing SpongeForge and Sponge plugins {#spongeforge-plugins-installation}
 SpongeForge is a Forge mod you can [install like any other mod](../mods.md#installation), so by uploading it to the `/mods/` folder and then restarting the server. On startup a `/plugins/` folder is created which you can treat like on a regular Spigot server, i.e. the plugin is installed by uploading the plugin (`.jar` file) to the `/plugins/` folder and a restart. The plugin configuration files are located in the `/plugins/` folder.

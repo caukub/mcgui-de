@@ -49,7 +49,7 @@ You shouldn't need to use an IP address at all, and it is not recommended as it 
 
 If you still want to get the IP address of the server for some reason, just open a Command Prompt on your computer (on Windows, keyboard shortcut *Win* + *R* → type *cmd* in the text box → press *Enter*/*OK*) and execute the command `ping <hostname>` (without the brackets), i.e. `ping node.myhost.com`.
 
-Use only the [hostname](#address-terminology). Do not use your custom domain address. In the case where an *SRV* record is used to point the domain, the *ping* command [will not work](#srv-pitfall).
+Use only the [hostname](#address-terminology). Do not use your custom domain address. In the case where an *SRV* record is used to point the domain, the *ping* command [will not work](../administration/domains.md#srv-pitfall).
 
 Also do not use port (including colon) in the command.
 

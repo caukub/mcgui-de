@@ -16,7 +16,7 @@ This part may be closely related to the [following part](#everything-is-stored-s
 ## Everything must be stored somewhere {#everything-is-stored-somewhere}
 While this may sound trivial, it is an often misunderstood principle that is important to understand.
 
-All data is always stored somewhere. The [RAM](#memory) stores the data that the server is currently working with. Data that should persist after the server restarts is stored in [disk](../administration/server-resources.md#disk) (in files) while the server is running or when the server shuts down. When the server needs to work with the data, it is loaded back into memory.
+All data is always stored somewhere. The [RAM](../administration/server-resources.md#memory) stores the data that the server is currently working with. Data that should persist after the server restarts is stored in [disk](../administration/server-resources.md#disk) (in files) while the server is running or when the server shuts down. When the server needs to work with the data, it is loaded back into memory.
 
 Every time the Minecraft server itself or a plugin tries to read the data, it is read from the files on disk. For example, world data and
 (non-plugin data) of players are stored in the world folder (basically `/world/`), plugin data and configurations are stored in the `/plugins/pluginname/` folder, and so on. The data is then read from this particular location. Thus when you want to upload a backup from another server, just upload the backup in the server root directory and extract it. It's that simple - it's just files which needs to be located on the correct place.

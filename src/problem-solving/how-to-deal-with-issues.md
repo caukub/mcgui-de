@@ -3,7 +3,7 @@ To learn how to troubleshoot basic server issues, see the following link: <https
 
 If you are experiencing a problem with a server, plugin (or mod), the cause of the problem can almost always be [read from the server log](logs.md#log-basics). If you are not able to understand the contents of the log even after sufficient (or at least minimal/basic) effort, just [ask for help](how-to-ask-for-help.md#where-get-help).
 
-If you can't tell the cause from the log, [disable all plugins](#plugin-disable) to find out if the problem is caused by the plugin or by the platform itself (if the problem disappears after disabling all plugins, it is logically caused by the plugin).
+If you can't tell the cause from the log, [disable all plugins](../plugins/basics.md#plugin-disable) to find out if the problem is caused by the plugin or by the platform itself (if the problem disappears after disabling all plugins, it is logically caused by the plugin).
 
 If the problem is caused by a plugin, use [binary search](#binary-search) to find out which one (and update/report the plugin if necessary).
 

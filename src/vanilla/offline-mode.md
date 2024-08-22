@@ -1,7 +1,7 @@
 # Offline Mode Security {#offline-mode-security}
 When the server is in online mode, the server security decreases due to the fact that Minecraft servers do not control the ownership of the accounts of the connected players, and thus any player can connect under any nickname.
 
-Therefore, it is important to note the following. Even so, the most reliable form of account protection on a server is to use online-mode ([and not just for security reasons](#offline-mode)), as authentication plugins can contain bugs, or ignorance, misunderstanding, or misconfiguration can also play a large role.
+Therefore, it is important to note the following. Even so, the most reliable form of account protection on a server is to use online-mode ([and not just for security reasons](../general/online-mode.md#offline-mode)), as authentication plugins can contain bugs, or ignorance, misunderstanding, or misconfiguration can also play a large role.
 
 ## Authentication plugin {#authentication-plugin}
 An authentication plugin, such as [AuthMeReloaded](https://www.spigotmc.org/resources/authmereloaded.6269/), or the more modern [LibreLogin](https://modrinth.com/plugin/libre-login), is an absolute must on an offline-mode server.

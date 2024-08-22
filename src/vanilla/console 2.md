@@ -10,7 +10,7 @@ The console has all rights to execute all commands.
 
 As noted [here](../general/commands.md#commands-console), commands in the console are by default written without the leading slash, since everything executed in the console is a command, so the leading slash is only written in chat, not the console (since the console executes the command and the command itself is e.g. `day`, not `/day`, while conversely chat writes the leading slash to indicate that it is a command).
 
-A concept that is related to the console, and important to understand, is [command-executor](#command-executor).
+A concept that is related to the console, and important to understand, is [command-executor](../general/commands.md#command-executor).
 
 ## Console spam {#console-spam}
-In the case where the console is spamming due to errors, the cause of the problem must be addressed. Definitely do not use plugins like ConsoleSpamFix as a patch. See [this section](#how-to-deal-with-issues) for how to resolve such errors.
+In the case where the console is spamming due to errors, the cause of the problem must be addressed. Definitely do not use plugins like ConsoleSpamFix as a patch. See [this section](../problem-solving/how-to-deal-with-issues.md) for how to resolve such errors.

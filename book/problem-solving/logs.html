@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "mocha";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -264,8 +264,8 @@
 <p>You can read the log from the beginning line by line, but this is usually unnecessary. You can search in text in almost any browser/text editor using the <em>Ctrl + F</em> shortcut.</p>
 <p>So, if you have a general server problem where you don’t know the cause (e.g. the server automatically shuts down), you want to search the log for error messages, i.e. messages with <a href="#log-level">log level <em>error</em>, possibly <em>warn</em></a>, i.e. messages containing <em>‘ERROR’</em> (possibly also <em>‘FATAL’</em> on Forge and <em>‘SEVERE’</em> on BungeeCord/Waterfall).</p>
 <p>If you have a specific problem with a plugin (or mod; e.g. it won’t start), you want to look for messages in the log with the name of that plugin. So if the <em>AuctionHouse</em> plugin does not work, you want to look for messages containing <em>‘AuctionHouse’</em>, as in the example below.</p>
-<p>If you don’t know what the various errors in the log mean, <a href="#how-to-deal-with-issues">this section</a> may help.</p>
-<p>If you still don’t understand the contents of the log and even <a href="#google-search">Google doesn’t help</a>, <a href="#how-to-share-log">share the log</a> and <a href="#where-get-help">get advice</a>.</p>
+<p>If you don’t know what the various errors in the log mean, <a href="how-to-deal-with-issues.html">this section</a> may help.</p>
+<p>If you still don’t understand the contents of the log and even <a href="how-to-deal-with-issues.html#google-search">Google doesn’t help</a>, <a href="#how-to-share-log">share the log</a> and <a href="how-to-ask-for-help.html#where-get-help">get advice</a>.</p>
 <p>For example, the message in the log might look like this:</p>
 <pre><code class="language-log">[18:42:47] [Server thread/ERROR]: [AuctionHouse] Error! No plugin supporting Vault's Economy API was found!
 </code></pre>

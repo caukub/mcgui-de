@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "mocha";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -419,7 +419,7 @@ pvp: false
 <p>Although no error may be visible at first glance, the YAML is not valid due to the use of the indentation tab. A valid Y(A)ML cannot use tabs for indentation, only spaces!</p>
 <pre><code class="language-yaml">boss-bar: &lt;rainbow&gt;&amp;lPINATA: '%hit%HIT%S% LEFT
 </code></pre>
-<p>YML is not valid here. If the text contains special characters, it is a good idea to wrap the text in quotes (but be careful if the text already contains a quote and you want to use the same type of quotes to wrap it, see <a href="#yaml-escape">here</a>).</p>
+<p>YML is not valid here. If the text contains special characters, it is a good idea to wrap the text in quotes (but be careful if the text already contains a quote and you want to use the same type of quotes to wrap it, see <a href="../general/configs.html#yaml-escape">here</a>).</p>
 <h3 id="json"><a class="header" href="#json">JSON</a></h3>
 <p>JSON is another common format. While JSON is not a format intended for configuration files (although some use it that way), you may need to edit the JSON file manually (e.g.
 <code>whitelist.json</code>).</p>

@@ -26,9 +26,9 @@ So, if you have a general server problem where you don't know the cause (e.g. th
 
 If you have a specific problem with a plugin (or mod; e.g. it won't start), you want to look for messages in the log with the name of that plugin. So if the *AuctionHouse* plugin does not work, you want to look for messages containing *'AuctionHouse'*, as in the example below.
 
-If you don't know what the various errors in the log mean, [this section](#how-to-deal-with-issues) may help.
+If you don't know what the various errors in the log mean, [this section](how-to-deal-with-issues.md) may help.
 
-If you still don't understand the contents of the log and even [Google doesn't help](#google-search), [share the log](#how-to-share-log) and [get advice](#where-get-help).
+If you still don't understand the contents of the log and even [Google doesn't help](how-to-deal-with-issues.md#google-search), [share the log](#how-to-share-log) and [get advice](how-to-ask-for-help.md#where-get-help).
 
 For example, the message in the log might look like this:
 

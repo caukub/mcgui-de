@@ -85,7 +85,7 @@ If the plugin supports PAPI, you are using the correct format, and there is no f
 #### Placeholder itself does not work {#troubleshooting-is-not-working}
 In the case where the placeholder itself is displayed instead of its value, do the following.
 
-If the placeholder is provided by an expansion, make sure you [have the expansion installed](#papi-expansion-installation) (for a list of installed expansions, use the `papi list` [command](../general/commands.md#commands)). If not, you can install the expansion using the `papi ecloud download <expansion>` command, or by uploading the expansion manually to `/plugins/PlaceholderAPI/expansions/`. Remember that you need to reload the plugin with `papi reload` or restart the server to reflect the changes.
+If the placeholder is provided by an expansion, make sure you have the expansion installed (for a list of installed expansions, use the `papi list` [command](../general/commands.md#commands)). If not, you can install the expansion using the `papi ecloud download <expansion>` command, or by uploading the expansion manually to `/plugins/PlaceholderAPI/expansions/`. Remember that you need to reload the plugin with `papi reload` or restart the server to reflect the changes.
 
 In case you have the expansion installed, make sure you are using the current version of the expansion and there are no multiple versions of the same expansion installed in `/plugins/PlaceholderAPI/expansions/`.
 

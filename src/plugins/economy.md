@@ -1,5 +1,5 @@
 # Economy {#economy}
-In case you want to use economy on your server, you will need an economy plugin and [Vault](#vault) installed (normally).
+In case you want to use economy on your server, you will need an economy plugin and [Vault](specific/vault.md) installed (normally).
 
 The Vault plugin itself is not an economy plugin, but most economy plugins need it to work properly, see [here](#why-vault).
 

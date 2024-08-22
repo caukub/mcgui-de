@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "mocha";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -283,7 +283,7 @@
 <h2 id="hostname-to-ip"><a class="header" href="#hostname-to-ip">How to get the IP address of a server</a></h2>
 <p>You shouldn’t need to use an IP address at all, and it is not recommended as it can change and is hard to remember. The hostname can be used in the same way as the IP address. Read more <a href="#address-use">here</a>.</p>
 <p>If you still want to get the IP address of the server for some reason, just open a Command Prompt on your computer (on Windows, keyboard shortcut <em>Win</em> + <em>R</em> → type <em>cmd</em> in the text box → press <em>Enter</em>/<em>OK</em>) and execute the command <code>ping &lt;hostname&gt;</code> (without the brackets), i.e. <code>ping node.myhost.com</code>.</p>
-<p>Use only the <a href="#address-terminology">hostname</a>. Do not use your custom domain address. In the case where an <em>SRV</em> record is used to point the domain, the <em>ping</em> command <a href="#srv-pitfall">will not work</a>.</p>
+<p>Use only the <a href="#address-terminology">hostname</a>. Do not use your custom domain address. In the case where an <em>SRV</em> record is used to point the domain, the <em>ping</em> command <a href="../administration/domains.html#srv-pitfall">will not work</a>.</p>
 <p>Also do not use port (including colon) in the command.</p>
 <p>The hostname is just the address itself (e.g. <code>node.myhost.com</code>).</p>
 <h3 id="port-forwarding"><a class="header" href="#port-forwarding">Port forwarding</a></h3>

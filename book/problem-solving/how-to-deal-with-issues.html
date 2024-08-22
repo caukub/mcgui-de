@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "mocha";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -251,7 +251,7 @@
 <h1 id="how-to-deal-with-issues"><a class="header" href="#how-to-deal-with-issues">How to deal with issues</a></h1>
 <p>To learn how to troubleshoot basic server issues, see the following link: <a href="https://docs.papermc.io/paper/basic-troubleshooting">https://docs.papermc.io/paper/basic-troubleshooting</a> and below.</p>
 <p>If you are experiencing a problem with a server, plugin (or mod), the cause of the problem can almost always be <a href="logs.html#log-basics">read from the server log</a>. If you are not able to understand the contents of the log even after sufficient (or at least minimal/basic) effort, just <a href="how-to-ask-for-help.html#where-get-help">ask for help</a>.</p>
-<p>If you can’t tell the cause from the log, <a href="#plugin-disable">disable all plugins</a> to find out if the problem is caused by the plugin or by the platform itself (if the problem disappears after disabling all plugins, it is logically caused by the plugin).</p>
+<p>If you can’t tell the cause from the log, <a href="../plugins/basics.html#plugin-disable">disable all plugins</a> to find out if the problem is caused by the plugin or by the platform itself (if the problem disappears after disabling all plugins, it is logically caused by the plugin).</p>
 <p>If the problem is caused by a plugin, use <a href="#binary-search">binary search</a> to find out which one (and update/report the plugin if necessary).</p>
 <p>If the error is caused by the server platform itself, update it as well and report the error if applicable.</p>
 <p>If it’s not a problem (bug) but you don’t know how to handle a certain behavior/setting of the plugin, you can almost always find everything you need in the <a href="../general/docs.html#docs">platform/plugin documentation</a>, or you can find it in the <a href="../general/configs.html#config">configuration</a>, eventually you can contact the plugin author/support. If you want to allow certain actions for specific/all players, learn how to work with <a href="../general/permissions.html#permissions">permissions</a>.</p>

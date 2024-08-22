@@ -39,7 +39,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "mocha";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -274,7 +274,7 @@
 <h3 id="mod-deletion"><a class="header" href="#mod-deletion">Deletion</a></h3>
 <p>To remove a mod, delete the mod (the mod itself is a <em>.jar</em> file) from the <code>/mods/</code> folder and then restart the server.</p>
 <h3 id="configuration"><a class="header" href="#configuration">Configuration</a></h3>
-<p>In case you want to configure a mod in some way, you can do so either using the commands found in the <a href="general/docs.html">mod documentation</a>, or using the <a href="#config">configuration files</a> (which are generated when the mod is first started) if the mod has configuration files.</p>
+<p>In case you want to configure a mod in some way, you can do so either using the commands found in the <a href="general/docs.html">mod documentation</a>, or using the <a href="general/configs.html">configuration files</a> (which are generated when the mod is first started) if the mod has configuration files.</p>
 <p>On newer versions of both Fabric and Forge, mod configuration files are usually located in the <code>/config/</code> folder, but this may not always be the case. For example, they can also be located in the <span class="hint" hint="root-directory">server root directory</span>, or the <a href="general/world.html#world-directory">world (main) folder</a>. See the <a href="general/docs.html">documentation</a> of the specific mod for more information.</p>
 <h2 id="modpack"><a class="header" href="#modpack">Modpack</a></h2>
 <h3 id="what-is-a-modpack"><a class="header" href="#what-is-a-modpack">What is a modpack</a></h3>

@@ -8,7 +8,7 @@ The plugin itself is a `.jar` file, not the folder. The folder contains configur
 
 When the plugin is intended for Bukkit or Spigot, the plugin is compatible with Spigot and its forks (Paper, Pufferfish, Purpur). It's all just Bukkit plugins which all of these platforms support.
 
-If you have problems with the plugin's functionality, to learn how to deal with such issue, [see here](#how-to-deal-with-issues).
+If you have problems with the plugin's functionality, to learn how to deal with such issue, [see here](../problem-solving/how-to-deal-with-issues.md).
 
 ## /plugins/ folder structure {#plugins-folder-structure}
 The `/plugins/` folder contains:

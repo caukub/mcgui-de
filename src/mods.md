@@ -39,7 +39,7 @@ If you want to update a mod, just [delete the old version of the mod](#mod-delet
 To remove a mod, delete the mod (the mod itself is a *.jar* file) from the `/mods/` folder and then restart the server.
 
 ### Configuration {#configuration}
-In case you want to configure a mod in some way, you can do so either using the commands found in the [mod documentation](general/docs.md), or using the [configuration files](#config) (which are generated when the mod is first started) if the mod has configuration files.
+In case you want to configure a mod in some way, you can do so either using the commands found in the [mod documentation](general/docs.md), or using the [configuration files](general/configs.md) (which are generated when the mod is first started) if the mod has configuration files.
 
 On newer versions of both Fabric and Forge, mod configuration files are usually located in the `/config/` folder, but this may not always be the case. For example, they can also be located in the [server root directory](~root-directory), or the [world (main) folder](general/world.md#world-directory). See the [documentation](general/docs.md) of the specific mod for more information.
 

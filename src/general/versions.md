@@ -63,7 +63,7 @@ If a platform, plugin, or mod has experimental builds, you can probably find a l
 
 ## How to change version {#how-to-change-version}
 ### How to change server version {#how-to-server-version}
-You can change the server version simply by replacing [server JAR](#server-jar) of the old version with the new one.
+You can change the server version simply by replacing [server JAR](../general/server-jar.md) of the old version with the new one.
 
 #### Downgrade {#downgrade}
 Warning! You **cannot** [downgrade](downgrade.md#downgrade) the server without losing data (switch from a higher Minecraft version to a lower one).
