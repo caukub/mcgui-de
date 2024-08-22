@@ -1,0 +1,528 @@
+<!DOCTYPE HTML>
+<html lang="en" class="mocha" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Common issues and their solutions - caukub&#x27;s Minecraft Server Handbook</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/ko-fi.css">
+        <link rel="stylesheet" href="../theme/hints.css">
+        <link rel="stylesheet" href=".././theme/catppuccin.css">
+        <link rel="stylesheet" href=".././theme/catppuccin-admonish.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('mocha')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">caukub's Minecraft Server Handbook</a></li><li class="chapter-item expanded affix "><a href="../quickstart.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">General</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> General</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../general/permissions.html"><strong aria-hidden="true">1.1.</strong> Permissions</a></li><li class="chapter-item expanded "><a href="../general/commands.html"><strong aria-hidden="true">1.2.</strong> Commands</a></li><li class="chapter-item expanded "><a href="../general/platforms.html"><strong aria-hidden="true">1.3.</strong> Platforms</a></li><li class="chapter-item expanded "><a href="../general/world.html"><strong aria-hidden="true">1.4.</strong> Worlds</a></li><li class="chapter-item expanded "><a href="../general/versions.html"><strong aria-hidden="true">1.5.</strong> Versions</a></li><li class="chapter-item expanded "><a href="../general/address-ports.html"><strong aria-hidden="true">1.6.</strong> Address and ports</a></li><li class="chapter-item expanded "><a href="../general/configs.html"><strong aria-hidden="true">1.7.</strong> Configuration files</a></li><li class="chapter-item expanded "><a href="../general/console.html"><strong aria-hidden="true">1.8.</strong> Console</a></li><li class="chapter-item expanded "><a href="../general/server-jar.html"><strong aria-hidden="true">1.9.</strong> Server JAR</a></li><li class="chapter-item expanded "><a href="../general/docs.html"><strong aria-hidden="true">1.10.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="../general/downgrade.html"><strong aria-hidden="true">1.11.</strong> Downgrade</a></li><li class="chapter-item expanded "><a href="../general/ftp.html"><strong aria-hidden="true">1.12.</strong> (S)FTP</a></li><li class="chapter-item expanded "><a href="../general/online-mode.html"><strong aria-hidden="true">1.13.</strong> Online mode</a></li><li class="chapter-item expanded "><a href="../general/performance.html"><strong aria-hidden="true">1.14.</strong> Server performance (optimization)</a></li><li class="chapter-item expanded "><a href="../general/pregeneration.html"><strong aria-hidden="true">1.15.</strong> Pregeneration</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Administration</li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Server Administration</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../administration/server-resources.html"><strong aria-hidden="true">2.1.</strong> Server Resources</a></li><li class="chapter-item expanded "><a href="../administration/backups.html"><strong aria-hidden="true">2.2.</strong> Backups</a></li><li class="chapter-item expanded "><a href="../administration/databases.html"><strong aria-hidden="true">2.3.</strong> Databases</a></li><li class="chapter-item expanded "><a href="../administration/domains.html"><strong aria-hidden="true">2.4.</strong> Domain</a></li><li class="chapter-item expanded "><a href="../administration/host-types.html"><strong aria-hidden="true">2.5.</strong> Host Types</a></li><li class="chapter-item expanded "><a href="../administration/java.html"><strong aria-hidden="true">2.6.</strong> Java</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Plugins</li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Plugins</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plugins/basics.html"><strong aria-hidden="true">3.1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../plugins/useful.html"><strong aria-hidden="true">3.2.</strong> Useful/Frequently used features</a></li><li class="chapter-item expanded "><a href="../plugins/prefixes.html"><strong aria-hidden="true">3.3.</strong> Prefixes</a></li><li class="chapter-item expanded "><a href="../plugins/placeholders.html"><strong aria-hidden="true">3.4.</strong> Placeholders</a></li><li class="chapter-item expanded "><a href="../plugins/economy.html"><strong aria-hidden="true">3.5.</strong> Economy</a></li><li class="chapter-item expanded "><a href="../plugins/anticheat.html"><strong aria-hidden="true">3.6.</strong> AntiCheat</a></li><li class="chapter-item expanded "><a href="../plugins/cracked.html"><strong aria-hidden="true">3.7.</strong> Cracked Plugins</a></li><li class="chapter-item expanded "><a href="../plugins/list.html"><strong aria-hidden="true">3.8.</strong> Hiding Plugin List</a></li><li class="chapter-item expanded "><a href="../plugins/voting.html"><strong aria-hidden="true">3.9.</strong> Voting</a></li><li class="chapter-item expanded "><a href="../plugins/reload.html"><strong aria-hidden="true">3.10.</strong> Reload</a></li><li class="chapter-item expanded "><a href="../plugins/spigot-ids.html"><strong aria-hidden="true">3.11.</strong> Spigot IDs</a></li><li class="chapter-item expanded "><a href="../plugins/bstats.html"><strong aria-hidden="true">3.12.</strong> bStats</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.13.</strong> Specific plugins</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../plugins/specific/dynmap.html"><strong aria-hidden="true">3.13.1.</strong> Dynmap</a></li><li class="chapter-item "><a href="../plugins/specific/essentialsx.html"><strong aria-hidden="true">3.13.2.</strong> EssentialsX</a></li><li class="chapter-item "><a href="../plugins/specific/luckperms.html"><strong aria-hidden="true">3.13.3.</strong> LuckPerms</a></li><li class="chapter-item "><a href="../plugins/specific/multiverse-core.html"><strong aria-hidden="true">3.13.4.</strong> Multiverse-Core</a></li><li class="chapter-item "><a href="../plugins/specific/vault.html"><strong aria-hidden="true">3.13.5.</strong> Vault</a></li><li class="chapter-item "><a href="../plugins/specific/viaversion.html"><strong aria-hidden="true">3.13.6.</strong> ViaVersion</a></li><li class="chapter-item "><a href="../plugins/specific/worldedit.html"><strong aria-hidden="true">3.13.7.</strong> WorldEdit</a></li><li class="chapter-item "><a href="../plugins/specific/worldguard.html"><strong aria-hidden="true">3.13.8.</strong> WorldGuard</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Mods</li><li class="chapter-item expanded "><a href="../mods.html"><strong aria-hidden="true">4.</strong> Mods and modpack</a></li><li class="chapter-item expanded affix "><li class="part-title">Proxy</li><li class="chapter-item expanded "><a href="../proxy.html"><strong aria-hidden="true">5.</strong> Proxy</a></li><li class="chapter-item expanded affix "><li class="part-title">Troubleshooting</li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Troubleshooting</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../problem-solving/common-issues.html" class="active"><strong aria-hidden="true">6.1.</strong> Common issues and their solutions</a></li><li class="chapter-item expanded "><a href="../problem-solving/how-to-ask-for-help.html"><strong aria-hidden="true">6.2.</strong> How to ask for help</a></li><li class="chapter-item expanded "><a href="../problem-solving/how-to-deal-with-issues.html"><strong aria-hidden="true">6.3.</strong> How to solve problems</a></li><li class="chapter-item expanded "><a href="../problem-solving/java-basics.html"><strong aria-hidden="true">6.4.</strong> Java Basics</a></li><li class="chapter-item expanded "><a href="../problem-solving/logs.html"><strong aria-hidden="true">6.5.</strong> Logs</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Security</li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Server Security</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../security/security.html"><strong aria-hidden="true">7.1.</strong> Security</a></li><li class="chapter-item expanded "><a href="../security/malware.html"><strong aria-hidden="true">7.2.</strong> Malware</a></li><li class="chapter-item expanded "><a href="../security/offline-mode.html"><strong aria-hidden="true">7.3.</strong> Offline mode</a></li><li class="chapter-item expanded "><a href="../security/proxy.html"><strong aria-hidden="true">7.4.</strong> Proxy</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Vanilla features</li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Vanilla features</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vanilla/bans.html"><strong aria-hidden="true">8.1.</strong> Bans</a></li><li class="chapter-item expanded "><a href="../vanilla/command-blocks.html"><strong aria-hidden="true">8.2.</strong> Command blocks</a></li><li class="chapter-item expanded "><a href="../vanilla/datapacks.html"><strong aria-hidden="true">8.3.</strong> Datapacks</a></li><li class="chapter-item expanded "><a href="../vanilla/eula.html"><strong aria-hidden="true">8.4.</strong> EULA</a></li><li class="chapter-item expanded "><a href="../vanilla/game-rules.html"><strong aria-hidden="true">8.5.</strong> Game rules</a></li><li class="chapter-item expanded "><a href="../vanilla/motd.html"><strong aria-hidden="true">8.6.</strong> MOTD</a></li><li class="chapter-item expanded "><a href="../vanilla/op.html"><strong aria-hidden="true">8.7.</strong> OP</a></li><li class="chapter-item expanded "><a href="../vanilla/query.html"><strong aria-hidden="true">8.8.</strong> Query</a></li><li class="chapter-item expanded "><a href="../vanilla/rcon.html"><strong aria-hidden="true">8.9.</strong> RCON</a></li><li class="chapter-item expanded "><a href="../vanilla/resource-pack.html"><strong aria-hidden="true">8.10.</strong> Resourcepack</a></li><li class="chapter-item expanded "><a href="../vanilla/server-icon.html"><strong aria-hidden="true">8.11.</strong> Server Icon</a></li><li class="chapter-item expanded "><a href="../vanilla/server-properties.html"><strong aria-hidden="true">8.12.</strong> server.properties</a></li><li class="chapter-item expanded "><a href="../vanilla/whitelist.html"><strong aria-hidden="true">8.13.</strong> Whitelist</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basic principles</li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Basic Principles</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basic-principles/hosting-role.html"><strong aria-hidden="true">9.1.</strong> Hosting Role</a></li><li class="chapter-item expanded "><a href="../basic-principles/no-magic.html"><strong aria-hidden="true">9.2.</strong> No Magic</a></li><li class="chapter-item expanded "><a href="../basic-principles/plugins-vs-mods.html"><strong aria-hidden="true">9.3.</strong> Plugins vs Mods</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Other</li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Other</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../other/desktop.html"><strong aria-hidden="true">10.1.</strong> Basic Computer Skills</a></li><li class="chapter-item expanded "><a href="../other/url-download.html"><strong aria-hidden="true">10.2.</strong> Downlading File from URL</a></li><li class="chapter-item expanded "><a href="../other/panels.html"><strong aria-hidden="true">10.3.</strong> Administration Panels</a></li><li class="chapter-item expanded "><a href="../other/regex.html"><strong aria-hidden="true">10.4.</strong> Regex</a></li><li class="chapter-item expanded "><a href="../other/nbt.html"><strong aria-hidden="true">10.5.</strong> NBT</a></li><li class="chapter-item expanded "><a href="../other/external-tools.html"><strong aria-hidden="true">10.6.</strong> External Tools</a></li><li class="chapter-item expanded "><a href="../other/deving-tools.html"><strong aria-hidden="true">10.7.</strong> Developing modifications, external tools for the Minecraft server and the server itself</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../appendix.html"><strong aria-hidden="true">11.</strong> Appendix</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">caukub&#x27;s Minecraft Server Handbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="/appendix.html#translations" title="Translations" aria-label="Translations">
+                            <i id="translation" class="fa fa-language"></i>
+                        </a>
+                        <a href="https://github.com/caukub/mcgui-de" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <style>
+.mdbook-alerts {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-left: 0.25em solid var(--mdbook-alerts-color);
+}
+
+.mdbook-alerts > *:first-child {
+  margin-top: 0;
+}
+
+.mdbook-alerts > *:last-child {
+  margin-bottom: 0;
+}
+
+.mdbook-alerts-title {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  line-height: 1;
+  color: var(--mdbook-alerts-color);
+  text-transform: capitalize;
+}
+
+.mdbook-alerts-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.2em;
+  background-color: currentColor;
+  -webkit-mask: no-repeat center / 100%;
+  mask: no-repeat center / 100%;
+  -webkit-mask-image: var(--mdbook-alerts-icon);
+  mask-image: var(--mdbook-alerts-icon);
+}
+
+.mdbook-alerts-note {
+  --mdbook-alerts-color: rgb(9, 105, 218);
+  /* https://icon-sets.iconify.design/material-symbols/info-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 17q.425 0 .713-.288T13 16v-4q0-.425-.288-.712T12 11q-.425 0-.712.288T11 12v4q0 .425.288.713T12 17m0-8q.425 0 .713-.288T13 8q0-.425-.288-.712T12 7q-.425 0-.712.288T11 8q0 .425.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m0-8"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-tip {
+  --mdbook-alerts-color: rgb(26, 127, 55);
+  /* https://icon-sets.iconify.design/material-symbols/lightbulb-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 22q-.825 0-1.412-.587T10 20h4q0 .825-.587 1.413T12 22m-3-3q-.425 0-.712-.288T8 18q0-.425.288-.712T9 17h6q.425 0 .713.288T16 18q0 .425-.288.713T15 19zm-.75-3q-1.725-1.025-2.738-2.75T4.5 9.5q0-3.125 2.188-5.312T12 2q3.125 0 5.313 2.188T19.5 9.5q0 2.025-1.012 3.75T15.75 16zm.6-2h6.3q1.125-.8 1.738-1.975T17.5 9.5q0-2.3-1.6-3.9T12 4Q9.7 4 8.1 5.6T6.5 9.5q0 1.35.613 2.525T8.85 14M12 14"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-important {
+  --mdbook-alerts-color: rgb(130, 80, 223);
+  /* https://icon-sets.iconify.design/material-symbols/chat-info-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 7q.425 0 .713-.288T13 6q0-.425-.288-.712T12 5q-.425 0-.712.288T11 6q0 .425.288.713T12 7m0 8q.425 0 .713-.288T13 14v-4q0-.425-.288-.712T12 9q-.425 0-.712.288T11 10v4q0 .425.288.713T12 15m-6 3l-2.3 2.3q-.475.475-1.088.213T2 19.575V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18zm-.85-2H20V4H4v13.125zM4 16V4z"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-warning {
+  --mdbook-alerts-color: rgb(154, 103, 0);
+  /* https://icon-sets.iconify.design/material-symbols/warning-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M2.725 21q-.275 0-.5-.137t-.35-.363q-.125-.225-.137-.488t.137-.512l9.25-16q.15-.25.388-.375T12 3q.25 0 .488.125t.387.375l9.25 16q.15.25.138.513t-.138.487q-.125.225-.35.363t-.5.137zm1.725-2h15.1L12 6zM12 18q.425 0 .713-.288T13 17q0-.425-.288-.712T12 16q-.425 0-.712.288T11 17q0 .425.288.713T12 18m0-3q.425 0 .713-.288T13 14v-3q0-.425-.288-.712T12 10q-.425 0-.712.288T11 11v3q0 .425.288.713T12 15m0-2.5"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-caution {
+  --mdbook-alerts-color: rgb(207, 34, 46);
+  /* https://icon-sets.iconify.design/material-symbols/brightness-alert-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 17q.425 0 .713-.288T13 16q0-.425-.288-.712T12 15q-.425 0-.712.288T11 16q0 .425.288.713T12 17m0-4q.425 0 .713-.288T13 12V8q0-.425-.288-.712T12 7q-.425 0-.712.288T11 8v4q0 .425.288.713T12 13m-3.35 7H6q-.825 0-1.412-.587T4 18v-2.65L2.075 13.4q-.275-.3-.425-.662T1.5 12q0-.375.15-.737t.425-.663L4 8.65V6q0-.825.588-1.412T6 4h2.65l1.95-1.925q.3-.275.663-.425T12 1.5q.375 0 .738.15t.662.425L15.35 4H18q.825 0 1.413.588T20 6v2.65l1.925 1.95q.275.3.425.663t.15.737q0 .375-.15.738t-.425.662L20 15.35V18q0 .825-.587 1.413T18 20h-2.65l-1.95 1.925q-.3.275-.662.425T12 22.5q-.375 0-.737-.15t-.663-.425zm.85-2l2.5 2.5l2.5-2.5H18v-3.5l2.5-2.5L18 9.5V6h-3.5L12 3.5L9.5 6H6v3.5L3.5 12L6 14.5V18zm2.5-6"%2F%3E%3C%2Fsvg%3E');
+}
+
+</style>
+<h1 id="common-issues"><a class="header" href="#common-issues">Most common errors / issues / questions</a></h1>
+<h2 id="modification-download"><a class="header" href="#modification-download">Not reading the basic information on the plugin page (or mod page)</a></h2>
+<p>As described in <a href="../plugins/basics.html#plugin-doesnt-work-basics">this section</a>, always read the basic information about the plugin on the plugin page. Never just mindlessly download a plugin, especially via the plugin installer in the <a href="../other/panels.html">admin panel</a>. Pay particular attention to:</p>
+<ol>
+<li>the correct version of the plugin</li>
+</ol>
+<p>Always check that the plugin you want to use is compatible with the version of your server, see <a href="../general/versions.html#plugin-versions">here</a>.</p>
+<ol start="2">
+<li>Check that the plugin does not require dependencies</li>
+</ol>
+<p>If the plugin needs another plugin to work (which is quite common), this will be stated on the plugin page.</p>
+<ol start="3">
+<li>All other important info</li>
+</ol>
+<p>(highlighted) information, such as the minimum required version of Java</p>
+<h2 id="bad-plugin-version"><a class="header" href="#bad-plugin-version">Bad plugin version/bad mod version</a></h2>
+<p>Read more about this issue on the plugin server <a href="#bad-plugin-version">here</a> and on the mod server <a href="../mods.html#bad-mod-version">here</a>.</p>
+<h2 id="missing-dependency"><a class="header" href="#missing-dependency">Missing dependencies</a></h2>
+<p>In the case where a plugin is missing a dependency, the plugin will not enable (exceptionally, the whole server may crash (shut down)). In the case of a missing mod dependency, the server will almost certainly crash.</p>
+<p>You can read more about this problem on the plugin server <a href="../mods.html#mods-missing-dependency">here</a> and on the modded server <a href="../mods.html#mods-missing-dependency">here</a>.</p>
+<h2 id="invalid-format"><a class="header" href="#invalid-format">Invalid file format</a></h2>
+<p>If you encounter an error like this, it means that the file format (<code>spigot.yml</code> in the first example) is not valid. You can read more about the validity of file formats <a href="../general/configs.html#config">here</a>.</p>
+<pre><code class="language-log">[19:19:37] [ServerMain/ERROR]: Failed to start the minecraft server
+java.lang.Exception: Failed to load configuration file: spigot.yml
+	at io.papermc.paper.configuration.PaperConfigurations.loadLegacyConfigFile(PaperConfigurations.java:419) ~[purpur-1.19.4.jar:git-Purpur-1985]
+	at net.minecraft.server.Main.main(Main.java:138) ~[purpur-1.19.4.jar:git-Purpur-1985]
+	at org.bukkit.craftbukkit.Main.main(Main.java:330) ~[purpur-1.19.4.jar:git-Purpur-1985]
+	at io.papermc.paperclip.Paperclip.lambda$main$0(Paperclip.java:42) ~[app:?]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: org.bukkit.configuration.InvalidConfigurationException: while parsing a block mapping
+ in 'reader', line 13, column 1:
+    messages:
+    ^
+expected &lt;block end&gt;, but found '&lt;block mapping start&gt;'
+ in 'reader', line 15, column 3:
+      unknown-command: Unknown command ...
+      ^
+
+	at org.bukkit.configuration.file.YamlConfiguration.loadFromString(YamlConfiguration.java:111) ~[purpur-api-1.19.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.configuration.file.FileConfiguration.load(FileConfiguration.java:160) ~[purpur-api-1.19.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.configuration.file.FileConfiguration.load(FileConfiguration.java:128) ~[purpur-api-1.19.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.configuration.PaperConfigurations.loadLegacyConfigFile(PaperConfigurations.java:417) ~[purpur-1.19.4.jar:git-Purpur-1985]
+	... 4 more
+Caused by: org.yaml.snakeyaml.parser.ParserException: while parsing a block mapping
+ in 'reader', line 13, column 1:
+    messages:
+    ^
+expected &lt;block end&gt;, but found '&lt;block mapping start&gt;'
+ in 'reader', line 15, column 3:
+      unknown-command: Unknown command ...
+      ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:679) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:185) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:57) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:43) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:136) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:116) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:318) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:212) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:357) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:336) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:311) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:212) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:134) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:160) ~[snakeyaml-1.33.jar:?]
+	at org.yaml.snakeyaml.Yaml.compose(Yaml.java:559) ~[snakeyaml-1.33.jar:?]
+	at org.bukkit.configuration.file.YamlConfiguration.loadFromString(YamlConfiguration.java:104) ~[purpur-api-1.19.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.configuration.file.FileConfiguration.load(FileConfiguration.java:160) ~[purpur-api-1.19.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.configuration.file.FileConfiguration.load(FileConfiguration.java:128) ~[purpur-api-1.19.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.configuration.PaperConfigurations.loadLegacyConfigFile(PaperConfigurations.java:417) ~[purpur-1.19.4.jar:git-Purpur-1985]
+	... 4 more
+</code></pre>
+<p>Or like this for JSON.</p>
+<pre><code class="language-log">[19:25:51] [Server thread/WARN]: Unable to read file whitelist.json
+com.google.gson.JsonSyntaxException: expected a com.google.gson.JsonArray but was com.google.gson.JsonPrimitive; at path $
+	at com.google.gson.internal.bind.TypeAdapters$34$1.read(TypeAdapters.java:1010) ~[gson-2.10.1.jar:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1227) ~[gson-2.10.1.jar:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1137) ~[gson-2.10.1.jar:?]
+	at com.google.gson.Gson.fromJson(Gson.java:1075) ~[gson-2.10.1.jar:?]
+	at net.minecraft.server.players.StoredUserList.load(StoredUserList.java:147) ~[?:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.loadWhiteList(DedicatedPlayerList.java:111) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.loadAndSaveFiles(DedicatedPlayerList.java:31) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:216) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1131) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+</code></pre>
+<h2 id="noclassdeffound"><a class="header" href="#noclassdeffound">NoClassDefFoundError</a></h2>
+<p>As (very simply and factually incorrect) explained in <a href="java-basics.html#java-class">this part</a>, you can think of a class as a single file in the source code (of a plugin, usually).</p>
+<p>An error with <code>NoClassDefFoundError</code> indicates that some program (in the example below, the <em>RPGLives</em> plugin) is trying to work with this file, but the file does not exist. This can mean several things.</p>
+<p>Most often it is one of these two problems (it’s not necessarily plugins, but typically it is):</p>
+<ol>
+<li>the plugin is programmed for a different version of the plugin (most common)</li>
+</ol>
+<p>In this case, check the plugin page/documentation for the specific version of the dependency that is expected.</p>
+<p>If no specific version is listed, most often an older version of the dependency is used, thus you just need to update it. However, you may also encounter the opposite case (i.e. you are using a too recent version of the dependency, but that shouldn’t normally happen).</p>
+<ol start="2">
+<li>the plugin tries to work with the plugin, but the plugin is not on the server</li>
+</ol>
+<p>While you may encounter this, it is not common as the plugin developer should have “handled” this better.</p>
+<pre><code class="language-log">[23:12:26] [Server thread/ERROR]: Error occurred while enabling RPGLives v3.0.0 (Is it up to date?)
+java.lang.NoClassDefFoundError: net/milkbowl/vault/economy/Economy
+	at net.minequests.gloriousmeme.rpglives.RPGLives.setupEconomy(RPGLives.java:102) ~[RPGLives-3.0.0.jar:?]
+	at net.minequests.gloriousmeme.rpglives.RPGLives.onEnable(RPGLives.java:54) ~[RPGLives-3.0.0.jar:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:281) ~[purpur-api-1.20.1-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:189) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:104) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:507) ~[purpur-api-1.20.1-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R1.CraftServer.enablePlugin(CraftServer.java:656) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at org.bukkit.craftbukkit.v1_20_R1.CraftServer.enablePlugins(CraftServer.java:567) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at net.minecraft.server.MinecraftServer.loadWorld0(MinecraftServer.java:640) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:439) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:345) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1116) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:322) ~[purpur-1.20.1.jar:git-Purpur-2062]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.lang.ClassNotFoundException: net.milkbowl.vault.economy.Economy
+	at org.bukkit.plugin.java.PluginClassLoader.loadClass0(PluginClassLoader.java:185) ~[purpur-api-1.20.1-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.java.PluginClassLoader.loadClass(PluginClassLoader.java:152) ~[purpur-api-1.20.1-R0.1-SNAPSHOT.jar:?]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:?]
+	... 14 more
+</code></pre>
+<p>In this example, the Vault plugin that <em>RPGLives</em> works with is missing from the server (although if the plugin is missing, an <a href="../plugins/basics.html#plugins-missing-dependency">UnknownDependencyException</a> error usually occurs instead).</p>
+<pre><code class="language-log">[22:09:41] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Could not load plugin 'BungeeHub.jar' in folder 'plugins'
+org.bukkit.plugin.InvalidPluginException: java.lang.NoClassDefFoundError: net/md_5/bungee/api/plugin/Plugin
+	at io.papermc.paper.plugin.provider.type.spigot.SpigotPluginProvider.createInstance(SpigotPluginProvider.java:127) ~[paper-1.20.4.jar:git-Paper-462]
+	...
+</code></pre>
+<p>In this example the error occurred because it is a BungeeCord plugin, but it is running on the Paper server. So this plugin tries to work with BungeeCord classes, but they don’t exist on the Paper server.</p>
+<h2 id="invalid-plugin-yml"><a class="header" href="#invalid-plugin-yml">Missing/invalid plugin.yml</a></h2>
+<p>Every Bukkit (Spigot) plugin must contain a <code>plugin.yml</code> file. In case you encounter an error of one of the types below, it means: 1) the uploaded file is not a Bukkit plugin (but for example a BungeeCord/Velocity plugin or mod) 2) the plugin contains an error In this case, the plugin author must be contacted to fix this issue.</p>
+<p>Example of an error (in this case it is the BungeeCord plugin):</p>
+<pre><code class="language-log">[19:37:03] [Server thread/ERROR]: Could not load 'plugins/UltraStaffChat-5.2.2.jar' in folder 'plugins'
+org.bukkit.plugin.InvalidDescriptionException: Invalid plugin.yml
+	at org.bukkit.plugin.java.JavaPluginLoader.getPluginDescription(JavaPluginLoader.java:178) ~[paper-api-1.18.2-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.loadPlugins(SimplePluginManager.java:159) ~[paper-api-1.18.2-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_18_R2.CraftServer.loadPlugins(CraftServer.java:418) ~[paper-1.18.2.jar:git-Paper-388]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:288) ~[paper-1.18.2.jar:git-Paper-388]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1164) ~[paper-1.18.2.jar:git-Paper-388]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:316) ~[paper-1.18.2.jar:git-Paper-388]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.io.FileNotFoundException: jar does not contain plugin.yml
+	... 7 more
+</code></pre>
+<pre><code class="language-log">[19:34:10] [ServerMain/ERROR]: [DirectoryProviderSource] Error loading plugin: java.lang.IllegalArgumentException: Directory 'plugins/UltraStaffChat-5.2.2.jar' does not contain a paper-plugin.yml or plugin.yml! Could not determine plugin type, cannot load a plugin from it!
+java.lang.RuntimeException: java.lang.IllegalArgumentException: Directory 'plugins/UltraStaffChat-5.2.2.jar' does not contain a paper-plugin.yml or plugin.yml! Could not determine plugin type, cannot load a plugin from it!
+	at io.papermc.paper.plugin.provider.source.FileProviderSource.registerProviders(FileProviderSource.java:70) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.provider.source.DirectoryProviderSource.registerProviders(DirectoryProviderSource.java:47) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.provider.source.DirectoryProviderSource.registerProviders(DirectoryProviderSource.java:17) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.util.EntrypointUtil.registerProvidersFromSource(EntrypointUtil.java:15) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.PluginInitializerManager.load(PluginInitializerManager.java:101) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.Main.main(Main.java:120) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.Main.main(Main.java:326) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paperclip.Paperclip.lambda$main$0(Paperclip.java:42) ~[app:?]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.lang.IllegalArgumentException: Directory 'plugins/UltraStaffChat-5.2.2.jar' does not contain a paper-plugin.yml or plugin.yml! Could not determine plugin type, cannot load a plugin from it!
+	... 9 more
+</code></pre>
+<h2 id="service-not-accessible-from-outside"><a class="header" href="#service-not-accessible-from-outside">Service is not accessible “from the outside”</a></h2>
+<p>In the case where the server itself is, but the address of another service is not publicly accessible “from the outside” (can’t be accessed from another machine), make sure: a) the port the service is running on <a href="../general/address-ports.html#open-port">is open</a> b) the service address is not <a href="../general/address-ports.html#localhost-address">localhost</a> (<em>127.0.0.1</em>)</p>
+<h2 id="class-version"><a class="header" href="#class-version">Java class version errors</a></h2>
+<p>Class file version denotes the version of <a href="https://en.wikipedia.org/wiki/Java_bytecode">bytecode</a>, effectively the version of Java.</p>
+<p>You can see which Java version corresponds to which class file version <a href="https://stackoverflow.com/questions/9170832/list-of-java-class-file-format-major-version-numbers">here</a>, or <a href="https://javaalmanac.io/bytecode/versions/">here</a>.</p>
+<p>So the error below means that the <em>WorldGuard</em> plugin needs at least Java version 21 (class file version 65) to work, while Java version 17 (class file version 61) is used.</p>
+<pre><code class="language-log">[21:52:22] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Could not load plugin 'worldguard-bukkit-7.0.10-dist.jar' in folder 'plugins'
+org.bukkit.plugin.InvalidPluginException: java.lang.UnsupportedClassVersionError: com/sk89q/worldguard/bukkit/WorldGuardPlugin has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+</code></pre>
+<p>You may also encounter this error:</p>
+<pre><code class="language-log">[21:48:28] [Server thread/ERROR]: Fatal error trying to convert WorldEdit v7.3.2+6779-3aca580:com/sk89q/worldedit/command/ExpandCommands.class
+java.lang.IllegalArgumentException: Unsupported class file major version 65
+</code></pre>
+<h2 id="data-version"><a class="header" href="#data-version">Data version errors</a></h2>
+<p>Each Minecraft version has an associated <a href="https://minecraft.fandom.com/wiki/Data_version">data version</a>, which indicates the version in which the world data is stored.</p>
+<p>You can find out which data version corresponds to which Minecraft version at <a href="https://minecraft.fandom.com/wiki/Data_version#List_of_data_versions">this link</a>.</p>
+<p>So the error below means that the server is trying to load the chunks (world) from version 1.20.1 (data version 3465) to version 1.19.4 (3337), which is not supported (see <a href="../general/downgrade.html#downgrade">downgrade</a>).</p>
+<pre><code class="language-log">[14:16:45] [Tuinity Chunk System Worker #0/WARN]: java.lang.RuntimeException: server attempted to load chunk saved with newer version of minecraft! 3465 &gt; 3337
+[14:16:45] [Tuinity Chunk System Worker #0/WARN]: at net.minecraft.world.level.chunk.storage.ChunkRegionLoader.loadChunk(ChunkRegionLoader.java:154)
+[14:16:45] [Tuinity Chunk System Worker #0/WARN]: at io.papermc.paper.chunk.system.scheduling.ChunkLoadTask$ChunkDataLoadTask.runOffMain(ChunkLoadTask.java:318)
+[14:16:45] [Tuinity Chunk System Worker #0/WARN]: at io.papermc.paper.chunk.system.scheduling.GenericDataLoadTask$ProcessOffMainTask.run(GenericDataLoadTask.java:307)
+[14:16:45] [Tuinity Chunk System Worker #0/WARN]: at ca.spottedleaf.concurrentutil.executor.standard.PrioritisedThreadedTaskQueue$PrioritisedTask.executeInternal(PrioritisedThreadedTaskQueue.java:351)
+[14:16:45] [Tuinity Chunk System Worker #0/WARN]: at ca.spottedleaf.concurrentutil.executor.standard.PrioritisedThreadedTaskQueue.executeTask(PrioritisedThreadedTaskQueue.java:118)
+[14:16:45] [Tuinity Chunk System Worker #0/WARN]: at ca.spottedleaf.concurrentutil.executor.standard.PrioritisedThreadPool$PrioritisedThread.pollTasks(PrioritisedThreadPool.java:274)
+[14:16:45] [Tuinity Chunk System Worker #0/WARN]: at ca.spottedleaf.concurrentutil.executor.standard.PrioritisedQueueExecutorThread.run(PrioritisedQueueExecutorThread.java:50)
+</code></pre>
+<h2 id="port-already-in-use"><a class="header" href="#port-already-in-use">Port is already in use</a></h2>
+<p>As mentioned in <a href="../general/address-ports.html#ports">this section</a>, one port can be used by one service (on the same protocol). Therefore, if you encounter an error similar to this: <code>[00:00:00] [Server thread/ERROR]: [plugin] Failed to bind to 0.0.0.0:54212</code>, the issue might be the port is already in use by some another service.</p>
+<h2 id="protocol-version"><a class="header" href="#protocol-version">Protocol version</a></h2>
+<p>Each version of Minecraft is assigned a protocol version.</p>
+<p>A complete list of Minecraft versions and their protocol versions can be found at the following link: <a href="https://minecraft.fandom.com/wiki/Data_version#List_of_data_versions">https://minecraft.fandom.com/wiki/Data_version#List_of_data_versions</a></p>
+<h2 id="zip-file-closed"><a class="header" href="#zip-file-closed">‘zip file closed’ error</a></h2>
+<p>For the cause and solution to the <em>‘zip file closed’</em> error, see the following
+link: <a href="https://madelinemiller.dev/blog/minecraft-zip-file-closed/">https://madelinemiller.dev/blog/minecraft-zip-file-closed/</a></p>
+<h2 id="unsupported-api-version"><a class="header" href="#unsupported-api-version">Unsupported API version</a></h2>
+<p>The <em>Unsupported API version</em> error means that the version of the plugin does not support an older version of the server. In this case, you need to update the server, or use an older version of the plugin (if it exists for that version of Minecraft), or just don’t use the plugin.</p>
+<pre><code class="language-log">[22:14:43] [Server thread/ERROR]: [LegacyPluginLoadingStrategy] Could not load 'plugins/AuctionHouse-1.20.4-3.7.1.jar' in folder 'plugins'
+org.bukkit.plugin.InvalidPluginException: Unsupported API version 1.20
+	at org.bukkit.craftbukkit.v1_19_R2.util.CraftMagicNumbers.checkSupported(CraftMagicNumbers.java:380) ~[purpur-1.19.3.jar:git-Purpur-1933]
+	at io.papermc.paper.plugin.provider.type.spigot.SpigotPluginProvider.createInstance(SpigotPluginProvider.java:119) ~[purpur-1.19.3.jar:git-Purpur-1933]
+	at io.papermc.paper.plugin.provider.type.spigot.SpigotPluginProvider.createInstance(SpigotPluginProvider.java:35) ~[purpur-1.19.3.jar:git-Purpur-1933]
+	at io.papermc.paper.plugin.entrypoint.strategy.LegacyPluginLoadingStrategy.loadProviders(LegacyPluginLoadingStrategy.java:200) ~[purpur-1.19.3.jar:git-Purpur-1933]
+	at io.papermc.paper.plugin.storage.SimpleProviderStorage.enter(SimpleProviderStorage.java:35) ~[purpur-1.19.3.jar:git-Purpur-1933]
+	at io.papermc.paper.plugin.entrypoint.LaunchEntryPointHandler.enter(LaunchEntryPointHandler.java:36) ~[purpur-1.19.3.jar:git-Purpur-1933]
+	at org.bukkit.craftbukkit.v1_19_R2.CraftServer.loadPlugins(CraftServer.java:442) ~[purpur-1.19.3.jar:git-Purpur-1933]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:309) ~[purpur-1.19.3.jar:git-Purpur-1933]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1117) ~[purpur-1.19.3.jar:git-Purpur-1933]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321) ~[purpur-1.19.3.jar:git-Purpur-1933]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+</code></pre>
+<h2 id="plugin-not-mentioned-in-log"><a class="header" href="#plugin-not-mentioned-in-log">Plugin is not mentioned in the log</a></h2>
+<p>In the case where the plugin doesn’t even try to enable (there is no mention of it in the <a href="logs.html#log">log</a>, it means the following (<a href="#plugin-platforms">assuming you are using a platform that supports plugins</a>): In order for the plugin to attempt to enable, it must meet the following:</p>
+<ul>
+<li>the plugi filen must be in the <code>/plugins/</code> folder</li>
+<li>the plugin file must have a <em>.jar</em> extension</li>
+</ul>
+<p>So if the plugin does not enable and there is no mention of it in the log, it means that you either did not upload the plugin itself (<code>.jar</code> file) or you did not upload it to the <code>/plugins/</code> folder.</p>
+<h2 id="bungeecord-config-reset"><a class="header" href="#bungeecord-config-reset">BungeeCord config resets after reboot</a></h2>
+<p>Ignoring the fact that you should be using Velocity in 2024, the reason is as follows:</p>
+<p>BungeeCord <a href="../general/configs.html#config">config</a> must always be edited when the server is not running! Otherwise the config will reset on restart.</p>
+<p>If the config resets even though the server isnot running when editing it, this is caused by a non-valid YML format. Read more about this problem <a href="../general/configs.html#config-format-yaml">here</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../proxy.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../problem-solving/how-to-ask-for-help.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../proxy.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../problem-solving/how-to-ask-for-help.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../theme/ko-fi.js"></script>
+        <script src="../theme/hints.js"></script>
+
+
+    </div>
+    </body>
+</html>

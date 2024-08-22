@@ -1,0 +1,4 @@
+# Administration Panel/Web Panel {#panels}
+In case you manage the machine on which the Minecraft server is running yourself, for easier management you can use the administration panel, which provides a simple (usually web) interface for managing (not only) Minecraft servers with a number of useful features such as limiting server resources (RAM, SSD, CPU), web-based file manager, simple version installer, etc.
+
+The most well-known panels include [Pterodactyl Panel](https://pterodactyl.io/) (Linux only, but you can use WSL on Windows) and [AMP](https://cubecoders.com/AMP) (Windows; paid). Other such panels include, for example, [PufferPanel](https://www.pufferpanel.com/), or the not so much used anymore [MultiCraft](https://www.multicraft.org/). Also it is worth mentioning the new Pterodactyl fork [Pelican](https://pelican.dev/).

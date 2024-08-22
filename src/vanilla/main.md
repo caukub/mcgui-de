@@ -1,0 +1,1 @@
+Vanilla refers to the base version of the game published by Mojang, so the features in this section can be used on all platforms.

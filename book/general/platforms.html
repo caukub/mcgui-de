@@ -1,0 +1,432 @@
+<!DOCTYPE HTML>
+<html lang="en" class="mocha" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Platforms - caukub&#x27;s Minecraft Server Handbook</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/ko-fi.css">
+        <link rel="stylesheet" href="../theme/hints.css">
+        <link rel="stylesheet" href=".././theme/catppuccin.css">
+        <link rel="stylesheet" href=".././theme/catppuccin-admonish.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('mocha')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">caukub's Minecraft Server Handbook</a></li><li class="chapter-item expanded affix "><a href="../quickstart.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">General</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> General</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../general/permissions.html"><strong aria-hidden="true">1.1.</strong> Permissions</a></li><li class="chapter-item expanded "><a href="../general/commands.html"><strong aria-hidden="true">1.2.</strong> Commands</a></li><li class="chapter-item expanded "><a href="../general/platforms.html" class="active"><strong aria-hidden="true">1.3.</strong> Platforms</a></li><li class="chapter-item expanded "><a href="../general/world.html"><strong aria-hidden="true">1.4.</strong> Worlds</a></li><li class="chapter-item expanded "><a href="../general/versions.html"><strong aria-hidden="true">1.5.</strong> Versions</a></li><li class="chapter-item expanded "><a href="../general/address-ports.html"><strong aria-hidden="true">1.6.</strong> Address and ports</a></li><li class="chapter-item expanded "><a href="../general/configs.html"><strong aria-hidden="true">1.7.</strong> Configuration files</a></li><li class="chapter-item expanded "><a href="../general/console.html"><strong aria-hidden="true">1.8.</strong> Console</a></li><li class="chapter-item expanded "><a href="../general/server-jar.html"><strong aria-hidden="true">1.9.</strong> Server JAR</a></li><li class="chapter-item expanded "><a href="../general/docs.html"><strong aria-hidden="true">1.10.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="../general/downgrade.html"><strong aria-hidden="true">1.11.</strong> Downgrade</a></li><li class="chapter-item expanded "><a href="../general/ftp.html"><strong aria-hidden="true">1.12.</strong> (S)FTP</a></li><li class="chapter-item expanded "><a href="../general/online-mode.html"><strong aria-hidden="true">1.13.</strong> Online mode</a></li><li class="chapter-item expanded "><a href="../general/performance.html"><strong aria-hidden="true">1.14.</strong> Server performance (optimization)</a></li><li class="chapter-item expanded "><a href="../general/pregeneration.html"><strong aria-hidden="true">1.15.</strong> Pregeneration</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Administration</li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Server Administration</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../administration/server-resources.html"><strong aria-hidden="true">2.1.</strong> Server Resources</a></li><li class="chapter-item expanded "><a href="../administration/backups.html"><strong aria-hidden="true">2.2.</strong> Backups</a></li><li class="chapter-item expanded "><a href="../administration/databases.html"><strong aria-hidden="true">2.3.</strong> Databases</a></li><li class="chapter-item expanded "><a href="../administration/domains.html"><strong aria-hidden="true">2.4.</strong> Domain</a></li><li class="chapter-item expanded "><a href="../administration/host-types.html"><strong aria-hidden="true">2.5.</strong> Host Types</a></li><li class="chapter-item expanded "><a href="../administration/java.html"><strong aria-hidden="true">2.6.</strong> Java</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Plugins</li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Plugins</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plugins/basics.html"><strong aria-hidden="true">3.1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../plugins/useful.html"><strong aria-hidden="true">3.2.</strong> Useful/Frequently used features</a></li><li class="chapter-item expanded "><a href="../plugins/prefixes.html"><strong aria-hidden="true">3.3.</strong> Prefixes</a></li><li class="chapter-item expanded "><a href="../plugins/placeholders.html"><strong aria-hidden="true">3.4.</strong> Placeholders</a></li><li class="chapter-item expanded "><a href="../plugins/economy.html"><strong aria-hidden="true">3.5.</strong> Economy</a></li><li class="chapter-item expanded "><a href="../plugins/anticheat.html"><strong aria-hidden="true">3.6.</strong> AntiCheat</a></li><li class="chapter-item expanded "><a href="../plugins/cracked.html"><strong aria-hidden="true">3.7.</strong> Cracked Plugins</a></li><li class="chapter-item expanded "><a href="../plugins/list.html"><strong aria-hidden="true">3.8.</strong> Hiding Plugin List</a></li><li class="chapter-item expanded "><a href="../plugins/voting.html"><strong aria-hidden="true">3.9.</strong> Voting</a></li><li class="chapter-item expanded "><a href="../plugins/reload.html"><strong aria-hidden="true">3.10.</strong> Reload</a></li><li class="chapter-item expanded "><a href="../plugins/spigot-ids.html"><strong aria-hidden="true">3.11.</strong> Spigot IDs</a></li><li class="chapter-item expanded "><a href="../plugins/bstats.html"><strong aria-hidden="true">3.12.</strong> bStats</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.13.</strong> Specific plugins</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../plugins/specific/dynmap.html"><strong aria-hidden="true">3.13.1.</strong> Dynmap</a></li><li class="chapter-item "><a href="../plugins/specific/essentialsx.html"><strong aria-hidden="true">3.13.2.</strong> EssentialsX</a></li><li class="chapter-item "><a href="../plugins/specific/luckperms.html"><strong aria-hidden="true">3.13.3.</strong> LuckPerms</a></li><li class="chapter-item "><a href="../plugins/specific/multiverse-core.html"><strong aria-hidden="true">3.13.4.</strong> Multiverse-Core</a></li><li class="chapter-item "><a href="../plugins/specific/vault.html"><strong aria-hidden="true">3.13.5.</strong> Vault</a></li><li class="chapter-item "><a href="../plugins/specific/viaversion.html"><strong aria-hidden="true">3.13.6.</strong> ViaVersion</a></li><li class="chapter-item "><a href="../plugins/specific/worldedit.html"><strong aria-hidden="true">3.13.7.</strong> WorldEdit</a></li><li class="chapter-item "><a href="../plugins/specific/worldguard.html"><strong aria-hidden="true">3.13.8.</strong> WorldGuard</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Mods</li><li class="chapter-item expanded "><a href="../mods.html"><strong aria-hidden="true">4.</strong> Mods and modpack</a></li><li class="chapter-item expanded affix "><li class="part-title">Proxy</li><li class="chapter-item expanded "><a href="../proxy.html"><strong aria-hidden="true">5.</strong> Proxy</a></li><li class="chapter-item expanded affix "><li class="part-title">Troubleshooting</li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Troubleshooting</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../problem-solving/common-issues.html"><strong aria-hidden="true">6.1.</strong> Common issues and their solutions</a></li><li class="chapter-item expanded "><a href="../problem-solving/how-to-ask-for-help.html"><strong aria-hidden="true">6.2.</strong> How to ask for help</a></li><li class="chapter-item expanded "><a href="../problem-solving/how-to-deal-with-issues.html"><strong aria-hidden="true">6.3.</strong> How to solve problems</a></li><li class="chapter-item expanded "><a href="../problem-solving/java-basics.html"><strong aria-hidden="true">6.4.</strong> Java Basics</a></li><li class="chapter-item expanded "><a href="../problem-solving/logs.html"><strong aria-hidden="true">6.5.</strong> Logs</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Security</li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Server Security</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../security/security.html"><strong aria-hidden="true">7.1.</strong> Security</a></li><li class="chapter-item expanded "><a href="../security/malware.html"><strong aria-hidden="true">7.2.</strong> Malware</a></li><li class="chapter-item expanded "><a href="../security/offline-mode.html"><strong aria-hidden="true">7.3.</strong> Offline mode</a></li><li class="chapter-item expanded "><a href="../security/proxy.html"><strong aria-hidden="true">7.4.</strong> Proxy</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Vanilla features</li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Vanilla features</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vanilla/bans.html"><strong aria-hidden="true">8.1.</strong> Bans</a></li><li class="chapter-item expanded "><a href="../vanilla/command-blocks.html"><strong aria-hidden="true">8.2.</strong> Command blocks</a></li><li class="chapter-item expanded "><a href="../vanilla/datapacks.html"><strong aria-hidden="true">8.3.</strong> Datapacks</a></li><li class="chapter-item expanded "><a href="../vanilla/eula.html"><strong aria-hidden="true">8.4.</strong> EULA</a></li><li class="chapter-item expanded "><a href="../vanilla/game-rules.html"><strong aria-hidden="true">8.5.</strong> Game rules</a></li><li class="chapter-item expanded "><a href="../vanilla/motd.html"><strong aria-hidden="true">8.6.</strong> MOTD</a></li><li class="chapter-item expanded "><a href="../vanilla/op.html"><strong aria-hidden="true">8.7.</strong> OP</a></li><li class="chapter-item expanded "><a href="../vanilla/query.html"><strong aria-hidden="true">8.8.</strong> Query</a></li><li class="chapter-item expanded "><a href="../vanilla/rcon.html"><strong aria-hidden="true">8.9.</strong> RCON</a></li><li class="chapter-item expanded "><a href="../vanilla/resource-pack.html"><strong aria-hidden="true">8.10.</strong> Resourcepack</a></li><li class="chapter-item expanded "><a href="../vanilla/server-icon.html"><strong aria-hidden="true">8.11.</strong> Server Icon</a></li><li class="chapter-item expanded "><a href="../vanilla/server-properties.html"><strong aria-hidden="true">8.12.</strong> server.properties</a></li><li class="chapter-item expanded "><a href="../vanilla/whitelist.html"><strong aria-hidden="true">8.13.</strong> Whitelist</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basic principles</li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Basic Principles</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basic-principles/hosting-role.html"><strong aria-hidden="true">9.1.</strong> Hosting Role</a></li><li class="chapter-item expanded "><a href="../basic-principles/no-magic.html"><strong aria-hidden="true">9.2.</strong> No Magic</a></li><li class="chapter-item expanded "><a href="../basic-principles/plugins-vs-mods.html"><strong aria-hidden="true">9.3.</strong> Plugins vs Mods</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Other</li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Other</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../other/desktop.html"><strong aria-hidden="true">10.1.</strong> Basic Computer Skills</a></li><li class="chapter-item expanded "><a href="../other/url-download.html"><strong aria-hidden="true">10.2.</strong> Downlading File from URL</a></li><li class="chapter-item expanded "><a href="../other/panels.html"><strong aria-hidden="true">10.3.</strong> Administration Panels</a></li><li class="chapter-item expanded "><a href="../other/regex.html"><strong aria-hidden="true">10.4.</strong> Regex</a></li><li class="chapter-item expanded "><a href="../other/nbt.html"><strong aria-hidden="true">10.5.</strong> NBT</a></li><li class="chapter-item expanded "><a href="../other/external-tools.html"><strong aria-hidden="true">10.6.</strong> External Tools</a></li><li class="chapter-item expanded "><a href="../other/deving-tools.html"><strong aria-hidden="true">10.7.</strong> Developing modifications, external tools for the Minecraft server and the server itself</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../appendix.html"><strong aria-hidden="true">11.</strong> Appendix</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">caukub&#x27;s Minecraft Server Handbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="/appendix.html#translations" title="Translations" aria-label="Translations">
+                            <i id="translation" class="fa fa-language"></i>
+                        </a>
+                        <a href="https://github.com/caukub/mcgui-de" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <style>
+.mdbook-alerts {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-left: 0.25em solid var(--mdbook-alerts-color);
+}
+
+.mdbook-alerts > *:first-child {
+  margin-top: 0;
+}
+
+.mdbook-alerts > *:last-child {
+  margin-bottom: 0;
+}
+
+.mdbook-alerts-title {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  line-height: 1;
+  color: var(--mdbook-alerts-color);
+  text-transform: capitalize;
+}
+
+.mdbook-alerts-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.2em;
+  background-color: currentColor;
+  -webkit-mask: no-repeat center / 100%;
+  mask: no-repeat center / 100%;
+  -webkit-mask-image: var(--mdbook-alerts-icon);
+  mask-image: var(--mdbook-alerts-icon);
+}
+
+.mdbook-alerts-note {
+  --mdbook-alerts-color: rgb(9, 105, 218);
+  /* https://icon-sets.iconify.design/material-symbols/info-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 17q.425 0 .713-.288T13 16v-4q0-.425-.288-.712T12 11q-.425 0-.712.288T11 12v4q0 .425.288.713T12 17m0-8q.425 0 .713-.288T13 8q0-.425-.288-.712T12 7q-.425 0-.712.288T11 8q0 .425.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m0-8"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-tip {
+  --mdbook-alerts-color: rgb(26, 127, 55);
+  /* https://icon-sets.iconify.design/material-symbols/lightbulb-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 22q-.825 0-1.412-.587T10 20h4q0 .825-.587 1.413T12 22m-3-3q-.425 0-.712-.288T8 18q0-.425.288-.712T9 17h6q.425 0 .713.288T16 18q0 .425-.288.713T15 19zm-.75-3q-1.725-1.025-2.738-2.75T4.5 9.5q0-3.125 2.188-5.312T12 2q3.125 0 5.313 2.188T19.5 9.5q0 2.025-1.012 3.75T15.75 16zm.6-2h6.3q1.125-.8 1.738-1.975T17.5 9.5q0-2.3-1.6-3.9T12 4Q9.7 4 8.1 5.6T6.5 9.5q0 1.35.613 2.525T8.85 14M12 14"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-important {
+  --mdbook-alerts-color: rgb(130, 80, 223);
+  /* https://icon-sets.iconify.design/material-symbols/chat-info-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 7q.425 0 .713-.288T13 6q0-.425-.288-.712T12 5q-.425 0-.712.288T11 6q0 .425.288.713T12 7m0 8q.425 0 .713-.288T13 14v-4q0-.425-.288-.712T12 9q-.425 0-.712.288T11 10v4q0 .425.288.713T12 15m-6 3l-2.3 2.3q-.475.475-1.088.213T2 19.575V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18zm-.85-2H20V4H4v13.125zM4 16V4z"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-warning {
+  --mdbook-alerts-color: rgb(154, 103, 0);
+  /* https://icon-sets.iconify.design/material-symbols/warning-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M2.725 21q-.275 0-.5-.137t-.35-.363q-.125-.225-.137-.488t.137-.512l9.25-16q.15-.25.388-.375T12 3q.25 0 .488.125t.387.375l9.25 16q.15.25.138.513t-.138.487q-.125.225-.35.363t-.5.137zm1.725-2h15.1L12 6zM12 18q.425 0 .713-.288T13 17q0-.425-.288-.712T12 16q-.425 0-.712.288T11 17q0 .425.288.713T12 18m0-3q.425 0 .713-.288T13 14v-3q0-.425-.288-.712T12 10q-.425 0-.712.288T11 11v3q0 .425.288.713T12 15m0-2.5"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-caution {
+  --mdbook-alerts-color: rgb(207, 34, 46);
+  /* https://icon-sets.iconify.design/material-symbols/brightness-alert-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 17q.425 0 .713-.288T13 16q0-.425-.288-.712T12 15q-.425 0-.712.288T11 16q0 .425.288.713T12 17m0-4q.425 0 .713-.288T13 12V8q0-.425-.288-.712T12 7q-.425 0-.712.288T11 8v4q0 .425.288.713T12 13m-3.35 7H6q-.825 0-1.412-.587T4 18v-2.65L2.075 13.4q-.275-.3-.425-.662T1.5 12q0-.375.15-.737t.425-.663L4 8.65V6q0-.825.588-1.412T6 4h2.65l1.95-1.925q.3-.275.663-.425T12 1.5q.375 0 .738.15t.662.425L15.35 4H18q.825 0 1.413.588T20 6v2.65l1.925 1.95q.275.3.425.663t.15.737q0 .375-.15.738t-.425.662L20 15.35V18q0 .825-.587 1.413T18 20h-2.65l-1.95 1.925q-.3.275-.662.425T12 22.5q-.375 0-.737-.15t-.663-.425zm.85-2l2.5 2.5l2.5-2.5H18v-3.5l2.5-2.5L18 9.5V6h-3.5L12 3.5L9.5 6H6v3.5L3.5 12L6 14.5V18zm2.5-6"%2F%3E%3C%2Fsvg%3E');
+}
+
+</style>
+<h1 id="server-platform"><a class="header" href="#server-platform">Server platforms</a></h1>
+<h2 id="what-platform"><a class="header" href="#what-platform">Which platform to use?</a></h2>
+<p>Specific platforms are discussed in more detail below. This section provides a simplified description of the platform you are most likely to need.</p>
+<h3 id="what-vanilla"><a class="header" href="#what-vanilla">I want a pure Vanilla server</a></h3>
+<p>In the case where you want a server with a pure Vanilla experience, the most reasonable choice is <a href="#fabric-forge">Fabric</a> with the mode <a href="https://modrinth.com/mod/lithium">Lithium</a> (optimization mode, which doesn’t affect Vanilla drives).</p>
+<h3 id="what-plugins"><a class="header" href="#what-plugins">I want plugins on the server</a></h3>
+<p>In this case you want Paper, Pufferfish, or Purpur. You can find the differences <a href="#spigot-forks">here</a>. Paper, however, is almost certainly all you need. You won’t make a mistake whichever of these three platforms you choose. Plus, you can freely switch between platforms later.</p>
+<p>Don’t use Spigot (and certainly not CraftBukkit) (the plugins are compatible).</p>
+<h3 id="what-modded"><a class="header" href="#what-modded">I want mods on the server</a></h3>
+<p>For modded platforms, it depends on what platform the mods you want to use are written. However, if you have a choice, you should prefer Fabric over Forge as it provides better user (and developer) experience and optimization options.</p>
+<h3 id="what-proxy"><a class="header" href="#what-proxy">I want a proxy platform</a></h3>
+<p>Nowadays you should use <a href="https://papermc.io/software/velocity">Velocity</a>.</p>
+<h3 id="what-plugins-and-mods"><a class="header" href="#what-plugins-and-mods">I want plugins and mods on the server</a></h3>
+<p>In this case, it’s best to don’t use plugins. Read more <a href="#hybrids">here</a>.</p>
+<h2 id="standard-platforms"><a class="header" href="#standard-platforms">Standard platforms</a></h2>
+<h3 id="vanilla"><a class="header" href="#vanilla">Vanilla</a></h3>
+<p>Vanilla is the official and only platform released by Mojang. This platform is generally <em>not recommended</em> for use. The only community modifications that Vanilla supports are <a href="../vanilla/datapacks.html#datapacks">datapacks</a>. Plugins or mods cannot be run on Vanilla. Vanilla is also not recommended even if the user does not want to use any plugins or mods, mainly due to poor optimization. If you want to use the Vanilla platform, use the Fabric platform with <a href="https://modrinth.com/mod/lithium">Lithium</a> mod instead. This mod optimizes the server without impacting the Vanilla mechanics. The players doesn’t need to have any mod installed on the client. They will connect just as if the server was running Vanilla.</p>
+<h2 id="plugin-platforms"><a class="header" href="#plugin-platforms">Platforms that support plugins</a></h2>
+<h3 id="spigot"><a class="header" href="#spigot">Spigot</a></h3>
+<p>Spigot is a platform that allows running plugins (specifically Bukkit plugins, which is generally what people by the term “plugins” means).</p>
+<p>However, Spigot is not recommended, unlike the <a href="#paper">Paper</a> platform, which is better in all aspects, while preserving full compatibility with Spigot plugins.</p>
+<h3 id="craftbukkit"><a class="header" href="#craftbukkit">CraftBukkit</a></h3>
+<p>The base platform supporting Bukkit plugins is CraftBukkit, however not everyone knows this, so in this book, Spigot is used as the “base” platform supporting plugins, although the functionality can be implemented by CraftBukkit itself. For example, the correct title could be “CraftBukkit and its forks” instead of “Spigot and its forks”. However, this should not be essential. So if you use CraftBukkit <em>(which you definitely shouldn’t)</em>, this applies to you as well.</p>
+<h4 id="craftbukkit-vs-bukkit"><a class="header" href="#craftbukkit-vs-bukkit">CraftBukkit vs Bukkit</a></h4>
+<p>Sometimes people confuse the terms CraftBukkit and Bukkit. Bukkit is a developer API (which allows you to write plugins). CraftBukkit is the platform, the server itself, which implements this API and allows plugins using this API to run.</p>
+<h3 id="paper"><a class="header" href="#paper">Paper</a></h3>
+<p><a href="https://papermc.io/downloads">Paper</a> is a <a href="#forks">fork</a> of Spigot (so Spigot plugins are fully compatible) that focuses primarily on server performance, optimizations, bug fixes.</p>
+<p>In the case that a bug or exploit is discovered (which may be more common than you think), Paper will likely be the first one to fix.
+The optimizations significantly improve the server performance.</p>
+<p>Nowadays most servers with plugin support runs Paper (<a href="https://bstats.org/global/bukkit#serverSoftware">see here</a>)</p>
+<h3 id="pufferfish"><a class="header" href="#pufferfish">Pufferfish</a></h3>
+<p><a href="https://pufferfish.host/downloads">Pufferfish</a> is a <a href="#forks">fork</a> of Paper that mainly adds more optimizations. This is especially useful for large servers trying to keep as many players as possible, or when server performance is not sufficient. However, it’s not panacea in this regard. <a href="#performance-optimization">There are many factors that have much more significant impact on the server performance</a>, but Pufferfish can somehow help a little bit.</p>
+<h3 id="purpur"><a class="header" href="#purpur">Purpur</a></h3>
+<p><a href="https://purpurmc.org/">Purpur</a> is a <a href="#forks">fork</a> of Pufferfish that adds a large number of options for configuring many aspects of the game and new features.</p>
+<p>This includes the <code>ping</code> command, mob riding, AFK system, TPS bar, silk touch spawners <a href="https://purpurmc.org/docs/purpur/">and much more</a>.</p>
+<p>Purpur performance is same as Pufferfish, the configuration possibilites does not impact performance in a bad way.</p>
+<h3 id="spigot-forks"><a class="header" href="#spigot-forks">Which Spigot fork to use?</a></h3>
+<p>Definitely do not use Spigot or CraftBukkit.</p>
+<p>With Paper, Pufferfish, or Purpur, you won’t make an mistake by choosing either of them.</p>
+<p>If you have no reason to use Pufferfish or Purpur, Paper is the best choice.</p>
+<p>The biggest disadvantage of using Pufferfish or Purpur is that these platforms are not supported in Paper-specific communities (e.g. Paper Discord/forum), so you people may not help you just because you are not using Paper.</p>
+<p>Another factor is the speed at which new updates are released. Since Purpur is a fork of Pufferfish, which is a fork of Paper, Paper comes out first, then Pufferfish, and finally Purpur, although the update duration between Pufferfish and Paper and Purpur and Pufferfish is not usually big.</p>
+<h2 id="modloaders"><a class="header" href="#modloaders">Platforms that support mods (modloaders)</a></h2>
+<h3 id="fabric-forge"><a class="header" href="#fabric-forge">Forge, Fabric and their forks</a></h3>
+<p>For modded platforms, two platforms are used in particular - Forge and Fabric. The mods on these platforms are not compatible with each other, they are two completely different platforms.</p>
+<p>So which one to use depends on which platform the mods you want to use are written for. However, if you have a choice, you should prefer Fabric over Forge as it provides a better user (and developer) experience and optimization options.</p>
+<p>There are also forks of these platforms, such as
+<a href="https://quiltmc.org/en/about/faq/">Quilt</a> (a fork of Fabric) or
+<a href="https://neoforged.net/news/theproject/">NeoForge</a> (a fork of Forge)
+but there’s probably no reason for you to use them.</p>
+<h3 id="spongeforge"><a class="header" href="#spongeforge">SpongeForge</a></h3>
+<p>SpongeForge is not really a platform like the others listed, but it is approached as such, even though it is only a Forge mod.</p>
+<p>SpongeForge is the only “platform” that allows Forge mods and plugins at the same time stably. However, SpongeForge <a href="#hybrids">unfortunately</a> supports <a href="https://spongepowered.org/downloads/spongeforge">only some version of Minecraft (Forge)</a>.</p>
+<p>However, SpongeForge does not allow running <a href="#bukkit-plugins">Bukkit plugins</a> (= “classic” plugins). The plugins have to support directly Sponge. Fortunately, many well-known plugins are supported by Sponge. These include LuckPerms, TAB, SkinsRestorer, LibertyBans and many others. For those that do not support Sponge, you can often find an alternative (e.g. <a href="https://ore.spongepowered.org/Nucleus/Nucleus">Nucleus</a> instead of EssentialsX).</p>
+<h4 id="spongeforge-plugins-installation"><a class="header" href="#spongeforge-plugins-installation">Installing SpongeForge and Sponge plugins</a></h4>
+<p>SpongeForge is a Forge mod you can <a href="../mods.html#installation">install like any other mod</a>, so by uploading it to the <code>/mods/</code> folder and then restarting the server. On startup a <code>/plugins/</code> folder is created which you can treat like on a regular Spigot server, i.e. the plugin is installed by uploading the plugin (<code>.jar</code> file) to the <code>/plugins/</code> folder and a restart. The plugin configuration files are located in the <code>/plugins/</code> folder.</p>
+<h2 id="hybrids"><a class="header" href="#hybrids">Hybrid platforms</a></h2>
+<p>A hybrid platform is a platform that supports both mods and plugins at the same time.</p>
+<h3 id="hybrid-forge"><a class="header" href="#hybrid-forge">Forge</a></h3>
+<p>From version 1.8 to 1.16.5 and for some later versions, <a href="#spongeforge">SpongeForge</a> can be used for Forge, which is the only stable and recommended platform for running mods and plugins together.</p>
+<p>For newer versions, there are platforms like Mohist, Magma and Arclight, which probably has the best reputation of the mentioned options. However, these platforms are <em>really not recommended</em> to use, as everything may not work as it should, are unstable, and can cause many problems. If you can’t use SpongeForge, the best solution is to avoid hybrid platforms and use a mod alternative instead of a plugin, which often exists (e.g. <a href="https://www.curseforge.com/minecraft/mc-mods/ftb-essentials-forge">FTB Essentials</a> instead of EssentialsX or <a href="https://www.curseforge.com/minecraft/mc-mods/ftb-chunks-forge">FTB Chunks</a>/Cadmus instead of Residence/Lands/GriefPrevention), and if no such option exists, do without the plugin.</p>
+<p>If you have problems with plugins on a hybrid server, that’s your problem, don’t expect help from plugin developers etc.</p>
+<p>For very old versions (1.7.10) there is e.g. KCauldron, Thermos or its maintained fork Crucible. The stability of hybrid platforms on such old versions may be better, but you may still encounter problems.</p>
+<p>If you want to learn more why not to use hybrid servers, you can read the following articles:
+<a href="https://madelinemiller.dev/blog/minecraft-hybrid-servers/">https://madelinemiller.dev/blog/minecraft-hybrid-servers/</a>
+<a href="https://madelinemiller.dev/blog/where-is-forge-worldguard/">https://madelinemiller.dev/blog/where-is-forge-worldguard/</a></p>
+<p>EssentialsX also wrote an article on why not to use Mohist:
+<a href="https://essentialsx.net/do-not-use-mohist.html">https://essentialsx.net/do-not-use-mohist.html</a></p>
+<h3 id="hybrid-fabric"><a class="header" href="#hybrid-fabric">Fabric</a></h3>
+<p>There is no usable hybrid platform for Fabric. There are some mods, such as Banner or CardBoard, that attempt to provide plugin functionality on Fabric, but sthey shouldn’t be used (you can read why here: <a href="https://gist.github.com/Patbox/e44844294c358b614d347d369b0fc3bf">https://gist.github.com/Patbox/e44844294c358b614d347d369b0fc3bf</a>).</p>
+<p>Instead, using alternatives in the form of server-side mods is ideal. A large list of these can be found here: <a href="https://serverside.infra.link/">https://serverside.infra.link/</a></p>
+<p>If you need help finding an alternative, you can ask in the following server-side communities:</p>
+<ul>
+<li>Fabric Server Side Development: <a href="https://discord.gg/atSzZ6zMHz">https://discord.gg/atSzZ6zMHz</a></li>
+<li>Patbox’s Discord: <a href="https://discord.gg/AbqPPppgrd">https://discord.gg/AbqPPppgrd</a></li>
+<li>Fabric/Quilt Server Tools: <a href="https://discord.gg/p56NJ6kp4u">https://discord.gg/p56NJ6kp4u</a></li>
+</ul>
+<p>Or modded communities in general:</p>
+<ul>
+<li>The Fabric Project: <a href="https://discord.gg/v6v4pMv">https://discord.gg/v6v4pMv</a></li>
+<li>The Quilt Community: <a href="https://discord.quiltmc.org/">https://discord.quiltmc.org/</a></li>
+</ul>
+<h2 id="proxy-platforms"><a class="header" href="#proxy-platforms">Proxy Platforms</a></h2>
+<p>You can read what a proxy is <a href="../proxy.html#proxy">here</a>.</p>
+<p>Velocity and BungeeCord (Waterfall) plugins are not compatible with each other.</p>
+<h3 id="velocity"><a class="header" href="#velocity">Velocity</a></h3>
+<p><a href="https://papermc.io/software/velocity">Velocity</a> is a modern proxy platform developed by PaperMC. Nowadays, Velocity is considered the standard that should be used. It has overtaken BungeeCord/Waterfall in number of users some time ago, making it the most used platform.</p>
+<h3 id="bungeecord"><a class="header" href="#bungeecord">BungeeCord and Waterfall</a></h3>
+<p>BungeeCord (and its fork Waterfall, which provides some improvements) has been the most used proxy platform for years, but its popularity is declining as Velocity is generally better.</p>
+<p>Waterfall isn’t even actively developed anymore, see
+<a href="https://forums.papermc.io/threads/announcing-the-end-of-life-of-waterfall.1088/.">https://forums.papermc.io/threads/announcing-the-end-of-life-of-waterfall.1088/.</a></p>
+<p>Thus, nowadays BungeeCord/Waterfall is being phased out and replaced by the more modern Velocity, which is recommended instead of BungeeCord/Waterfall.</p>
+<h2 id="other-platforms"><a class="header" href="#other-platforms">Other platforms</a></h2>
+<h3 id="folia"><a class="header" href="#folia">Folia</a></h3>
+<p>Folia differs significantly from all other platforms, as it operates differently than the classic platforms. This platform is suitable for really large servers with a large number of players spread over a large area, such as the 2b2t.org server.</p>
+<p>Folia removes a limiting feature of classic Minecraft servers, where the main game loop uses only one thread. This makes Folia suitable for a completely different processor model than classic servers.</p>
+<p>For most servers, Folia doesn’t make sense, so you don’t have to bother with it at all. If you’re not sure if Folia makes sense for you, it almost certainly doesn’t.</p>
+<p>You can read more about this Folia here: <a href="https://paper-chan.moe/folia/">https://paper-chan.moe/folia/</a></p>
+<h3 id="no-notchian-platforms"><a class="header" href="#no-notchian-platforms">Non-Notchian platforms</a></h3>
+<p>The above mentioned platforms like Vanilla, Paper and Fabric are so-called Notchian servers. This means that they are based on the original Minecraft code (Vanilla, which is itself a Notchian server). However, there are also implementations of Minecraft servers that do not contain any code from Mojang. Such platforms don’t even need to be written in the Java programming language. Examples include <a href="https://minestom.net/">Minestom</a> or <a href="https://valence.rs/">Valence</a>. More can be found at the following link: <a href="https://wiki.vg/Server_List">https://wiki.vg/Server_List</a></p>
+<p>However, none of these projects can replace standard platforms, as these platforms do not implement many of Vanilla’s mechanics and features. Rather, they are “building blocks” from which such a server can be programmed, but would be extremely difficult to develop and maintain. Thus, they are currently more like “toys”, but they may have some usecases.</p>
+<p>There are also proxies in various languages, such as <a href="https://github.com/BRA1L0R/hopper-rs">Hopper</a> and <a href="https://github.com/minekube/gate">Gate</a>, with the biggest problem being the lack of community modifications. It doesn’t make sense to develop such proxy platforms, so Velocity remains the most sensible choice.</p>
+<p>By the way, there are even Minecraft clients written in other languages, such as <a href="https://github.com/iceiix/stevenarella">stevenerella</a>.</p>
+<h2 id="forks"><a class="header" href="#forks">What is a fork</a></h2>
+<p>In the software world, a fork is software that inherits and modifies other software. In general, a fork keeps up-to-date with the project it inherits.</p>
+<p>The term “fork” is most commonly encountered with platforms that support plugins. In the image below, you can see the most well-known forks and their purpose.</p>
+<p><img src="/assets/images/platforms/fork_graph_simplified.png" alt="Simplified Fork Graph" /> (source: PurpurMC Discord - <code>.forks</code> command).</p>
+<p>That implies the following - when you use Paper, the server will work the same way it does on Spigot (i.e. Spigot plugins will work), with added features from Paper (in Paper’s case, bug fixes, optimizations, etc.). Pufferfish will have the same features as Paper with some extra features (in the case of Pufferfish, mainly extra optimizations). When the server is running on the Purpur platform, you can still use the features and settings of Spigot, Paper, and Pufferfish, with some extra features (in the case of Purpur, that is the ability to configure many aspects of the game, see <a href="https://purpurmc.org/docs/purpur/configuration/">https://purpurmc.org/docs/purpur/configuration/</a>).</p>
+<p>When a new version of Minecraft releases, Purpur will be the last of these platforms (from the Spigot, Paper, Pufferfish &amp; Purpur chain) to be released. Since these are forks, Paper has to come out first, then Pufferfish, and finally Purpur.</p>
+<p>Forks also exist for other platforms, like Forge. Examples include <a href="https://neoforged.net/news/theproject/">NeoForge</a> (a Forge fork), or <a href="https://quiltmc.org/en/about/faq/">QuiltMC</a> (<a href="https://madelinemiller.dev/blog/paper-hard-fork/#what-is-a-hard-fork">hard fork</a> of Fabric).</p>
+<p>As you can see in the image below, there are many forks of various platforms.
+<img src="/assets/images/platforms/fork_graph.png" alt="Fork Graph" />
+(source: <a href="https://raw.githubusercontent.com/saboooor/fork-graph/main/img.png">https://raw.githubusercontent.com/saboooor/fork-graph/main/img.png</a>)</p>
+<p>However, a lot of them are not stable. That’s why you should only use “battle tested” forks (which e.g. in the case of platforms supporting plugins is Paper, Pufferfish, or Purpur).</p>
+<p>Technical note: The primary platform supporting Bukkit plugins is CraftBukkit, however not everyone knows this, so Spigot is used as the “base”, even though the actual features may be implemented by CraftBukkit. The correct name could be “CraftBukkit and its forks” instead of “Spigot and its forks”. However, this should not be important. So if you use CraftBukkit <em>(which you definitely shouldn’t)</em>, this applies to you unless noted otherwise.</p>
+<h2 id="platform-change"><a class="header" href="#platform-change">Platform change</a></h2>
+<p>Changing platforms is usually a simple process. The platform is coded in the server itself, i.e. the <a href="server-jar.html">server JAR</a>.</p>
+<p>Therefore, in the vast majority of cases, you just download the server file of the new platform and replace the original one.</p>
+<p>It is important to have a [server backup](../administration/backups md#backups) in case something would go wrong or you want to revert the action.</p>
+<p>If you are migrating from the Spigot fork to the Vanilla/modded platform, it is necessary to <a href="world.html#world-migration">migrate worlds</a>.</p>
+<h2 id="paid-forks"><a class="header" href="#paid-forks">Paid forks</a></h2>
+<p>When it comes to paid forks, the vast majority of their authors are just cashing in on ignorance and marketing that raises high expectations, but the reality is different and the purchase is unnecessary.</p>
+<p>However, some of them can make sense, for example in certain situations on very old versions (1.8.8) or on modern versions there is a Pufferfish+ fork, which I don’t have personal experience with, but I think that unlike forks found for example on BuiltByBit, it doesn’t have to be an outright waste of money in some cases.</p>
+<p>As for paid proxy forks, unless they have a feature you really need, using them is almost certainly pointless. If you want a modern, efficient and secure proxy, use Velocity.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../general/commands.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../general/world.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../general/commands.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../general/world.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../theme/ko-fi.js"></script>
+        <script src="../theme/hints.js"></script>
+
+
+    </div>
+    </body>
+</html>

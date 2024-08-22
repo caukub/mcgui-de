@@ -1,0 +1,467 @@
+<!DOCTYPE HTML>
+<html lang="en" class="mocha" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>How to solve problems - caukub&#x27;s Minecraft Server Handbook</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/ko-fi.css">
+        <link rel="stylesheet" href="../theme/hints.css">
+        <link rel="stylesheet" href=".././theme/catppuccin.css">
+        <link rel="stylesheet" href=".././theme/catppuccin-admonish.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('mocha')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">caukub's Minecraft Server Handbook</a></li><li class="chapter-item expanded affix "><a href="../quickstart.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">General</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> General</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../general/permissions.html"><strong aria-hidden="true">1.1.</strong> Permissions</a></li><li class="chapter-item expanded "><a href="../general/commands.html"><strong aria-hidden="true">1.2.</strong> Commands</a></li><li class="chapter-item expanded "><a href="../general/platforms.html"><strong aria-hidden="true">1.3.</strong> Platforms</a></li><li class="chapter-item expanded "><a href="../general/world.html"><strong aria-hidden="true">1.4.</strong> Worlds</a></li><li class="chapter-item expanded "><a href="../general/versions.html"><strong aria-hidden="true">1.5.</strong> Versions</a></li><li class="chapter-item expanded "><a href="../general/address-ports.html"><strong aria-hidden="true">1.6.</strong> Address and ports</a></li><li class="chapter-item expanded "><a href="../general/configs.html"><strong aria-hidden="true">1.7.</strong> Configuration files</a></li><li class="chapter-item expanded "><a href="../general/console.html"><strong aria-hidden="true">1.8.</strong> Console</a></li><li class="chapter-item expanded "><a href="../general/server-jar.html"><strong aria-hidden="true">1.9.</strong> Server JAR</a></li><li class="chapter-item expanded "><a href="../general/docs.html"><strong aria-hidden="true">1.10.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="../general/downgrade.html"><strong aria-hidden="true">1.11.</strong> Downgrade</a></li><li class="chapter-item expanded "><a href="../general/ftp.html"><strong aria-hidden="true">1.12.</strong> (S)FTP</a></li><li class="chapter-item expanded "><a href="../general/online-mode.html"><strong aria-hidden="true">1.13.</strong> Online mode</a></li><li class="chapter-item expanded "><a href="../general/performance.html"><strong aria-hidden="true">1.14.</strong> Server performance (optimization)</a></li><li class="chapter-item expanded "><a href="../general/pregeneration.html"><strong aria-hidden="true">1.15.</strong> Pregeneration</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Administration</li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Server Administration</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../administration/server-resources.html"><strong aria-hidden="true">2.1.</strong> Server Resources</a></li><li class="chapter-item expanded "><a href="../administration/backups.html"><strong aria-hidden="true">2.2.</strong> Backups</a></li><li class="chapter-item expanded "><a href="../administration/databases.html"><strong aria-hidden="true">2.3.</strong> Databases</a></li><li class="chapter-item expanded "><a href="../administration/domains.html"><strong aria-hidden="true">2.4.</strong> Domain</a></li><li class="chapter-item expanded "><a href="../administration/host-types.html"><strong aria-hidden="true">2.5.</strong> Host Types</a></li><li class="chapter-item expanded "><a href="../administration/java.html"><strong aria-hidden="true">2.6.</strong> Java</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Plugins</li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Plugins</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plugins/basics.html"><strong aria-hidden="true">3.1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../plugins/useful.html"><strong aria-hidden="true">3.2.</strong> Useful/Frequently used features</a></li><li class="chapter-item expanded "><a href="../plugins/prefixes.html"><strong aria-hidden="true">3.3.</strong> Prefixes</a></li><li class="chapter-item expanded "><a href="../plugins/placeholders.html"><strong aria-hidden="true">3.4.</strong> Placeholders</a></li><li class="chapter-item expanded "><a href="../plugins/economy.html"><strong aria-hidden="true">3.5.</strong> Economy</a></li><li class="chapter-item expanded "><a href="../plugins/anticheat.html"><strong aria-hidden="true">3.6.</strong> AntiCheat</a></li><li class="chapter-item expanded "><a href="../plugins/cracked.html"><strong aria-hidden="true">3.7.</strong> Cracked Plugins</a></li><li class="chapter-item expanded "><a href="../plugins/list.html"><strong aria-hidden="true">3.8.</strong> Hiding Plugin List</a></li><li class="chapter-item expanded "><a href="../plugins/voting.html"><strong aria-hidden="true">3.9.</strong> Voting</a></li><li class="chapter-item expanded "><a href="../plugins/reload.html"><strong aria-hidden="true">3.10.</strong> Reload</a></li><li class="chapter-item expanded "><a href="../plugins/spigot-ids.html"><strong aria-hidden="true">3.11.</strong> Spigot IDs</a></li><li class="chapter-item expanded "><a href="../plugins/bstats.html"><strong aria-hidden="true">3.12.</strong> bStats</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.13.</strong> Specific plugins</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../plugins/specific/dynmap.html"><strong aria-hidden="true">3.13.1.</strong> Dynmap</a></li><li class="chapter-item "><a href="../plugins/specific/essentialsx.html"><strong aria-hidden="true">3.13.2.</strong> EssentialsX</a></li><li class="chapter-item "><a href="../plugins/specific/luckperms.html"><strong aria-hidden="true">3.13.3.</strong> LuckPerms</a></li><li class="chapter-item "><a href="../plugins/specific/multiverse-core.html"><strong aria-hidden="true">3.13.4.</strong> Multiverse-Core</a></li><li class="chapter-item "><a href="../plugins/specific/vault.html"><strong aria-hidden="true">3.13.5.</strong> Vault</a></li><li class="chapter-item "><a href="../plugins/specific/viaversion.html"><strong aria-hidden="true">3.13.6.</strong> ViaVersion</a></li><li class="chapter-item "><a href="../plugins/specific/worldedit.html"><strong aria-hidden="true">3.13.7.</strong> WorldEdit</a></li><li class="chapter-item "><a href="../plugins/specific/worldguard.html"><strong aria-hidden="true">3.13.8.</strong> WorldGuard</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Mods</li><li class="chapter-item expanded "><a href="../mods.html"><strong aria-hidden="true">4.</strong> Mods and modpack</a></li><li class="chapter-item expanded affix "><li class="part-title">Proxy</li><li class="chapter-item expanded "><a href="../proxy.html"><strong aria-hidden="true">5.</strong> Proxy</a></li><li class="chapter-item expanded affix "><li class="part-title">Troubleshooting</li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Troubleshooting</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../problem-solving/common-issues.html"><strong aria-hidden="true">6.1.</strong> Common issues and their solutions</a></li><li class="chapter-item expanded "><a href="../problem-solving/how-to-ask-for-help.html"><strong aria-hidden="true">6.2.</strong> How to ask for help</a></li><li class="chapter-item expanded "><a href="../problem-solving/how-to-deal-with-issues.html" class="active"><strong aria-hidden="true">6.3.</strong> How to solve problems</a></li><li class="chapter-item expanded "><a href="../problem-solving/java-basics.html"><strong aria-hidden="true">6.4.</strong> Java Basics</a></li><li class="chapter-item expanded "><a href="../problem-solving/logs.html"><strong aria-hidden="true">6.5.</strong> Logs</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Security</li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Server Security</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../security/security.html"><strong aria-hidden="true">7.1.</strong> Security</a></li><li class="chapter-item expanded "><a href="../security/malware.html"><strong aria-hidden="true">7.2.</strong> Malware</a></li><li class="chapter-item expanded "><a href="../security/offline-mode.html"><strong aria-hidden="true">7.3.</strong> Offline mode</a></li><li class="chapter-item expanded "><a href="../security/proxy.html"><strong aria-hidden="true">7.4.</strong> Proxy</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Vanilla features</li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Vanilla features</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vanilla/bans.html"><strong aria-hidden="true">8.1.</strong> Bans</a></li><li class="chapter-item expanded "><a href="../vanilla/command-blocks.html"><strong aria-hidden="true">8.2.</strong> Command blocks</a></li><li class="chapter-item expanded "><a href="../vanilla/datapacks.html"><strong aria-hidden="true">8.3.</strong> Datapacks</a></li><li class="chapter-item expanded "><a href="../vanilla/eula.html"><strong aria-hidden="true">8.4.</strong> EULA</a></li><li class="chapter-item expanded "><a href="../vanilla/game-rules.html"><strong aria-hidden="true">8.5.</strong> Game rules</a></li><li class="chapter-item expanded "><a href="../vanilla/motd.html"><strong aria-hidden="true">8.6.</strong> MOTD</a></li><li class="chapter-item expanded "><a href="../vanilla/op.html"><strong aria-hidden="true">8.7.</strong> OP</a></li><li class="chapter-item expanded "><a href="../vanilla/query.html"><strong aria-hidden="true">8.8.</strong> Query</a></li><li class="chapter-item expanded "><a href="../vanilla/rcon.html"><strong aria-hidden="true">8.9.</strong> RCON</a></li><li class="chapter-item expanded "><a href="../vanilla/resource-pack.html"><strong aria-hidden="true">8.10.</strong> Resourcepack</a></li><li class="chapter-item expanded "><a href="../vanilla/server-icon.html"><strong aria-hidden="true">8.11.</strong> Server Icon</a></li><li class="chapter-item expanded "><a href="../vanilla/server-properties.html"><strong aria-hidden="true">8.12.</strong> server.properties</a></li><li class="chapter-item expanded "><a href="../vanilla/whitelist.html"><strong aria-hidden="true">8.13.</strong> Whitelist</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basic principles</li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Basic Principles</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basic-principles/hosting-role.html"><strong aria-hidden="true">9.1.</strong> Hosting Role</a></li><li class="chapter-item expanded "><a href="../basic-principles/no-magic.html"><strong aria-hidden="true">9.2.</strong> No Magic</a></li><li class="chapter-item expanded "><a href="../basic-principles/plugins-vs-mods.html"><strong aria-hidden="true">9.3.</strong> Plugins vs Mods</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Other</li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Other</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../other/desktop.html"><strong aria-hidden="true">10.1.</strong> Basic Computer Skills</a></li><li class="chapter-item expanded "><a href="../other/url-download.html"><strong aria-hidden="true">10.2.</strong> Downlading File from URL</a></li><li class="chapter-item expanded "><a href="../other/panels.html"><strong aria-hidden="true">10.3.</strong> Administration Panels</a></li><li class="chapter-item expanded "><a href="../other/regex.html"><strong aria-hidden="true">10.4.</strong> Regex</a></li><li class="chapter-item expanded "><a href="../other/nbt.html"><strong aria-hidden="true">10.5.</strong> NBT</a></li><li class="chapter-item expanded "><a href="../other/external-tools.html"><strong aria-hidden="true">10.6.</strong> External Tools</a></li><li class="chapter-item expanded "><a href="../other/deving-tools.html"><strong aria-hidden="true">10.7.</strong> Developing modifications, external tools for the Minecraft server and the server itself</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../appendix.html"><strong aria-hidden="true">11.</strong> Appendix</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">caukub&#x27;s Minecraft Server Handbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="/appendix.html#translations" title="Translations" aria-label="Translations">
+                            <i id="translation" class="fa fa-language"></i>
+                        </a>
+                        <a href="https://github.com/caukub/mcgui-de" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <style>
+.mdbook-alerts {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-left: 0.25em solid var(--mdbook-alerts-color);
+}
+
+.mdbook-alerts > *:first-child {
+  margin-top: 0;
+}
+
+.mdbook-alerts > *:last-child {
+  margin-bottom: 0;
+}
+
+.mdbook-alerts-title {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  line-height: 1;
+  color: var(--mdbook-alerts-color);
+  text-transform: capitalize;
+}
+
+.mdbook-alerts-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.2em;
+  background-color: currentColor;
+  -webkit-mask: no-repeat center / 100%;
+  mask: no-repeat center / 100%;
+  -webkit-mask-image: var(--mdbook-alerts-icon);
+  mask-image: var(--mdbook-alerts-icon);
+}
+
+.mdbook-alerts-note {
+  --mdbook-alerts-color: rgb(9, 105, 218);
+  /* https://icon-sets.iconify.design/material-symbols/info-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 17q.425 0 .713-.288T13 16v-4q0-.425-.288-.712T12 11q-.425 0-.712.288T11 12v4q0 .425.288.713T12 17m0-8q.425 0 .713-.288T13 8q0-.425-.288-.712T12 7q-.425 0-.712.288T11 8q0 .425.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m0-8"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-tip {
+  --mdbook-alerts-color: rgb(26, 127, 55);
+  /* https://icon-sets.iconify.design/material-symbols/lightbulb-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 22q-.825 0-1.412-.587T10 20h4q0 .825-.587 1.413T12 22m-3-3q-.425 0-.712-.288T8 18q0-.425.288-.712T9 17h6q.425 0 .713.288T16 18q0 .425-.288.713T15 19zm-.75-3q-1.725-1.025-2.738-2.75T4.5 9.5q0-3.125 2.188-5.312T12 2q3.125 0 5.313 2.188T19.5 9.5q0 2.025-1.012 3.75T15.75 16zm.6-2h6.3q1.125-.8 1.738-1.975T17.5 9.5q0-2.3-1.6-3.9T12 4Q9.7 4 8.1 5.6T6.5 9.5q0 1.35.613 2.525T8.85 14M12 14"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-important {
+  --mdbook-alerts-color: rgb(130, 80, 223);
+  /* https://icon-sets.iconify.design/material-symbols/chat-info-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 7q.425 0 .713-.288T13 6q0-.425-.288-.712T12 5q-.425 0-.712.288T11 6q0 .425.288.713T12 7m0 8q.425 0 .713-.288T13 14v-4q0-.425-.288-.712T12 9q-.425 0-.712.288T11 10v4q0 .425.288.713T12 15m-6 3l-2.3 2.3q-.475.475-1.088.213T2 19.575V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18zm-.85-2H20V4H4v13.125zM4 16V4z"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-warning {
+  --mdbook-alerts-color: rgb(154, 103, 0);
+  /* https://icon-sets.iconify.design/material-symbols/warning-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M2.725 21q-.275 0-.5-.137t-.35-.363q-.125-.225-.137-.488t.137-.512l9.25-16q.15-.25.388-.375T12 3q.25 0 .488.125t.387.375l9.25 16q.15.25.138.513t-.138.487q-.125.225-.35.363t-.5.137zm1.725-2h15.1L12 6zM12 18q.425 0 .713-.288T13 17q0-.425-.288-.712T12 16q-.425 0-.712.288T11 17q0 .425.288.713T12 18m0-3q.425 0 .713-.288T13 14v-3q0-.425-.288-.712T12 10q-.425 0-.712.288T11 11v3q0 .425.288.713T12 15m0-2.5"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-caution {
+  --mdbook-alerts-color: rgb(207, 34, 46);
+  /* https://icon-sets.iconify.design/material-symbols/brightness-alert-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 17q.425 0 .713-.288T13 16q0-.425-.288-.712T12 15q-.425 0-.712.288T11 16q0 .425.288.713T12 17m0-4q.425 0 .713-.288T13 12V8q0-.425-.288-.712T12 7q-.425 0-.712.288T11 8v4q0 .425.288.713T12 13m-3.35 7H6q-.825 0-1.412-.587T4 18v-2.65L2.075 13.4q-.275-.3-.425-.662T1.5 12q0-.375.15-.737t.425-.663L4 8.65V6q0-.825.588-1.412T6 4h2.65l1.95-1.925q.3-.275.663-.425T12 1.5q.375 0 .738.15t.662.425L15.35 4H18q.825 0 1.413.588T20 6v2.65l1.925 1.95q.275.3.425.663t.15.737q0 .375-.15.738t-.425.662L20 15.35V18q0 .825-.587 1.413T18 20h-2.65l-1.95 1.925q-.3.275-.662.425T12 22.5q-.375 0-.737-.15t-.663-.425zm.85-2l2.5 2.5l2.5-2.5H18v-3.5l2.5-2.5L18 9.5V6h-3.5L12 3.5L9.5 6H6v3.5L3.5 12L6 14.5V18zm2.5-6"%2F%3E%3C%2Fsvg%3E');
+}
+
+</style>
+<h1 id="how-to-deal-with-issues"><a class="header" href="#how-to-deal-with-issues">How to deal with issues</a></h1>
+<p>To learn how to troubleshoot basic server issues, see the following link: <a href="https://docs.papermc.io/paper/basic-troubleshooting">https://docs.papermc.io/paper/basic-troubleshooting</a> and below.</p>
+<p>If you are experiencing a problem with a server, plugin (or mod), the cause of the problem can almost always be <a href="logs.html#log-basics">read from the server log</a>. If you are not able to understand the contents of the log even after sufficient (or at least minimal/basic) effort, just <a href="how-to-ask-for-help.html#where-get-help">ask for help</a>.</p>
+<p>If you can’t tell the cause from the log, <a href="#plugin-disable">disable all plugins</a> to find out if the problem is caused by the plugin or by the platform itself (if the problem disappears after disabling all plugins, it is logically caused by the plugin).</p>
+<p>If the problem is caused by a plugin, use <a href="#binary-search">binary search</a> to find out which one (and update/report the plugin if necessary).</p>
+<p>If the error is caused by the server platform itself, update it as well and report the error if applicable.</p>
+<p>If it’s not a problem (bug) but you don’t know how to handle a certain behavior/setting of the plugin, you can almost always find everything you need in the <a href="../general/docs.html#docs">platform/plugin documentation</a>, or you can find it in the <a href="../general/configs.html#config">configuration</a>, eventually you can contact the plugin author/support. If you want to allow certain actions for specific/all players, learn how to work with <a href="../general/permissions.html#permissions">permissions</a>.</p>
+<h2 id="binary-search"><a class="header" href="#binary-search">Binary search</a></h2>
+<p>In the case where you don’t know what plugin (or mod) is causing the problem, but you know that a plugin is causing it, the most efficient method to find the plugin is by using the binary search method. How this method works and how to perform it can be found at the following link: <a href="https://docs.papermc.io/paper/basic-troubleshooting#binary-search">https://docs.papermc.io/paper/basic-troubleshooting#binary-search</a></p>
+<p>For modded servers, the binary search can be more tedious, as the server is likely to crash (shut down) if a dependency is missing. In this case, you have to find the missing dependency in the log and move it back to active modes (and not remove it until the mod that requires it is in active mods). At the same time, the server mod list and client most list may need to be synchronized, so the mods will need to be removed not only from the server but also from the client.</p>
+<p>The binary search method is much faster for searching through larger lists than going through plugins one by one. For example, if there were 100 plugins on the server, you would need 73 attempts if you were disabling plugins one by one, if the faulty plugin was 73rd. However, if you use the binary search method, you need a maximum of 8 attempts (100 -&gt; 50 -&gt; 25 -&gt; 12 -&gt; 6 -&gt; 3 -&gt; 2 -&gt; 1).</p>
+<p><img src="/assets/images/problem-solving/binary-search.gif" alt="Binary search visualization" /></p>
+<h2 id="how-to-do-xy--what-is-the-permission-for-xy--what-is-the-placeholder-for-xy--what-is-the-command-for-xy"><a class="header" href="#how-to-do-xy--what-is-the-permission-for-xy--what-is-the-placeholder-for-xy--what-is-the-command-for-xy">How to do XY / What is the permission for XY / What is the placeholder for XY / What is the command for XY</a></h2>
+<p>As described in <a href="../plugins/basics.html#everything-is-plugin-specific">this section</a>, the various functions, perms, placeholders and commands are always plugin specific. Although plugins share many common principles, these things should always be looked up in the <a href="../general/docs.html#docs">documentation</a> of the plugin or platform.</p>
+<h2 id="action-and-reaction"><a class="header" href="#action-and-reaction">Action and reaction principle</a></h2>
+<p>When you add a plugin, execute a command, and the server starts to, crash, something stops working, etc., the logical first thing to do is to check if the action isn’t the cause of the problem.</p>
+<p>So, if a problem occurs after an certain action has been performed, you should suspect that the action is the cause first.</p>
+<h2 id="advanced-problem-solving"><a class="header" href="#advanced-problem-solving">Advanced</a></h2>
+<h3 id="source-code"><a class="header" href="#source-code">Searching in source code</a></h3>
+<p>If you understand programming, it may be useful to read the source code in certain cases.</p>
+<p>If the project is open-sourced on GitHub, you can rewrite ’github“ to ’github1s“ in the project URL and pressing <em>Enter</em> will open the project in a web editor. You can do the same by rewriting <em>github.com</em> to <em>github.dev</em>, or by pressing the <code>.</code> (dot) character in the GitHub repository, which will redirect you to the repository in the <em>github.dev</em> editor. Both <em>github1s.com</em> and <em>github.dev</em> have identical functionality, <em>github.dev</em> is the official GitHub platform (I personally prefer <em>github1s</em> as I find it more nimble).</p>
+<p>In this text editor, you can easily search across all the files in the project (top left 3 vertical lines under the GitHub logo -&gt; <em>Edit</em> -&gt; <em>Find in Files</em>).</p>
+<p>In the case where the plugin is not open-source, you can decompile the plugin using a Java decompiler like <a href="http://java-decompiler.github.io/">JD-GUI</a>, but this may violate the TOS (terms of use) of some plugins (especially paid ones).</p>
+<h3 id="config-files-in-source"><a class="header" href="#config-files-in-source">Finding configuration files in source code</a></h3>
+<p>Configuration files can be found in the source code in <code>/src/main/resources/</code>, so for example for EssentialsX they can be found <a href="https://github.com/EssentialsX/Essentials/tree/2.x/Essentials/src/main/resources">here</a>.</p>
+<p>If a plugin supports multiple platforms, these files are usually in a shared folder that all these versions of the plugin use, as in the case of the plugin <a href="https://modrinth.com/plugin/tab-was-taken">TAB</a> (by NEZNAMY), where these files are located in the <em>shared</em> folder (but it’s often called something else, such as <em>common</em>) see <a href="https://github.com/NEZNAMY/TAB/tree/master/shared/src/main/resources/config">https://github.com/NEZNAMY/TAB/tree/master/shared/src/main/resources/config</a></p>
+<p>However, sometimes the plugin does not contain such files, or not all files do. For example, for <a href="https://github.com/kyngs/LibreLogin/blob/master/Plugin/src/main/java/xyz/kyngs/librelogin/common/config/ConfigurationKeys.java">this plugin</a> the basic configuration is hardcoded in code instead of bein in separate file.</p>
+<h3 id="changelog"><a class="header" href="#changelog">Changelog</a></h3>
+<p>The changelog describes a list of changes, i.e. new features, bug fixes, vulnerabilities and other changes. For this reason, it is a good idea to check the changelog when updating the plugin so that you don’t miss important updates.
+However, the changelog can also be useful when troubleshooting various issues. There are many cases where the changelog comes in handy. One such specific example is with the Citizens plugin, which only supports the latest subversion (i.e. when support for 1.20.2 is released, 1.20.1 is no longer supported). So if you would like to use a version that supports 1.20.1, you need to find the <a href="../general/versions.html#build">build</a> in the changelog when the version supporting 1.20.2 was released, and thus download the last <a href="../general/versions.html#build">build</a> released before that version (supporting 1.20.2).</p>
+<p>You will find the changelog different on each platform where the plugin is released, but you will almost always find it somewhere, for example:</p>
+<ul>
+<li>Spigot - <em>Updates</em> tab (<a href="https://www.spigotmc.org/resources/essentialsx.9089/updates">example</a>)</li>
+<li>Modrinth - <em>Changelog</em> tab (<a href="https://modrinth.com/plugin/decentholograms/changelog">example</a>)</li>
+<li>Jenkins - <em>Changes</em> tab (<a href="https://ci.ender.zone/job/EssentialsX/changes">example</a>)</li>
+<li>GitHub - <em>Releases</em> tab (<a href="https://github.com/EssentialsX/Essentials/releases">example</a>)</li>
+</ul>
+<p>If the server platform changes are not on the platform page, <a href="https://papermc.io/downloads/paper">such as for Paper</a>, you should at least find the changes in <em>GitHub Releases</em> (e.g. <a href="https://github.com/IzzelAliz/Arclight/releases/tag/Whisper%2F1.0.4">here</a>), or Git commits on the platform where it is developed (this is for <em>Paper</em> <a href="https://github.com/PaperMC/Paper/commits/master/">GitHub</a>, for Spigot Jira, for some it may be GitLab).</p>
+<p>If the software is open-source, in the commits on the platform where the project is developed (GitHub, GitLab, Jira, Gitea, …) you will find all the changes, regardless of whether it is a platform, plugin, or mod (since that is how software is generally developed).</p>
+<h2 id="search"><a class="header" href="#search">Search</a></h2>
+<p>Whether you’re looking for how to do certain a thing, for a plugin, mod, cause of a specific bug or source (config/part in documentation/…), etc., usually the ideal way to find what you need is by using Google.</p>
+<p>Discord searches can also help. There are plenty of messages on active Discord servers, so the chance someone has asked the same question is high. Therefore, before you ask a question in a Discord channel, it is a good idea to check if you can already find a message with a similar question/problem.</p>
+<p>Below are some general beginner tips that may help you.</p>
+<h3 id="google-search"><a class="header" href="#google-search">Google search (tips)</a></h3>
+<p>When searching for a particular bug, copy only the relevant part, i.e. the text that is the same for all, i.e. for a bug only the error message itself without the time, <a href="logs.html#log-level">log level</a> etc., in short only the relevant part to the bug.</p>
+<p>If you’re looking for a specific thing like a plugin, its particular settings or config, simply search using keywords like “<em>&lt;plugin name&gt; config.yml</em>”, “<em>minecraft ban plugin</em>”, etc. (see <a href="../plugins/basics.html#how-to-find-plugins">plugin search</a>)</p>
+<h4 id="google-strict-search"><a class="header" href="#google-strict-search">Strict search / Exact search</a></h4>
+<p>If you only want Google to return results with exact match, simply enclose the search text in normal quotes (<code>"strict search"</code>).</p>
+<h3 id="discord-search"><a class="header" href="#discord-search">Discord Search (tips)</a></h3>
+<p>When searching for text on Discord, search by keywords that may have been used in the question/issue description. Of course, words can be used in different forms, which is good to keep in mind and try multiple variants if you can’t find what you are looking for on the first search.</p>
+<p>It’s good to keep in mind that when using keywords in a search, the words don’t have to be next to each other, but their order matters.</p>
+<p>In Discord searches, the diacritics matter.</p>
+<p>Of course, the more relevant to the problem (i.e. if you have a problem with a plugin and the plugin in question has a Discord server, it’s ideal to start your search there) the Discord server in question is, and the more messages it contains, the better.</p>
+<h2 id="translator"><a class="header" href="#translator">Translator</a></h2>
+<p>If the text is in a foreign language you don’t understand, use a translator like <a href="https://deepl.com">DeepL</a>, or the classic <a href="https://translate.google.com">Google Translate</a>.</p>
+<p>When you enter a URL (link) into <a href="https://translate.google.com">Google Translate</a>, you can then click on the URL and the whole page will be translated (there are also browser extensions that will translate the page). Eventually, your browser may have this feature built in.</p>
+<h2 id="text-search"><a class="header" href="#text-search">Text search</a></h2>
+<p>Whether it is a text editor or a browser, you can almost always search text in a program using the <em>Ctrl + F</em> shortcut (do not use the <em>F3</em> key).</p>
+<p>In the case where you are looking for a particular thing but don’t know exactly what it is called, try searching using <em>keywords</em>.</p>
+<p>In the configuration files, <a href="../general/configs.html#config-search">watch out for colors and variables</a> when searching in the text.</p>
+<p>When copying some text from the internet you want to search for, be careful not to copy a space at the end or beginning of the text, which sometimes happens when you double-click to select the text. In case that would happen, make sure to remove the space(s) from the text, otherwise you may not find anything in the text, even if the text you are looking for is in the text but without the space(s).</p>
+<h2 id="how-to-read-stacktrace"><a class="header" href="#how-to-read-stacktrace">Reading stacktrace</a></h2>
+<p>You can read what a stacktrace is <a href="java-basics.html#java-stacktrace">here</a>. When reading stacktrace, it is useful to have <a href="java-basics.html#java-basics">basic knowledge of Java</a>.
+All the terms used in this section can be found in the Java basics chapter.</p>
+<p>Below are specific examples of stacktraces and what the thought process might look like when reading it. The ability to solve a problem using stacktrace depends on your experience and knowledge, and you will probably get better at it over time.</p>
+<h3 id="stacktrace-examples"><a class="header" href="#stacktrace-examples">Examples</a></h3>
+<h4 id="stacktrace-example-1"><a class="header" href="#stacktrace-example-1">Example 1</a></h4>
+<pre><code class="language-log">[16:55:29] [Server thread/ERROR]: Encountered an unexpected exception
+org.spongepowered.configurate.serialize.SerializationException: [entities, spawning, monster-spawn-max-light-level] of type java.lang.Integer: java.lang.NumberFormatException: For input string: "default"
+    at org.spongepowered.configurate.serialize.NumericSerializers.parseNumber(NumericSerializers.java:346) ~[configurate-core-4.1.2.jar:?]
+    at org.spongepowered.configurate.serialize.NumericSerializers.lambda$static$9(NumericSerializers.java:254) ~[configurate-core-4.1.2.jar:?]
+    at org.spongepowered.configurate.serialize.FunctionScalarSerializer.deserialize(FunctionScalarSerializer.java:40) ~[configurate-core-4.1.2.jar:?]
+    at org.spongepowered.configurate.serialize.ScalarSerializer.deserialize(ScalarSerializer.java:115) ~[configurate-core-4.1.2.jar:?]
+    at org.spongepowered.configurate.objectmapping.ObjectMapperImpl.load0(ObjectMapperImpl.java:64) ~[configurate-core-4.1.2.jar:?]
+    ....
+    at io.papermc.paper.configuration.Configurations.initializeWorldDefaultsConfiguration(Configurations.java:154) ~[paper-1.20.1.jar:git-Paper-196]
+    at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:210) ~[paper-1.20.1.jar:git-Paper-196]
+    at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1100) ~[paper-1.20.1.jar:git-Paper-196]
+    at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:317) ~[paper-1.20.1.jar:git-Paper-196]
+    at java.lang.Thread.run(Thread.java:833) ~[?:?]
+</code></pre>
+<p>This stacktrace starts with <a href="java-basics.html#java-exception">exception</a>, which throws Configurate. What even is this <em>Configurate</em>? You can easily find out by googling the software/library name and the project/author name (both of which you can read from <a href="java-basics.html#java-package">package</a>, in this case <code>org.spongepowered.configurate</code>). So in this case, just use Google to search for <em>“spongepowered configurate “</em>. You will find out that “Configurate is a simple configuration library”. So it is a library for working with configuration files.</p>
+<p>So the name of the <a href="java-basics.html#java-exception">exception</a> <em>SerializationException</em> indicates that there was an error when serializing the configuration, or in simple terms, loading it. Specifically, an error occurred while serializing the value <code>entities.spawning.monster-spawn-max-light-level</code> (written using <a href="../general/configs.html#dot-notation">dot notation</a>).</p>
+<p>This error occurred because a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NumberFormatException.html"><em>NumberFormatException</em></a> occurred, as <a href="java-basics.html#java-types">Integer (number)</a> was expected, but the value of the field was “default” <a href="java-basics.html#java-types">(which is String instead of Integer)</a>.</p>
+<p>So now you know that the value of some field is <code>default</code>, even though a number was expected.</p>
+<p>But now how to find out which configuration file it is? In this case, there are two easy ways to find out:</p>
+<ol>
+<li>from stacktrace</li>
+</ol>
+<pre><code>at io.papermc.paper.configuration.Configurations.initializeWorldDefaultsConfiguration(Configurations.java:154)...
+</code></pre>
+<ol start="2">
+<li>using Google</li>
+</ol>
+<p>When you search for “monster-spawn-max-light-level” (with quotes for <a href="#google-strict-search">strict search</a>, without it you would probably come across a lot of irrelevant results), the following page will pop up:
+<a href="https://docs.papermc.io/paper/reference/world-configuration">https://docs.papermc.io/paper/reference/world-configuration</a></p>
+<p>Both of these tell us that the <code>entities.spawning.monster-spawn-max-light-level</code> field with the value <code>default</code> is in the Paper world config, whose location is <code>/config/paper-world-defaults.yml</code>.</p>
+<p>Okay, now you know that the value of the <code>entities.spawning.monster-spawn-max-light-level</code> field is <code>default</code>, even though a number is expected. But why did this happen? Practically, this could mean two things:</p>
+<ol>
+<li>Someone manually set the value of this field to <code>default</code> -
+that probably didn’t happen.</li>
+<li>The value of the <code>default</code> fields was set automatically, no one set it manually</li>
+</ol>
+<p>Basically always option 2 was the cause of this error. This happened when <a href="../general/downgrade.html#downgrade">downgrading</a> a server, where the Paper config was generated on a newer version that supported the <code>default</code> value, but the user was using an older version that didn’t, so the only valid value was a number.</p>
+<p>(Eventually Paper could contain a bug, but that is very unlikely)</p>
+<p>Great, now you even know why the problem occurred, but how to solve it? Logically, there are two solutions to this situation:</p>
+<p>a) Manually set the value of <code>entities.spawning.monster-spawn-max-light-level</code> (and all other fields with the value <code>default</code>) from <code>default</code> to a number (you would find the default field values in the <a href="https://docs.papermc.io/paper/reference/world-configuration#entities_spawning_monster_spawn_max_light_level">PaperMC documentation</a>).</p>
+<p>b) Delete the config and let server automatically generate new (default) one.</p>
+<p>So the solution is to reset the Paper config or set the fields with the value
+“default” to valid (numeric) values.</p>
+<h4 id="stacktrace-example-2"><a class="header" href="#stacktrace-example-2">2nd example</a></h4>
+<pre><code class="language-log">.....
+[12:32:13] [Server thread/INFO]: [HeadDatabase] Loading HeadDatabase v1.2.0
+.....
+[12:32:21] [Server thread/ERROR]: [DeluxeHub] Plugin DeluxeHub v3.5.5 has failed to register events for class fun.lewisdev.deluxehub.hook.hooks.head.DatabaseHead because me/arcaniax/hdb/api/DatabaseLoadEvent does not exist.
+[12:32:21] [Server thread/ERROR]: Error occurred while enabling DeluxeHub v3.5.5 (Is it up to date?)
+java.lang.NoClassDefFoundError: me/arcaniax/hdb/api/HeadDatabaseAPI
+	at fun.lewisdev.deluxehub.hook.hooks.head.DatabaseHead.onEnable(DatabaseHead.java:20) ~[DeluxeHub-3.5.5.jar:?]
+	at fun.lewisdev.deluxehub.hook.HooksManager.lambda$new$0(HooksManager.java:35) ~[DeluxeHub-3.5.5.jar:?]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(Unknown Source) ~[?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(Unknown Source) ~[?:?]
+	..........
+	at java.lang.Thread.run(Unknown Source) ~[[?:?]
+Caused by: java.lang.ClassNotFoundException: me.arcaniax.hdb.api.HeadDatabaseAPI
+	at org.bukkit.plugin.java.PluginClassLoader.loadClass0(PluginClassLoader.java:153) ~[server.jar:git-Purpur-1428]
+	at org.bukkit.plugin.java.PluginClassLoader.loadClass(PluginClassLoader.java:105) ~[server.jar:git-Purpur-1428]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:?]
+	... 23 more
+[12:32:21] [Server thread/INFO]: [DeluxeHub] Disabling DeluxeHub v3.5.5
+</code></pre>
+<p>In this log you will encounter a stacktrace with the error <a href="common-issues.html#noclassdeffound">NoClassDefFound</a>. The DeluxeHub plugin is trying to work with the HeadDatabase plugin, specifically its <a href="java-basics.html#java-class">class</a> <code>me/arcaniax/hdb/api/HeadDatabaseAPI</code>. The log also says that the HeadDatabase plugin is installed and enabled on the server, so the problem cannot be the missing plugin.</p>
+<p>So DeluxeHub tries to work with the <a href="java-basics.html#java-class">class</a> plugin, which is on the server, but does not have a specific class. This can mean the following:</p>
+<ol>
+<li>DeluxeHub is working with a different version of the plugin</li>
+</ol>
+<p>This is usually the most common cause for plugins, but this is the case here
+This is not the case here.</p>
+<ol start="2">
+<li>HeadDatabase plugin installed on the server is not HeadDatabase plugin DeluxeHub expects</li>
+</ol>
+<p>Typically, dependencies and links to them should be listed on the plugin page. This is not the case with DeluxeHub, but you can easily tell which plugin DeluxeHub is trying to work with from the stacktrace. You can find the specific plugin by Googling the plugin name and the name <a href="java-basics.html#java-package">package</a>.</p>
+<p>This allows you to find out that it is this particular plugin: <a href="https://www.spigotmc.org/resources/head-database.14280/,">https://www.spigotmc.org/resources/head-database.14280/,</a> but
+there is a completely different plugin on the server called HeadDatabase installed, specifically this one <a href="https://www.spigotmc.org/resources/headdatabase.95118/,">https://www.spigotmc.org/resources/headdatabase.95118/,</a> which you can find out by searching “HeadDatabase 1.2.0” in Google.</p>
+<p>What is the solution in this case? First, I would look into the plugin configuration to see if the HeadDatabase hook can be disabled (to prevent DH from trying to work with HeadDatabase). DeluxeHub doesn’t have that option, so the only thing to do is to report this to the DeluxeHub developer and hope that they fix this issue, or remove the plugin (which in this particular case would be the most sensible option, since it is an outdated, unmaintained plugin that you probably don’t even want to use and have it on your server “by mistake”) (or, since HeadDatabase is an open-source plugin, you could possibly change the name of the plugin if you are able to. This would resolve the DeluxeHub error, since DeluxeHub would not try to work with the “HeadDatabase” plugin, since a plugin with that name would not be on the server).</p>
+<h4 id="stacktrace-example-3"><a class="header" href="#stacktrace-example-3">3rd example</a></h4>
+<pre><code class="language-log">[19:37:03] [Server thread/ERROR]: Could not load 'plugins/UltraStaffChat-5.2.2.jar' in folder 'plugins'
+org.bukkit.plugin.InvalidDescriptionException: Invalid plugin.yml
+	at org.bukkit.plugin.java.JavaPluginLoader.getPluginDescription(JavaPluginLoader.java:178) ~[paper-api-1.18.2-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.loadPlugins(SimplePluginManager.java:159) ~[paper-api-1.18.2-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_18_R2.CraftServer.loadPlugins(CraftServer.java:418) ~[paper-1.18.2.jar:git-Paper-388]
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:288) ~[paper-1.18.2.jar:git-Paper-388]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1164) ~[paper-1.18.2.jar:git-Paper-388]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:316) ~[paper-1.18.2.jar:git-Paper-388]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+Caused by: java.io.FileNotFoundException: jar does not contain plugin.yml
+	... 7 more
+</code></pre>
+<p>In this stacktrace you will encounter the error “<em>Invalid plugin.yml</em>”. The cause of the error is directly stated as “<em>Jar does not contain plugin.yml</em>”. You can read why this error occurs <a href="common-issues.html#invalid-plugin-yml">here</a> (or just type the error into Google and you will find many posts on this topic).</p>
+<p>In this example, it is a BungeeCord plugin.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../problem-solving/how-to-ask-for-help.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../problem-solving/java-basics.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../problem-solving/how-to-ask-for-help.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../problem-solving/java-basics.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../theme/ko-fi.js"></script>
+        <script src="../theme/hints.js"></script>
+
+
+    </div>
+    </body>
+</html>

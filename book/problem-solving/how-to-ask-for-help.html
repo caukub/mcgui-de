@@ -1,0 +1,395 @@
+<!DOCTYPE HTML>
+<html lang="en" class="mocha" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>How to ask for help - caukub&#x27;s Minecraft Server Handbook</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/ko-fi.css">
+        <link rel="stylesheet" href="../theme/hints.css">
+        <link rel="stylesheet" href=".././theme/catppuccin.css">
+        <link rel="stylesheet" href=".././theme/catppuccin-admonish.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('mocha')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">caukub's Minecraft Server Handbook</a></li><li class="chapter-item expanded affix "><a href="../quickstart.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">General</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> General</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../general/permissions.html"><strong aria-hidden="true">1.1.</strong> Permissions</a></li><li class="chapter-item expanded "><a href="../general/commands.html"><strong aria-hidden="true">1.2.</strong> Commands</a></li><li class="chapter-item expanded "><a href="../general/platforms.html"><strong aria-hidden="true">1.3.</strong> Platforms</a></li><li class="chapter-item expanded "><a href="../general/world.html"><strong aria-hidden="true">1.4.</strong> Worlds</a></li><li class="chapter-item expanded "><a href="../general/versions.html"><strong aria-hidden="true">1.5.</strong> Versions</a></li><li class="chapter-item expanded "><a href="../general/address-ports.html"><strong aria-hidden="true">1.6.</strong> Address and ports</a></li><li class="chapter-item expanded "><a href="../general/configs.html"><strong aria-hidden="true">1.7.</strong> Configuration files</a></li><li class="chapter-item expanded "><a href="../general/console.html"><strong aria-hidden="true">1.8.</strong> Console</a></li><li class="chapter-item expanded "><a href="../general/server-jar.html"><strong aria-hidden="true">1.9.</strong> Server JAR</a></li><li class="chapter-item expanded "><a href="../general/docs.html"><strong aria-hidden="true">1.10.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="../general/downgrade.html"><strong aria-hidden="true">1.11.</strong> Downgrade</a></li><li class="chapter-item expanded "><a href="../general/ftp.html"><strong aria-hidden="true">1.12.</strong> (S)FTP</a></li><li class="chapter-item expanded "><a href="../general/online-mode.html"><strong aria-hidden="true">1.13.</strong> Online mode</a></li><li class="chapter-item expanded "><a href="../general/performance.html"><strong aria-hidden="true">1.14.</strong> Server performance (optimization)</a></li><li class="chapter-item expanded "><a href="../general/pregeneration.html"><strong aria-hidden="true">1.15.</strong> Pregeneration</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Administration</li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Server Administration</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../administration/server-resources.html"><strong aria-hidden="true">2.1.</strong> Server Resources</a></li><li class="chapter-item expanded "><a href="../administration/backups.html"><strong aria-hidden="true">2.2.</strong> Backups</a></li><li class="chapter-item expanded "><a href="../administration/databases.html"><strong aria-hidden="true">2.3.</strong> Databases</a></li><li class="chapter-item expanded "><a href="../administration/domains.html"><strong aria-hidden="true">2.4.</strong> Domain</a></li><li class="chapter-item expanded "><a href="../administration/host-types.html"><strong aria-hidden="true">2.5.</strong> Host Types</a></li><li class="chapter-item expanded "><a href="../administration/java.html"><strong aria-hidden="true">2.6.</strong> Java</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Plugins</li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Plugins</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plugins/basics.html"><strong aria-hidden="true">3.1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../plugins/useful.html"><strong aria-hidden="true">3.2.</strong> Useful/Frequently used features</a></li><li class="chapter-item expanded "><a href="../plugins/prefixes.html"><strong aria-hidden="true">3.3.</strong> Prefixes</a></li><li class="chapter-item expanded "><a href="../plugins/placeholders.html"><strong aria-hidden="true">3.4.</strong> Placeholders</a></li><li class="chapter-item expanded "><a href="../plugins/economy.html"><strong aria-hidden="true">3.5.</strong> Economy</a></li><li class="chapter-item expanded "><a href="../plugins/anticheat.html"><strong aria-hidden="true">3.6.</strong> AntiCheat</a></li><li class="chapter-item expanded "><a href="../plugins/cracked.html"><strong aria-hidden="true">3.7.</strong> Cracked Plugins</a></li><li class="chapter-item expanded "><a href="../plugins/list.html"><strong aria-hidden="true">3.8.</strong> Hiding Plugin List</a></li><li class="chapter-item expanded "><a href="../plugins/voting.html"><strong aria-hidden="true">3.9.</strong> Voting</a></li><li class="chapter-item expanded "><a href="../plugins/reload.html"><strong aria-hidden="true">3.10.</strong> Reload</a></li><li class="chapter-item expanded "><a href="../plugins/spigot-ids.html"><strong aria-hidden="true">3.11.</strong> Spigot IDs</a></li><li class="chapter-item expanded "><a href="../plugins/bstats.html"><strong aria-hidden="true">3.12.</strong> bStats</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.13.</strong> Specific plugins</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../plugins/specific/dynmap.html"><strong aria-hidden="true">3.13.1.</strong> Dynmap</a></li><li class="chapter-item "><a href="../plugins/specific/essentialsx.html"><strong aria-hidden="true">3.13.2.</strong> EssentialsX</a></li><li class="chapter-item "><a href="../plugins/specific/luckperms.html"><strong aria-hidden="true">3.13.3.</strong> LuckPerms</a></li><li class="chapter-item "><a href="../plugins/specific/multiverse-core.html"><strong aria-hidden="true">3.13.4.</strong> Multiverse-Core</a></li><li class="chapter-item "><a href="../plugins/specific/vault.html"><strong aria-hidden="true">3.13.5.</strong> Vault</a></li><li class="chapter-item "><a href="../plugins/specific/viaversion.html"><strong aria-hidden="true">3.13.6.</strong> ViaVersion</a></li><li class="chapter-item "><a href="../plugins/specific/worldedit.html"><strong aria-hidden="true">3.13.7.</strong> WorldEdit</a></li><li class="chapter-item "><a href="../plugins/specific/worldguard.html"><strong aria-hidden="true">3.13.8.</strong> WorldGuard</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Mods</li><li class="chapter-item expanded "><a href="../mods.html"><strong aria-hidden="true">4.</strong> Mods and modpack</a></li><li class="chapter-item expanded affix "><li class="part-title">Proxy</li><li class="chapter-item expanded "><a href="../proxy.html"><strong aria-hidden="true">5.</strong> Proxy</a></li><li class="chapter-item expanded affix "><li class="part-title">Troubleshooting</li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Troubleshooting</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../problem-solving/common-issues.html"><strong aria-hidden="true">6.1.</strong> Common issues and their solutions</a></li><li class="chapter-item expanded "><a href="../problem-solving/how-to-ask-for-help.html" class="active"><strong aria-hidden="true">6.2.</strong> How to ask for help</a></li><li class="chapter-item expanded "><a href="../problem-solving/how-to-deal-with-issues.html"><strong aria-hidden="true">6.3.</strong> How to solve problems</a></li><li class="chapter-item expanded "><a href="../problem-solving/java-basics.html"><strong aria-hidden="true">6.4.</strong> Java Basics</a></li><li class="chapter-item expanded "><a href="../problem-solving/logs.html"><strong aria-hidden="true">6.5.</strong> Logs</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Security</li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Server Security</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../security/security.html"><strong aria-hidden="true">7.1.</strong> Security</a></li><li class="chapter-item expanded "><a href="../security/malware.html"><strong aria-hidden="true">7.2.</strong> Malware</a></li><li class="chapter-item expanded "><a href="../security/offline-mode.html"><strong aria-hidden="true">7.3.</strong> Offline mode</a></li><li class="chapter-item expanded "><a href="../security/proxy.html"><strong aria-hidden="true">7.4.</strong> Proxy</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Vanilla features</li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Vanilla features</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vanilla/bans.html"><strong aria-hidden="true">8.1.</strong> Bans</a></li><li class="chapter-item expanded "><a href="../vanilla/command-blocks.html"><strong aria-hidden="true">8.2.</strong> Command blocks</a></li><li class="chapter-item expanded "><a href="../vanilla/datapacks.html"><strong aria-hidden="true">8.3.</strong> Datapacks</a></li><li class="chapter-item expanded "><a href="../vanilla/eula.html"><strong aria-hidden="true">8.4.</strong> EULA</a></li><li class="chapter-item expanded "><a href="../vanilla/game-rules.html"><strong aria-hidden="true">8.5.</strong> Game rules</a></li><li class="chapter-item expanded "><a href="../vanilla/motd.html"><strong aria-hidden="true">8.6.</strong> MOTD</a></li><li class="chapter-item expanded "><a href="../vanilla/op.html"><strong aria-hidden="true">8.7.</strong> OP</a></li><li class="chapter-item expanded "><a href="../vanilla/query.html"><strong aria-hidden="true">8.8.</strong> Query</a></li><li class="chapter-item expanded "><a href="../vanilla/rcon.html"><strong aria-hidden="true">8.9.</strong> RCON</a></li><li class="chapter-item expanded "><a href="../vanilla/resource-pack.html"><strong aria-hidden="true">8.10.</strong> Resourcepack</a></li><li class="chapter-item expanded "><a href="../vanilla/server-icon.html"><strong aria-hidden="true">8.11.</strong> Server Icon</a></li><li class="chapter-item expanded "><a href="../vanilla/server-properties.html"><strong aria-hidden="true">8.12.</strong> server.properties</a></li><li class="chapter-item expanded "><a href="../vanilla/whitelist.html"><strong aria-hidden="true">8.13.</strong> Whitelist</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basic principles</li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Basic Principles</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basic-principles/hosting-role.html"><strong aria-hidden="true">9.1.</strong> Hosting Role</a></li><li class="chapter-item expanded "><a href="../basic-principles/no-magic.html"><strong aria-hidden="true">9.2.</strong> No Magic</a></li><li class="chapter-item expanded "><a href="../basic-principles/plugins-vs-mods.html"><strong aria-hidden="true">9.3.</strong> Plugins vs Mods</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Other</li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Other</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../other/desktop.html"><strong aria-hidden="true">10.1.</strong> Basic Computer Skills</a></li><li class="chapter-item expanded "><a href="../other/url-download.html"><strong aria-hidden="true">10.2.</strong> Downlading File from URL</a></li><li class="chapter-item expanded "><a href="../other/panels.html"><strong aria-hidden="true">10.3.</strong> Administration Panels</a></li><li class="chapter-item expanded "><a href="../other/regex.html"><strong aria-hidden="true">10.4.</strong> Regex</a></li><li class="chapter-item expanded "><a href="../other/nbt.html"><strong aria-hidden="true">10.5.</strong> NBT</a></li><li class="chapter-item expanded "><a href="../other/external-tools.html"><strong aria-hidden="true">10.6.</strong> External Tools</a></li><li class="chapter-item expanded "><a href="../other/deving-tools.html"><strong aria-hidden="true">10.7.</strong> Developing modifications, external tools for the Minecraft server and the server itself</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../appendix.html"><strong aria-hidden="true">11.</strong> Appendix</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">caukub&#x27;s Minecraft Server Handbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="/appendix.html#translations" title="Translations" aria-label="Translations">
+                            <i id="translation" class="fa fa-language"></i>
+                        </a>
+                        <a href="https://github.com/caukub/mcgui-de" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <style>
+.mdbook-alerts {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-left: 0.25em solid var(--mdbook-alerts-color);
+}
+
+.mdbook-alerts > *:first-child {
+  margin-top: 0;
+}
+
+.mdbook-alerts > *:last-child {
+  margin-bottom: 0;
+}
+
+.mdbook-alerts-title {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  line-height: 1;
+  color: var(--mdbook-alerts-color);
+  text-transform: capitalize;
+}
+
+.mdbook-alerts-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.2em;
+  background-color: currentColor;
+  -webkit-mask: no-repeat center / 100%;
+  mask: no-repeat center / 100%;
+  -webkit-mask-image: var(--mdbook-alerts-icon);
+  mask-image: var(--mdbook-alerts-icon);
+}
+
+.mdbook-alerts-note {
+  --mdbook-alerts-color: rgb(9, 105, 218);
+  /* https://icon-sets.iconify.design/material-symbols/info-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 17q.425 0 .713-.288T13 16v-4q0-.425-.288-.712T12 11q-.425 0-.712.288T11 12v4q0 .425.288.713T12 17m0-8q.425 0 .713-.288T13 8q0-.425-.288-.712T12 7q-.425 0-.712.288T11 8q0 .425.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m0-8"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-tip {
+  --mdbook-alerts-color: rgb(26, 127, 55);
+  /* https://icon-sets.iconify.design/material-symbols/lightbulb-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 22q-.825 0-1.412-.587T10 20h4q0 .825-.587 1.413T12 22m-3-3q-.425 0-.712-.288T8 18q0-.425.288-.712T9 17h6q.425 0 .713.288T16 18q0 .425-.288.713T15 19zm-.75-3q-1.725-1.025-2.738-2.75T4.5 9.5q0-3.125 2.188-5.312T12 2q3.125 0 5.313 2.188T19.5 9.5q0 2.025-1.012 3.75T15.75 16zm.6-2h6.3q1.125-.8 1.738-1.975T17.5 9.5q0-2.3-1.6-3.9T12 4Q9.7 4 8.1 5.6T6.5 9.5q0 1.35.613 2.525T8.85 14M12 14"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-important {
+  --mdbook-alerts-color: rgb(130, 80, 223);
+  /* https://icon-sets.iconify.design/material-symbols/chat-info-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 7q.425 0 .713-.288T13 6q0-.425-.288-.712T12 5q-.425 0-.712.288T11 6q0 .425.288.713T12 7m0 8q.425 0 .713-.288T13 14v-4q0-.425-.288-.712T12 9q-.425 0-.712.288T11 10v4q0 .425.288.713T12 15m-6 3l-2.3 2.3q-.475.475-1.088.213T2 19.575V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18zm-.85-2H20V4H4v13.125zM4 16V4z"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-warning {
+  --mdbook-alerts-color: rgb(154, 103, 0);
+  /* https://icon-sets.iconify.design/material-symbols/warning-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M2.725 21q-.275 0-.5-.137t-.35-.363q-.125-.225-.137-.488t.137-.512l9.25-16q.15-.25.388-.375T12 3q.25 0 .488.125t.387.375l9.25 16q.15.25.138.513t-.138.487q-.125.225-.35.363t-.5.137zm1.725-2h15.1L12 6zM12 18q.425 0 .713-.288T13 17q0-.425-.288-.712T12 16q-.425 0-.712.288T11 17q0 .425.288.713T12 18m0-3q.425 0 .713-.288T13 14v-3q0-.425-.288-.712T12 10q-.425 0-.712.288T11 11v3q0 .425.288.713T12 15m0-2.5"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-caution {
+  --mdbook-alerts-color: rgb(207, 34, 46);
+  /* https://icon-sets.iconify.design/material-symbols/brightness-alert-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 17q.425 0 .713-.288T13 16q0-.425-.288-.712T12 15q-.425 0-.712.288T11 16q0 .425.288.713T12 17m0-4q.425 0 .713-.288T13 12V8q0-.425-.288-.712T12 7q-.425 0-.712.288T11 8v4q0 .425.288.713T12 13m-3.35 7H6q-.825 0-1.412-.587T4 18v-2.65L2.075 13.4q-.275-.3-.425-.662T1.5 12q0-.375.15-.737t.425-.663L4 8.65V6q0-.825.588-1.412T6 4h2.65l1.95-1.925q.3-.275.663-.425T12 1.5q.375 0 .738.15t.662.425L15.35 4H18q.825 0 1.413.588T20 6v2.65l1.925 1.95q.275.3.425.663t.15.737q0 .375-.15.738t-.425.662L20 15.35V18q0 .825-.587 1.413T18 20h-2.65l-1.95 1.925q-.3.275-.662.425T12 22.5q-.375 0-.737-.15t-.663-.425zm.85-2l2.5 2.5l2.5-2.5H18v-3.5l2.5-2.5L18 9.5V6h-3.5L12 3.5L9.5 6H6v3.5L3.5 12L6 14.5V18zm2.5-6"%2F%3E%3C%2Fsvg%3E');
+}
+
+</style>
+<h1 id="how-to-get-help"><a class="header" href="#how-to-get-help">How to ask for help</a></h1>
+<p>In case you have a problem with a server or plugin (or mod), always describe your problem directly, specifically, in as much detail as possible, <strong>always</strong> <a href="logs.html#how-to-share-log">attach the server log</a> and as much relevant information as possible (for example, if a player can’t connect, a message telling the player what it says when they try to connect. If you have trouble with certain plugin setting, include the plugin configuration file(s) and so on).</p>
+<p>If the server crashes and crash log is created, send that as well. Crash logs are located in the <code>/crash-reports/</code> folder. Send the crash log together with the regular log, do not send the crash log alone, always send normal log too!</p>
+<p>A message like <em>“my server is down “</em> or <em>“my plugin is down “</em> is <em>completely insufficient</em> by itself.</p>
+<p>Describe your problem in as much detail as possible, provide as much information as possible, what you have already tried, what tutorials you have used, etc.</p>
+<p>Always include log and configuration files relevant to the problem, i.e. don’t send a log that is two days old when you are dealing with a problem that is happening now. Usually you want to send the latest log, this is in <code>/logs/latest.log</code> on the standard platforms and Velocity, and in <code>proxy.log.0</code> on BungeeCord.</p>
+<p>In case the problem still persists after somebody tries to help you, or you encounter a new problem, again send the (new) log or configuration files and provide as much information related to the problem as possible. The cause of the problem may be different, or you may not have followed the instructions correctly, and without a new log or configuration files it is impossible to tell. Therefore, if the problem persists after somebody’s advice, writing <em>“don’t work”</em> is <strong>completely insufficient</strong>.</p>
+<p>If the server doesn’t even try to enable (start), thus no log is generated, send the output from the console (terminal). If the console closes immediately, thus you have no time to copy the output, add <code>pause</code> to the new last line of the startup script (<code>something.bat</code>) on Windows, or <code>read -p "Press any key to exit"</code> on Linux/macOS.</p>
+<h2 id="dont-asking-for-help"><a class="header" href="#dont-asking-for-help">What to not do when asking for help</a></h2>
+<ul>
+<li>do not remove “irrelevant information” from the log</li>
+<li>do not send snippets of log/configuration files</li>
+</ul>
+<p>Whether it’s logs, bugs, or config files, always share it in its entirety (except for sensitive informationlike tokens/passwords in config files). Do not remove “irrelevant information”.</p>
+<p>An experienced person can find out much more from a log than you might think, so removing some information can make finding the cause of the problem very difficult or impossible. If you want to remove “sensitive” information, such as IP addresses, you can use <a href="https://mclo.gs">https://mclo.gs</a> which will automatically hide it.</p>
+<ul>
+<li>do not send raw text/files/screenshots</li>
+</ul>
+<p>When you want to share some text (e.g. a configuration file or log), never send it as raw text, a file, or a screenshot. Instead, use the pastebin service - see <a href="#pastebin">here</a>.</p>
+<ul>
+<li>do not send console output</li>
+</ul>
+<p>Always share the log instead of the console output. The console output may not contain all the information and depending on the hosting it may be truncated. At the same time, people asking for help often don’t copy all the relevant output, or they also copy the output from a previous server launch, which may have outdated information, so it makes it less readable and clear.</p>
+<ul>
+<li>do not seek for help retrospectively</li>
+</ul>
+<p>Don’t solve the problem retrospectively. Depending on the specific problem and the remaining information (e.g. from logs), finding out the cause may be quite difficult, if at all. If you don’t ask for help when you have the problem, don’t expect anyone to help you.</p>
+<p>For example, in the following example, the cause of the problem cannot be find out, since there is no longer any information from which the cause can be deduced: “I need help with a modded server. I have built a modpack and uploaded it to a folder. The server started up, but after a while of someone playing, it disconnects them and they can’t connect anymore. I can’t send the log anymore because I reinstalled the server on Vanilla so we can play at least something.”</p>
+<h3 id="inappropriate-behavior"><a class="header" href="#inappropriate-behavior">Inappropriate questions and behavior when seeking for help</a></h3>
+<p>Below you can see the most common examples of inappropriate questions and behaviors, with an explanation of why, and how a question might look “right”.</p>
+<ul>
+<li>“how does &lt;plugin&gt; work?”</li>
+<li>“how to set up &lt;plugin&gt;?”</li>
+</ul>
+<p>A question like “How to set up/how does &lt;plugin&gt; work” is bad because it is too general. The plugin has a number of features and settings, which you can read more about in the <a href="../general/docs.html">documentation</a> of the plugin or in the configuration files. If the documentation isn’t enough to explain, you should always specify what <strong>specifically</strong> you want to set up in the plugin, or describe what <strong>specific</strong> aspect of the plugin you need to explain. No one is willing to explain every aspect of the plugin and configuration (i.e. rewrite the plugin documentation).</p>
+<p>For example, a correctly asked question might be, “How do I change the maximum size of the player residence in the Residence plugin?”</p>
+<ul>
+<li>“Hi, is anyone here?”</li>
+<li>“can I ask you a question?”</li>
+<li>“I need help with XY”</li>
+<li>“does anyone have experience with the XY plugin?”</li>
+<li>“Anyone got time? I have a small question (about &lt;xy&gt;)”</li>
+</ul>
+<p>Always describe your problem specifically and provide as much information as possible. By asking questions like the ones above, you’re only reducing the chances that someone will help you.</p>
+<p>Most people will take a question like “I have a problem with &lt;xy&gt;” as: I have a problem with &lt;xy&gt;, but I’m not even willing to describe it and provide more information, so I’m looking for a specific person who has enough confidence that will be able to help me, and is willing to spend the time to find out the cause of the problem, even though I don’t even have the willingness to solve the problem enough to describe it, let alone provide the basic information needed to find out the cause/solution (<a href="https://dontasktoask.com">https://dontasktoask.com</a>).</p>
+<p>For example, a proper query might be “Hello, I have a problem with &lt;x&gt;. When I do &lt;y&gt;, it becomes &lt;z&gt;, even though I have &lt;something&gt; set in the plugin configuration. &lt;link to plugin configuration&gt;. Why’s that?”</p>
+<ul>
+<li>“my plugin is not working”</li>
+<li>“my server is down”</li>
+</ul>
+<p>A message like “my server is down”, “my plugin is down”, etc. is completely insufficient. You always need to describe what specifically is not working and how. What exactly does it mean that the server is “not working”? Does it automatically shut down? Or does it not shut down, but you cannot connect? And what does it mean that the plugin “doesn’t work”? It doesn’t start (shut down immediately)? Or does it enable but you can’t perform certain actions? Or the command returns an error? <strong>Be specific</strong>.</p>
+<p>So it’s important to always describe the problem in as much detail as possible, i.e. what specific plugin you have what specific problem with (generally it’s good to state what make you think that it “doesn’t work”) and include as much information as possible, i.e. at least the server log, possibly configuration files, and in the case where the player can’t connect, a message about what it says to the player when they try to connect.</p>
+<ul>
+<li>“do you know why is this happening? &lt;screenshot&gt;” with no further information</li>
+<li>“do you know what to do? &lt;screenshot&gt;” with no further information</li>
+</ul>
+<p>A screenshot can certainly help, but often the screenshot itself may not even tell other people what problem you have. Therefore, it is important not only to send a screenshot, but also to describe the problem and provide as much additional information as possible, including a detailed description of the problem, including when in which situation the problem occurs.</p>
+<ul>
+<li>“why can’t I set up/configure &lt;plugin&gt;”</li>
+</ul>
+<p>We don’t know. What exactly does “set &lt;plugin&gt;” mean? And what exactly does “can’t be set” mean? What makes you think the plugin can’t be set? How specifically did you set up the plugin? You need to be specific and provide as much information as possible.</p>
+<p>“Hello, I can’t set &lt;plugin&gt; in &lt;x&gt; plugin. I have set &lt;y&gt; to <code>true</code> in the configuration file, but even after loading the changes using &lt;command&gt;, when I click on it, it says &lt;z&gt; - &lt;link to configuration file&gt;”</p>
+<ul>
+<li>“I need help with XY, DM me”</li>
+<li>don’t add anyone as a friend or send them DMs</li>
+</ul>
+<p>Unless the person told you, don’t ping them, and always communicate in the channel intended for solving your problem. This means you should not send friend request to person or send them private message without their permission. This is inconsiderate not only to the person you are asking for help from, but also to other users who may later search for your problem using search feature. In addition, you are hurting yourself as you are reducing your chances of getting the ideal help, because “two (or more) heads are better than one”.</p>
+<ul>
+<li>follow basic internet etiquette</li>
+</ul>
+<p>This means not spamming, not @pinging a user without prior conversation (unless they gave you permission), or not contacting anyone directly (in general community support) without prior conversation. If you want to report a bug to the plugin author, that’s fine of course).</p>
+<p>In the end, you will only harm yourself by such behaviour, spamming and the like won’t help you, asking for help in the right way will.</p>
+<h2 id="where-get-help"><a class="header" href="#where-get-help">Where to ask for help</a></h2>
+<p>If you’re dealing with a general Minecraft server issue and need help, there are many communities that will help you. Some of these places include:</p>
+<ul>
+<li>Discord server/forums on the platform itself (e.g. PaperMC/PurpurMC/Fabric Discord)</li>
+<li>Admincraft Discord/Reddit (<em>r/admincraft</em>)</li>
+<li>HelpChat Discord (<a href="https://helpch.at/">https://helpch.at/</a>)</li>
+<li>Discord server of your host (if you use a managed host that has such Discord server)</li>
+</ul>
+<p>If you are dealing with plugin (or mod) specific problem, you will often find an invitation to the Discord server on the plugin page.</p>
+<p>The most convenient place to ask for help is usually Discord.</p>
+<h2 id="pastebin"><a class="header" href="#pastebin">Pastebin</a></h2>
+<p>Never send logs and configuration files as a raw text, files, or a screenshot. Always use pastebin service, where you embed the contents of the file and share a generated link that other users can use to easily view the embedded file. Examples of such services include <a href="https://mclo.gs">https://mclo.gs</a> and <a href="https://pastebin.com">https://pastebin.com</a>.</p>
+<p>Posting images is inappropriate as you cannot search for text in them and depending on the size and resolution of the monitor, some users may not see the text correctly or may not read it at all. In addition, the text in the image may not be readable by users with visual impairments, and the file may contain whitespaces that cannot be seen at a glance. At the same time, text from a screenshot of someone else’s monitor is harder to read for everyone.</p>
+<p>Sending files is inappropriate as the user has to download the shared file to their own computer (which some fear for security reasons), and also in the case of some file extensions, the content of the file cannot be easily viewed (especially on mobile devices).</p>
+<p>Sending plain text (to Discord) is inappropriate as it is not possible to search in it easily.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../problem-solving/common-issues.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../problem-solving/how-to-deal-with-issues.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../problem-solving/common-issues.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../problem-solving/how-to-deal-with-issues.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../theme/ko-fi.js"></script>
+        <script src="../theme/hints.js"></script>
+
+
+    </div>
+    </body>
+</html>

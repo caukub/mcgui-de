@@ -1,0 +1,479 @@
+<!DOCTYPE HTML>
+<html lang="en" class="mocha" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Server Resources - caukub&#x27;s Minecraft Server Handbook</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/ko-fi.css">
+        <link rel="stylesheet" href="../theme/hints.css">
+        <link rel="stylesheet" href=".././theme/catppuccin.css">
+        <link rel="stylesheet" href=".././theme/catppuccin-admonish.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "mocha";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('mocha')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../introduction.html">caukub's Minecraft Server Handbook</a></li><li class="chapter-item expanded affix "><a href="../quickstart.html">Getting Started</a></li><li class="chapter-item expanded affix "><li class="part-title">General</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> General</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../general/permissions.html"><strong aria-hidden="true">1.1.</strong> Permissions</a></li><li class="chapter-item expanded "><a href="../general/commands.html"><strong aria-hidden="true">1.2.</strong> Commands</a></li><li class="chapter-item expanded "><a href="../general/platforms.html"><strong aria-hidden="true">1.3.</strong> Platforms</a></li><li class="chapter-item expanded "><a href="../general/world.html"><strong aria-hidden="true">1.4.</strong> Worlds</a></li><li class="chapter-item expanded "><a href="../general/versions.html"><strong aria-hidden="true">1.5.</strong> Versions</a></li><li class="chapter-item expanded "><a href="../general/address-ports.html"><strong aria-hidden="true">1.6.</strong> Address and ports</a></li><li class="chapter-item expanded "><a href="../general/configs.html"><strong aria-hidden="true">1.7.</strong> Configuration files</a></li><li class="chapter-item expanded "><a href="../general/console.html"><strong aria-hidden="true">1.8.</strong> Console</a></li><li class="chapter-item expanded "><a href="../general/server-jar.html"><strong aria-hidden="true">1.9.</strong> Server JAR</a></li><li class="chapter-item expanded "><a href="../general/docs.html"><strong aria-hidden="true">1.10.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="../general/downgrade.html"><strong aria-hidden="true">1.11.</strong> Downgrade</a></li><li class="chapter-item expanded "><a href="../general/ftp.html"><strong aria-hidden="true">1.12.</strong> (S)FTP</a></li><li class="chapter-item expanded "><a href="../general/online-mode.html"><strong aria-hidden="true">1.13.</strong> Online mode</a></li><li class="chapter-item expanded "><a href="../general/performance.html"><strong aria-hidden="true">1.14.</strong> Server performance (optimization)</a></li><li class="chapter-item expanded "><a href="../general/pregeneration.html"><strong aria-hidden="true">1.15.</strong> Pregeneration</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Administration</li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Server Administration</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../administration/server-resources.html" class="active"><strong aria-hidden="true">2.1.</strong> Server Resources</a></li><li class="chapter-item expanded "><a href="../administration/backups.html"><strong aria-hidden="true">2.2.</strong> Backups</a></li><li class="chapter-item expanded "><a href="../administration/databases.html"><strong aria-hidden="true">2.3.</strong> Databases</a></li><li class="chapter-item expanded "><a href="../administration/domains.html"><strong aria-hidden="true">2.4.</strong> Domain</a></li><li class="chapter-item expanded "><a href="../administration/host-types.html"><strong aria-hidden="true">2.5.</strong> Host Types</a></li><li class="chapter-item expanded "><a href="../administration/java.html"><strong aria-hidden="true">2.6.</strong> Java</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Plugins</li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Plugins</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../plugins/basics.html"><strong aria-hidden="true">3.1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="../plugins/useful.html"><strong aria-hidden="true">3.2.</strong> Useful/Frequently used features</a></li><li class="chapter-item expanded "><a href="../plugins/prefixes.html"><strong aria-hidden="true">3.3.</strong> Prefixes</a></li><li class="chapter-item expanded "><a href="../plugins/placeholders.html"><strong aria-hidden="true">3.4.</strong> Placeholders</a></li><li class="chapter-item expanded "><a href="../plugins/economy.html"><strong aria-hidden="true">3.5.</strong> Economy</a></li><li class="chapter-item expanded "><a href="../plugins/anticheat.html"><strong aria-hidden="true">3.6.</strong> AntiCheat</a></li><li class="chapter-item expanded "><a href="../plugins/cracked.html"><strong aria-hidden="true">3.7.</strong> Cracked Plugins</a></li><li class="chapter-item expanded "><a href="../plugins/list.html"><strong aria-hidden="true">3.8.</strong> Hiding Plugin List</a></li><li class="chapter-item expanded "><a href="../plugins/voting.html"><strong aria-hidden="true">3.9.</strong> Voting</a></li><li class="chapter-item expanded "><a href="../plugins/reload.html"><strong aria-hidden="true">3.10.</strong> Reload</a></li><li class="chapter-item expanded "><a href="../plugins/spigot-ids.html"><strong aria-hidden="true">3.11.</strong> Spigot IDs</a></li><li class="chapter-item expanded "><a href="../plugins/bstats.html"><strong aria-hidden="true">3.12.</strong> bStats</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.13.</strong> Specific plugins</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../plugins/specific/dynmap.html"><strong aria-hidden="true">3.13.1.</strong> Dynmap</a></li><li class="chapter-item "><a href="../plugins/specific/essentialsx.html"><strong aria-hidden="true">3.13.2.</strong> EssentialsX</a></li><li class="chapter-item "><a href="../plugins/specific/luckperms.html"><strong aria-hidden="true">3.13.3.</strong> LuckPerms</a></li><li class="chapter-item "><a href="../plugins/specific/multiverse-core.html"><strong aria-hidden="true">3.13.4.</strong> Multiverse-Core</a></li><li class="chapter-item "><a href="../plugins/specific/vault.html"><strong aria-hidden="true">3.13.5.</strong> Vault</a></li><li class="chapter-item "><a href="../plugins/specific/viaversion.html"><strong aria-hidden="true">3.13.6.</strong> ViaVersion</a></li><li class="chapter-item "><a href="../plugins/specific/worldedit.html"><strong aria-hidden="true">3.13.7.</strong> WorldEdit</a></li><li class="chapter-item "><a href="../plugins/specific/worldguard.html"><strong aria-hidden="true">3.13.8.</strong> WorldGuard</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Mods</li><li class="chapter-item expanded "><a href="../mods.html"><strong aria-hidden="true">4.</strong> Mods and modpack</a></li><li class="chapter-item expanded affix "><li class="part-title">Proxy</li><li class="chapter-item expanded "><a href="../proxy.html"><strong aria-hidden="true">5.</strong> Proxy</a></li><li class="chapter-item expanded affix "><li class="part-title">Troubleshooting</li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Troubleshooting</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../problem-solving/common-issues.html"><strong aria-hidden="true">6.1.</strong> Common issues and their solutions</a></li><li class="chapter-item expanded "><a href="../problem-solving/how-to-ask-for-help.html"><strong aria-hidden="true">6.2.</strong> How to ask for help</a></li><li class="chapter-item expanded "><a href="../problem-solving/how-to-deal-with-issues.html"><strong aria-hidden="true">6.3.</strong> How to solve problems</a></li><li class="chapter-item expanded "><a href="../problem-solving/java-basics.html"><strong aria-hidden="true">6.4.</strong> Java Basics</a></li><li class="chapter-item expanded "><a href="../problem-solving/logs.html"><strong aria-hidden="true">6.5.</strong> Logs</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Security</li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Server Security</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../security/security.html"><strong aria-hidden="true">7.1.</strong> Security</a></li><li class="chapter-item expanded "><a href="../security/malware.html"><strong aria-hidden="true">7.2.</strong> Malware</a></li><li class="chapter-item expanded "><a href="../security/offline-mode.html"><strong aria-hidden="true">7.3.</strong> Offline mode</a></li><li class="chapter-item expanded "><a href="../security/proxy.html"><strong aria-hidden="true">7.4.</strong> Proxy</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Vanilla features</li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Vanilla features</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vanilla/bans.html"><strong aria-hidden="true">8.1.</strong> Bans</a></li><li class="chapter-item expanded "><a href="../vanilla/command-blocks.html"><strong aria-hidden="true">8.2.</strong> Command blocks</a></li><li class="chapter-item expanded "><a href="../vanilla/datapacks.html"><strong aria-hidden="true">8.3.</strong> Datapacks</a></li><li class="chapter-item expanded "><a href="../vanilla/eula.html"><strong aria-hidden="true">8.4.</strong> EULA</a></li><li class="chapter-item expanded "><a href="../vanilla/game-rules.html"><strong aria-hidden="true">8.5.</strong> Game rules</a></li><li class="chapter-item expanded "><a href="../vanilla/motd.html"><strong aria-hidden="true">8.6.</strong> MOTD</a></li><li class="chapter-item expanded "><a href="../vanilla/op.html"><strong aria-hidden="true">8.7.</strong> OP</a></li><li class="chapter-item expanded "><a href="../vanilla/query.html"><strong aria-hidden="true">8.8.</strong> Query</a></li><li class="chapter-item expanded "><a href="../vanilla/rcon.html"><strong aria-hidden="true">8.9.</strong> RCON</a></li><li class="chapter-item expanded "><a href="../vanilla/resource-pack.html"><strong aria-hidden="true">8.10.</strong> Resourcepack</a></li><li class="chapter-item expanded "><a href="../vanilla/server-icon.html"><strong aria-hidden="true">8.11.</strong> Server Icon</a></li><li class="chapter-item expanded "><a href="../vanilla/server-properties.html"><strong aria-hidden="true">8.12.</strong> server.properties</a></li><li class="chapter-item expanded "><a href="../vanilla/whitelist.html"><strong aria-hidden="true">8.13.</strong> Whitelist</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Basic principles</li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Basic Principles</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../basic-principles/hosting-role.html"><strong aria-hidden="true">9.1.</strong> Hosting Role</a></li><li class="chapter-item expanded "><a href="../basic-principles/no-magic.html"><strong aria-hidden="true">9.2.</strong> No Magic</a></li><li class="chapter-item expanded "><a href="../basic-principles/plugins-vs-mods.html"><strong aria-hidden="true">9.3.</strong> Plugins vs Mods</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Other</li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Other</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../other/desktop.html"><strong aria-hidden="true">10.1.</strong> Basic Computer Skills</a></li><li class="chapter-item expanded "><a href="../other/url-download.html"><strong aria-hidden="true">10.2.</strong> Downlading File from URL</a></li><li class="chapter-item expanded "><a href="../other/panels.html"><strong aria-hidden="true">10.3.</strong> Administration Panels</a></li><li class="chapter-item expanded "><a href="../other/regex.html"><strong aria-hidden="true">10.4.</strong> Regex</a></li><li class="chapter-item expanded "><a href="../other/nbt.html"><strong aria-hidden="true">10.5.</strong> NBT</a></li><li class="chapter-item expanded "><a href="../other/external-tools.html"><strong aria-hidden="true">10.6.</strong> External Tools</a></li><li class="chapter-item expanded "><a href="../other/deving-tools.html"><strong aria-hidden="true">10.7.</strong> Developing modifications, external tools for the Minecraft server and the server itself</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Appendix</li><li class="chapter-item expanded "><a href="../appendix.html"><strong aria-hidden="true">11.</strong> Appendix</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">caukub&#x27;s Minecraft Server Handbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="/appendix.html#translations" title="Translations" aria-label="Translations">
+                            <i id="translation" class="fa fa-language"></i>
+                        </a>
+                        <a href="https://github.com/caukub/mcgui-de" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <style>
+.mdbook-alerts {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border-left: 0.25em solid var(--mdbook-alerts-color);
+}
+
+.mdbook-alerts > *:first-child {
+  margin-top: 0;
+}
+
+.mdbook-alerts > *:last-child {
+  margin-bottom: 0;
+}
+
+.mdbook-alerts-title {
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  line-height: 1;
+  color: var(--mdbook-alerts-color);
+  text-transform: capitalize;
+}
+
+.mdbook-alerts-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.2em;
+  background-color: currentColor;
+  -webkit-mask: no-repeat center / 100%;
+  mask: no-repeat center / 100%;
+  -webkit-mask-image: var(--mdbook-alerts-icon);
+  mask-image: var(--mdbook-alerts-icon);
+}
+
+.mdbook-alerts-note {
+  --mdbook-alerts-color: rgb(9, 105, 218);
+  /* https://icon-sets.iconify.design/material-symbols/info-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 17q.425 0 .713-.288T13 16v-4q0-.425-.288-.712T12 11q-.425 0-.712.288T11 12v4q0 .425.288.713T12 17m0-8q.425 0 .713-.288T13 8q0-.425-.288-.712T12 7q-.425 0-.712.288T11 8q0 .425.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m0-8"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-tip {
+  --mdbook-alerts-color: rgb(26, 127, 55);
+  /* https://icon-sets.iconify.design/material-symbols/lightbulb-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 22q-.825 0-1.412-.587T10 20h4q0 .825-.587 1.413T12 22m-3-3q-.425 0-.712-.288T8 18q0-.425.288-.712T9 17h6q.425 0 .713.288T16 18q0 .425-.288.713T15 19zm-.75-3q-1.725-1.025-2.738-2.75T4.5 9.5q0-3.125 2.188-5.312T12 2q3.125 0 5.313 2.188T19.5 9.5q0 2.025-1.012 3.75T15.75 16zm.6-2h6.3q1.125-.8 1.738-1.975T17.5 9.5q0-2.3-1.6-3.9T12 4Q9.7 4 8.1 5.6T6.5 9.5q0 1.35.613 2.525T8.85 14M12 14"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-important {
+  --mdbook-alerts-color: rgb(130, 80, 223);
+  /* https://icon-sets.iconify.design/material-symbols/chat-info-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 7q.425 0 .713-.288T13 6q0-.425-.288-.712T12 5q-.425 0-.712.288T11 6q0 .425.288.713T12 7m0 8q.425 0 .713-.288T13 14v-4q0-.425-.288-.712T12 9q-.425 0-.712.288T11 10v4q0 .425.288.713T12 15m-6 3l-2.3 2.3q-.475.475-1.088.213T2 19.575V4q0-.825.588-1.412T4 2h16q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18zm-.85-2H20V4H4v13.125zM4 16V4z"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-warning {
+  --mdbook-alerts-color: rgb(154, 103, 0);
+  /* https://icon-sets.iconify.design/material-symbols/warning-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M2.725 21q-.275 0-.5-.137t-.35-.363q-.125-.225-.137-.488t.137-.512l9.25-16q.15-.25.388-.375T12 3q.25 0 .488.125t.387.375l9.25 16q.15.25.138.513t-.138.487q-.125.225-.35.363t-.5.137zm1.725-2h15.1L12 6zM12 18q.425 0 .713-.288T13 17q0-.425-.288-.712T12 16q-.425 0-.712.288T11 17q0 .425.288.713T12 18m0-3q.425 0 .713-.288T13 14v-3q0-.425-.288-.712T12 10q-.425 0-.712.288T11 11v3q0 .425.288.713T12 15m0-2.5"%2F%3E%3C%2Fsvg%3E');
+}
+
+.mdbook-alerts-caution {
+  --mdbook-alerts-color: rgb(207, 34, 46);
+  /* https://icon-sets.iconify.design/material-symbols/brightness-alert-outline-rounded/ */
+  --mdbook-alerts-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M12 17q.425 0 .713-.288T13 16q0-.425-.288-.712T12 15q-.425 0-.712.288T11 16q0 .425.288.713T12 17m0-4q.425 0 .713-.288T13 12V8q0-.425-.288-.712T12 7q-.425 0-.712.288T11 8v4q0 .425.288.713T12 13m-3.35 7H6q-.825 0-1.412-.587T4 18v-2.65L2.075 13.4q-.275-.3-.425-.662T1.5 12q0-.375.15-.737t.425-.663L4 8.65V6q0-.825.588-1.412T6 4h2.65l1.95-1.925q.3-.275.663-.425T12 1.5q.375 0 .738.15t.662.425L15.35 4H18q.825 0 1.413.588T20 6v2.65l1.925 1.95q.275.3.425.663t.15.737q0 .375-.15.738t-.425.662L20 15.35V18q0 .825-.587 1.413T18 20h-2.65l-1.95 1.925q-.3.275-.662.425T12 22.5q-.375 0-.737-.15t-.663-.425zm.85-2l2.5 2.5l2.5-2.5H18v-3.5l2.5-2.5L18 9.5V6h-3.5L12 3.5L9.5 6H6v3.5L3.5 12L6 14.5V18zm2.5-6"%2F%3E%3C%2Fsvg%3E');
+}
+
+</style>
+<h1 id="resources"><a class="header" href="#resources">Server resources/resources</a></h1>
+<h2 id="disk"><a class="header" href="#disk">Hard disk</a></h2>
+<p>A hard disk is a place where persistent data is stored. These data is stored in files. Examples of such data might be world data (which is in the <code>/world/</code> directory by default), player data, or plugin data.</p>
+<h3 id="disk-data-manipulation"><a class="header" href="#disk-data-manipulation">Disk data manipulation</a></h3>
+<p>When editing or deleting files that are not configuration files (e.g. world files), it is important to do the editing <strong>always</strong> with the server turned off. Otherwise, changes may not be saved (in the case where data is later saved from RAM), or other problems may occur, such as corruption of the data being edited.</p>
+<h3 id="disk-types"><a class="header" href="#disk-types">Disk types</a></h3>
+<p>A disk is essentially divided into two types - SSD and HDD. In simple terms, an SSD is suitable for a server and an HDD is suitable for backups.</p>
+<p>HDD is better than SSD in terms of storage capacity and price, but it has a higher error rate and is slower compared to SSD. This difference is not negligible. The speed can have a significant negative impact on server performance and therefore SSD should be used as server storage.</p>
+<p>On the other hand, HDD is ideal for storing backups.</p>
+<h3 id="disk-speed"><a class="header" href="#disk-speed">Disk speed</a></h3>
+<p>Disk speed is an important feature up to a certain point. In particular, some standard VPS hosts tend to have very tight disk speeds. Therefore, even if the disk model is NVMe, it does not automatically mean that the disk is actually fast. Read more <a href="host-types.html#vps">here</a>.</p>
+<h3 id="disk-usage"><a class="header" href="#disk-usage">Disk space usage</a></h3>
+<p>Unless the free disk space (not just the capacity available to you but whole disk) is critically low, disk space usage has no impact on server performance.</p>
+<p>Normally, the world is the biggest consumer of disk space. For this reason, it’s a good idea to set a border (read more <a href="../general/pregeneration.html#pregeneration">here</a>). You can find out how much space a fully generated world with certains radius takes up by using <a href="https://onlinemo.de/world">this tool</a>.</p>
+<p>Then there are plugins that also take up a large amount of space. These include map webview plugins (Dynmap), or CoreProtect.</p>
+<p>The size of the server data itself and the plugins is absolutely negligible compared to the data size of the world and plugins like Dynmap and CoreProtect. Therefore, the minimum disk space size should be based on the size of the world (and possibly plugins that take up a lot of space, if any is installed on the server), with some margin of course.</p>
+<h4 id="how-to-get-disk-usage"><a class="header" href="#how-to-get-disk-usage">How to find out what takes up most space</a></h4>
+<p>If you have access to the server the Minecraft server is running on, there are many tools depending on the operating system you use to find out what is taking up the most disk space. For example, for Linux there is the <a href="https://en.wikipedia.org/wiki/Ncdu">ncdu</a> tool (without GUI) or <a href="https://github.com/shundhammer/qdirstat">qdirstat</a> (with GUI).</p>
+<p>If you do not have access to the server, the admin (web)panels often provide a feature to view disk space usage/calculate folder sizes.</p>
+<p>If you do not have access to the server and the admin panel does not allow provide feature to calculate folder sizes, the WinSCP FTP client (Windows only) allows you to calculate folder sizes.</p>
+<h3 id="disk-free-space"><a class="header" href="#disk-free-space">Reduce disk space usage</a></h3>
+<h4 id="dynmap-disk-usage"><a class="header" href="#dynmap-disk-usage">Dynmap and similar plugins</a></h4>
+<p>Dynmap disk usage is affected by number of rendered worlds, its size, and map resolution. By deleting maps for unnecessary worlds and lowering the resolution, you can greatly reduce the disk usage of Dynmap.</p>
+<p>The resolution can be set <a href="https://github.com/webbukkit/dynmap/wiki/Configuration.txt#deftemplatesuffix">in the configuration</a></p>
+<p>It is important to note that changing the resolution does not make the existing rendered data disappear, so changing the resolution itself does not free up space. Existing plugin data needs to be deleted. Only then will the disk space be freed.</p>
+<h4 id="coreprotect-disk-usage"><a class="header" href="#coreprotect-disk-usage">CoreProtect</a></h4>
+<p>The size of the CoreProtect database depends mainly on the number of players and the configuration of what all CoreProtect logs.</p>
+<p>The <code>purge</code> command allows you to delete old data, which frees up the disk space. For example, the <code>co purge t:30d</code> command will delete all data older than one month, see <a href="https://docs.coreprotect.net/commands/#co-purge">https://docs.coreprotect.net/commands/#co-purge</a>.</p>
+<h4 id="inactive-chunks-disk-usage"><a class="header" href="#inactive-chunks-disk-usage">Deleting inactive chunks</a></h4>
+<p>In particular, if you don’t have a world border set (and thus the world size is unlimited), the <a href="../other/external-tools.html#mcaselector">MCASelector</a> utility can be useful to delete “inactive” chunks, meaning chunks that are generated (i.e. taking up disk space), but the player has only been in them for very small amount of time (e.g. flew through them with elytra). This can free up quite a lot of space, especially on servers that have been around for a long time. This tool is written in <a href="../administration/java.html#java">Java</a> and has a CLI version, so if you have the ability to edit the startup command, the tool can be used directly on the server where the world is located. If you don’t have that option (to change startup command), you can try asking support if they couldn’t run it. When the answer is no, you need to download the world, install the tool, use it, delete original world, and upload the modified world back to the server.</p>
+<h4 id="standalone-database-disk-usage"><a class="header" href="#standalone-database-disk-usage">Standalone database</a></h4>
+<p>In the case where you have a standalone database, and a plugin that takes up too much disk space has that option, you can use a database as a storage, which frees up disk space (after deleting the data on the disk). This is of course not the case if the disk space used by the server also belongs to the database itself, e.g. if you have a VPS server where you host both the server and the database.</p>
+<p>If the database is provided as an additional service, the database often has a smaller maximum size per database (typically 1 GB). In this case, the database is not suitable for plugins that use a lot of space, as such plugins takes up a lot more space. Connecting plugins like LuckPerms to standalone database is useless in terms of saving disk space, as such plugins take up almost no space.</p>
+<h3 id="disk-full"><a class="header" href="#disk-full">Disk space is full</a></h3>
+<p>When SSD space fills up very quickly for no apparent reason, the cause is most often a spammed log. Therefore, in this case you should first look in the <code>/logs/</code> folder for the size of the log files. If their size is in the hundreds of megabytes, or even gigabytes, this is a problem that needs to be resolved. Logs should be in units of MB, at most a dozen (but even that is a lot, and the log is spammed with errors you should fix).</p>
+<p>The most common cause of an extremely spammed log is <a href="../administration/java.html#new-java-old-version">using a new version of Java for old Minecraft versions</a>, but the cause of a spammed log can be a plugin or a mod too.</p>
+<h2 id="memory"><a class="header" href="#memory">Memory (RAM)</a></h2>
+<p>RAM is the memory that temporarily stores the data the server works with. Persistent data is later saved to <a href="#disk">disk</a>. The moment the server needs to work with them, they are loaded into memory.</p>
+<h3 id="memory-behavior"><a class="header" href="#memory-behavior">RAM usage/keeping RAM (GC)</a></h3>
+<p>The pattern of heap memory usage behavior is that it fills up, and after some time it frees up (see the figure below). The fact that memory is filling up and freeing up does not indicate anything wrong. This is standard behavior in garbage collected languages.</p>
+<p><img src="/assets/images/resources/sawtooth-pattern.png" alt="Java Memory (Sawtooth) Pattern" /></p>
+<p>Also, the fact that most of memory is used doesn’t mean anything bad either. In short - Java will use what it can. This is even more noticeable when using (optimized) <a href="#java-flags">Aikar flags</a>. Because up to a certain point, unused memory is “wasted” memory, and perhaps you want to use what you pay for.</p>
+<p>See <a href="#memory-performance">this section</a> for how to tell if you have enough memory.</p>
+<h3 id="heap"><a class="header" href="#heap">What is heap memory</a></h3>
+<p>Heap memory is the memory where all Java objects that are used by the Minecraft server itself are stored. This can be loaded chunks, player information etc. The size of heap memory that can be used by the server is determined by <a href="java.html#java-flags">Java flag</a> <em>Xmx</em>.</p>
+<h3 id="needed-memory"><a class="header" href="#needed-memory">Memory needed</a></h3>
+<ul>
+<li>
+<p>heap memory is the memory that can be used by the Minecraft server itself. How much of this memory the server can use is determined by <a href="#java-flags">startup flag</a> <em>Xmx</em></p>
+</li>
+<li>
+<p>Java memory</p>
+</li>
+</ul>
+<p>For Java applications to work, it is not enough to have only heap memory available, but also some extra memory for Java itself.</p>
+<ul>
+<li>Memory for the operating system - If you are managing the server running Minecraft yourself, you need to make sure you leave enough memory for the operating system itself and the other processes running on it.</li>
+</ul>
+<p>In the case where the server is running in a container (Docker), you don’t need to consider spare space for each container, as a container is just an isolated environment and not a virtual machine where a separate operating system runs for each instance.</p>
+<p>The <a href="https://docs.papermc.io/paper/aikars-flags">PaperMC documentation</a> says (edited):</p>
+<p>“Do not allocate all of your available memory on a shared host!</p>
+<p>When setting the Xms and Xmx values, if your host says you have 8GB of memory, do not use 8GB!</p>
+<p>Minecraft (and Java) needs additional memory on top of that Xmx parameter. It is recommended to reduce your Xmx and Xms by about 1000-1500MB to avoid running out of memory or OOMKiller killing your server. This also leaves room for the operating system to use memory too.</p>
+<p>Do you have 8GB of memory? Use 6500MB for safety. But you may also ask your host if they will cover this overhead for you and give you 9500M instead. Some hosts will! Just ask.“</p>
+<h3 id="memory-indicator"><a class="header" href="#memory-indicator">Memory indicators (RAM vs RAM)</a></h3>
+<p>When talking about memory (RAM), it can be very important what kind of memory is being talked about. You may encounter the following:</p>
+<ul>
+<li>heap memory used</li>
+</ul>
+<p>this value is shown by the Spark profiler and is a value indicating the current heap memory usage. This is almost always the only value you are interested in and is useful. When we talk about used memory, we usually mean this value.</p>
+<ul>
+<li>heap memory size</li>
+</ul>
+<p>in this case two values can be meant - the current size of (allocated) heap memory, or the maximum heap memory size. What is the difference between these values can be found <a href="#heap-size">here</a>. Usually we mean the maximum heap size (<em>Xmx</em> flag, i.e. how much heap memory can the Minecraft server use)</p>
+<ul>
+<li>system indicator</li>
+</ul>
+<p>if you are looking at the memory usage values via the admin (web)panel (Pterodactyl) or a system command (<em>top</em>, <em>htop</em>, <em>ps</em>)/<em>Task Manager</em>, this value is almost always irrelevant.</p>
+<p>However, on some hosts you may have a plugin/mode installed that communicates with the panel, so you will see the same value in the admin panel as Spark would show (heap memory used).</p>
+<h3 id="memory-amount"><a class="header" href="#memory-amount">Amount of memory</a></h3>
+<div class="mdbook-alerts mdbook-alerts-important">
+<p class="mdbook-alerts-title">
+  <span class="mdbook-alerts-icon"></span>
+  important
+</p>
+<p>All values given in this section denote the heap memory, which max size is determined by <em>Xmx</em> <a href="java.html#java-flags">flag</a>, i.e. memory for Java and the operating system is not included. Read more about the differences between these values <a href="#needed-memory">here</a>.</p>
+</div>
+<p>The values shown are intented for 1.21. Older versions (=&lt; 1.12) can easily get with less RAM and the requirements will increase over time.</p>
+<h3 id="memory-performance"><a class="header" href="#memory-performance">Impact of memory on performance and lack of memory</a></h3>
+<p>If you have at least 6 GB of heap memory allocated on a small to medium sized Paper server and you have a noticeable server performance problem, the problem is probably not lack of memory. Although providing more RAM would improve performance in the case of 6 GB, there is almost certainly not so little memory to cause a significant negative impact on the server performance. From 10 onwards, you can be almost always sure of this (except for extremely memory heavy servers). You can read more about server performance <a href="../general/performance.html#performance-optimization">here</a>.</p>
+<p>So as far as Paper is used, allocating more than 10 GB of heap memory is (except for <em>really</em> large and heavy servers) almost always unnecessary, regardless of the number of players and plugins. For modded servers, this limit is pushed a bit higher, but still, from a certain point on, increasing RAM doesn’t help with performance.</p>
+<p>You can find out how to determine if you need more memory in this article:
+<a href="https://docs.pufferfish.host/general/why-is-my-ram-all-used/#how-do-i-know-if-i-need-more-ram">https://docs.pufferfish.host/general/why-is-my-ram-all-used/#how-do-i-know-if-i-need-more-ram</a></p>
+<p>However, insufficient memory can have a significant impact on server performance.</p>
+<p>If you feel that giving server more memory has solved performance issues on <a href="host-types.html#shared-host">shared host</a>, keep in mind that even if the CPU performance is not specified, plans can vary not only in terms of memory, but also in terms of CPU performance. Thus, the problem may not have been solved by increasing RAM, but by better processor performance. This may be more noticeable on Vanilla and especially modded servers.</p>
+<p>Lack of RAM absolutely does not affect the functionality of various aspects of the game, such as plugins.</p>
+<h4 id="too-much-memory"><a class="header" href="#too-much-memory">Too much memory</a></h4>
+<p>If you want to increase the memory because of the (almost) 100% memory usage shown by the admin (web)panel (Pterodactyl) or the system indicator (htop/Task Manager), it doesn’t mean there is not enough memory. Read more <a href="#memory-indicator">here</a>.</p>
+<p>As noted in the <a href="https://docs.papermc.io/paper/aikars-flags#recommended-memory">PaperMC documentation</a>, <strong>more memory from a certain point does not mean better performance</strong>. Unfortunately, this is an ongoing myth stemming from a misunderstanding of how Minecraft server (Java application) memory works and hosting companies’ desire to maximize profits.</p>
+<p>Buying server with 32GB of RAM will not help you in terms of performance and is just a waste of money. The server has no way to use that much memory. Conversely, from a certain point where there is too much RAM, performance declines.</p>
+<p>That means that, for example, the following comment is completely false: “Hi, 8 GB of RAM for server is very little. I have a dedicated server with 64 GB of RAM and believe me, even 64 GB is not enough. For example, my server can hold about 30 to 45 players with 64 GB of RAM. Considering you have 8 GB, even 5 players is too much.”</p>
+<p>Until RAM is severely lacking, the the bottleneck is usually the CPU.</p>
+<h4 id="minimum-memory"><a class="header" href="#minimum-memory">Minimum recommended memory</a></h4>
+<div class="mdbook-alerts mdbook-alerts-important">
+<p class="mdbook-alerts-title">
+  <span class="mdbook-alerts-icon"></span>
+  important
+</p>
+<p>This is only my personal recommendation based on experience. Some might disagree. This section might and probably be edited or even deleted.</p>
+</div>
+<p>Please note that the stated values are for reference only. It is not possible to say in general how much RAM is needed as a minimum, as it depends on many factors such as platform number of players, optimization, server type (e.g. Survival will need more RAM than BedWars server), plugins or mods used, etc.</p>
+<h5 id="memory-paper"><a class="header" href="#memory-paper">Paper and its forks</a></h5>
+<p>The <a href="https://docs.papermc.io/paper/aikars-flags#recommended-memory">PaperMC article</a> says: “We recommend using at least 6-10 GB, regardless of the number of players! If you can’t afford 10 GB of memory, give as much as you can, but make sure to leave some memory for the operating system as well.”</p>
+<p>So if you have that option, give the server at least 6GB of memory if you can. If you can’t afford that much memory and it’s not a performance heavy server, especially in terms of player count, you can run the server on 5, 4, or even 3 GB of RAM, but the more memory the better.</p>
+<p>Technically speaking, you are able to run a server for a few friends on 1.21 even on 2 GB RAM (still talking about heap memory only!), however, you may need to optimize the server and perform regular restarts. However, this is definitely not ideal and I would take at least 3 GB of RAM as a recommended minimum, 4 if you can.</p>
+<p>However, as Paper states, at least 6 GB of RAM is recommended.</p>
+<h6 id="memory-vanilla"><a class="header" href="#memory-vanilla">Vanilla</a></h6>
+<p>Vanilla is generally less capable of running with less memory than Paper, so the minimum limit is pushed a bit higher.</p>
+<h6 id="memory-modded"><a class="header" href="#memory-modded">Modded server</a></h6>
+<p>A modded server is the kind of server that generally requires the most RAM. This amount can vary significantly depending the mods. Thus, the minimum memory required varies depending on the modpack, and can be up to several GB more than Paper for heavy modpacks.</p>
+<h5 id="memory-proxy"><a class="header" href="#memory-proxy">Proxy</a></h5>
+<p>Proxy servers does not require much memory, so the vast majority of proxies can get by with 1 GB of RAM. For example, <a href="https://docs.papermc.io/velocity/tuning#allocate-enough-heap">the Velocity documentation states</a> that 2 GB of memory should be allocated for 1,000 players.</p>
+<h4 id="memory-usage"><a class="header" href="#memory-usage">Memory usage</a></h4>
+<p>It may not be easy to create a realistic mental model of how much memory different parts of the server use, especially if you have no idea how the server technically works “under the hood”. Therefore, below is some basic information about how different aspects of the server impact memory usage.</p>
+<h5 id="memory-worlds"><a class="header" href="#memory-worlds">Worlds</a></h5>
+<p>Each player has an area (circle) around them. One area determines how far the player can see. This affects the <a href="https://docs.papermc.io/paper/reference/server-properties#view_distance">view-distance</a> setting in <a href="../vanilla/server-properties.html#server-properties"><code>server.properties</code></a>.</p>
+<p>Then the area whose size is determined by the <a href="https://docs.papermc.io/paper/reference/server-properties#simulation_distance">simulation-distance</a> value in <a href="../vanilla/server-properties.html#server-properties"><code>server.properties</code></a>.</p>
+<p>The size of these regions has a major impact on memory usage, as they determine the size of the area around each player for which the chunks themselves will be loaded and updated (ticked). That means updating all entities, plants, blocks and so on.</p>
+<p>It is the number of chunks loaded and all the actions performed in them that has a significant impact on memory usage.</p>
+<p>This is why, for example, a BoxFight or BedWars server will use noticeably less memory than Survival server.</p>
+<p>Thus, if a server had 70 players in one place, it would use significantey less memory than a server with 70 players spread all over the world. At the same time, on a server with 70 players, adjusting the simulation distance would also have a noticeable impact on memory usage, as the number of chunks updated would change noticebly.</p>
+<p>As explained, the number of chunks loaded is crucial. The number of worlds doesn’t play that much of a role. While each world has spawn chunks that are automatically loaded even when no one is in the world, the number of these chunks is not very insignificant (also it’s possible to disable the loading spawn chunks <a href="https://docs.papermc.io/paper/reference/world-configuration#spawn_keep_spawn_loaded">in Paper config</a>).</p>
+<h5 id="memory-plugins"><a class="header" href="#memory-plugins">Plugins</a></h5>
+<p>The amount of memory required to load a plugin is insignificant, so the number of plugins does not play a major role in memory usage. Much more crucial is how much memory a particular plugin needs and what it does. A single plugin can use much more memory than dozens of other plugins combined. Examples of such plugins include Dynmap, or Chunky when generating chunks. However, if Chunky does not generate any chunks, it uses almost no memory (the generation task is what use the memory). So it depends on what a particular plugin does.</p>
+<h3 id="xms-vs-xmx"><a class="header" href="#xms-vs-xmx">Xmx and Xms flags</a></h3>
+<p>The <em>Xmx</em> flag specifies the maximum available heap memory size. The <em>Xms</em> flag specifies the size of the heap memory the process starts with, so the heap memory size cannot go below this value.</p>
+<h4 id="heap-size"><a class="header" href="#heap-size">Current and maximum heap memory size</a></h4>
+<p>The Spark profiler shows the current usage (shown on the left) and size (shown on the right) of the heap memory.</p>
+<p>This means that if <em>Xmx</em> is set to 8 GB and <em>Xms</em> is set to the same, Spark will always show a heap size of 8 GB, since that is the size of memory allocated (since the process starts with that value, which as mentioned, is determined by the <em>Xms</em> flag, and the heap size cannot go below that value).</p>
+<p><img src="/assets/images/resources/xms-equals-xmx.png" alt="Spark - Xms Equals Xmx" /></p>
+<p>In the case that the <em>Xms</em> value is lower than the <em>Xmx</em> value, this does not apply. Let’s say the maximum memory size is still 8 GB and <em>Xms</em> is reduced to 1 GB.</p>
+<p>This means that Java allocates 1 GB of heap memory at the beginning, and when it needs it, it allocates more (maximum of <em>Xmx</em>, which is 8 GB in this case), thus the heap memory size increase. Thus, the heap memory size can range from 1 to 8 GB.</p>
+<p><img src="/assets/images/resources/xms-doesntequal-xms.png" alt="Spark - Xms doesn’t equal Xms" /></p>
+<h4 id="should-xms-equal-xmx"><a class="header" href="#should-xms-equal-xmx">Should Xms be equal to Xmx?</a></h4>
+<p>It used to be very strongly recommended that <em>Xms</em> should equal <em>Xmx</em>. Hosting providers lower the <em>Xms</em> value to make fit more servers per node.</p>
+<p>Nowadays, Java behaves differently, so a lower <em>Xms</em> value is not a big deal. Even so, the same <em>Xms</em> value as <em>Xmx</em> can still help in terms of performance. However, if you don’t have that option, it’s not as crucial as it used to be, so you probably don’t need to worry about it.</p>
+<h3 id="memory-leak"><a class="header" href="#memory-leak">Memory leak</a></h3>
+<p>As written on <a href="https://en.wikipedia.org/wiki/Memory_leak">Wikipedia</a> - In computer science, a memory leak is a type of resource leak that occurs when a computer program incorrectly manages memory allocations in a way that memory which is no longer needed is not released.</p>
+<p>If you suspect a memory leak because a panel/system indicator (e.g. <em>htop</em>/<em>Task Manager</em>) shows (almost) 100% memory usage when there should be enough memory, it is not a memory leak. See <a href="#memory-behavior">here</a> for more information.</p>
+<p>However, if you have 6 to 10 GB of heap memory allocated on the Paper server, enough memory for Java and the operating system itself, and the server crashes after some time due to lack of memory (<em>OutOfMemory</em> error), the chances that there is memory usage without freeing memory is quite high, since with a small number of players, this amount of memory should be quite sufficient.</p>
+<p>How to recognize and solve a memory leak can be found at the following link: <a href="https://docs.pufferfish.host/general/why-is-my-ram-all-used#what-is-a-memory-leak">https://docs.pufferfish.host/general/why-is-my-ram-all-used#what-is-a-memory-leak</a></p>
+<p>The <a href="https://spark.lucko.me/docs/Command-Usage#spark-heapsummary">command <code>spark heapsummary</code></a> can be useful too.</p>
+<h2 id="cpu"><a class="header" href="#cpu">CPU/Processor</a></h2>
+<p>The CPU is the “brain of the computer” that processes and executes all tasks.</p>
+<h3 id="cpu-model"><a class="header" href="#cpu-model">CPU model</a></h3>
+<p>For the CPU of a Minecraft server, the most important CPU parameter is the single thread performance. A Minecraft server cannot use multiple threads efficiently, as the main game loop runs on one thread only (this does not mean that it does not use more than one thread - the minimum recommended number of threads is four, see <a href="#thread-count">below</a> for more information).
+This is why traditional VPS hosts are not suitable for hosting Minecraft servers - there are many threads available, but these threads are has low performance per core. (<a href="host-types.html#vps">see here</a>).</p>
+<p>As stated in <a href="https://paper-chan.moe/paper-optimization/">https://paper-chan.moe/paper-optimization/</a>, when selecting a processor, do not use clock speed to compare two processors (unless they are the same model and manufacture): “When selecting CPUs for your Minecraft server, do not use the clock speed rating to compare two CPUs unless they are of same model and manufacture. Please refer to <a href="https://en.wikipedia.org/wiki/Megahertz_myth">Gigahertz Myth</a> for more info. In short, select the latest CPU architecture and the highest single core thread rating model available.”</p>
+<h3 id="thread-count"><a class="header" href="#thread-count">Thread count</a></h3>
+<p>Although single-thread performance is essential, as stated in <a href="https://paper-chan.moe/paper-optimization/">https://paper-chan.moe/paper-optimization/</a>, the minimum recommended thread count is 4: “The minimum recommended thread/core count for a Minecraft server is FOUR. While it is true that the main game loop is done entirely on a single thread, there are many tasks that can benefit from multiple threads. For example, Netty, plugins, SQL databases, etc.”
+(edited)</p>
+<p>However, from a certain point, assigning more threads will not bring any benefit. It is still the performance of a single thread that matters the most. Assigning 32 cores to a server will not help performance (does not apply to <a href="../general/platforms.html#folia">Folia</a> platform).</p>
+<h3 id="high-cpu-usage"><a class="header" href="#high-cpu-usage">Too high CPU usage (up to 100%)</a></h3>
+<p>In the case where you have enough CPU resources available, but the performance is not sufficient, <a href="#cpu-model">make sure you have the appropriate CPU model for the Minecraft server</a>.</p>
+<p>If you’re using a traditional VPS hosting service, the CPU is probably not suitable for a Minecraft server. Read more <a href="../administration/host-types.html#vps">here</a>.</p>
+<p>High CPU usage can also be caused by plugins. This happens often for example with Dynmap, which can use up to 100% of the CPU (in the sense of all available CPU power, not a single thread) during (automatic) rendering. You can read how to solve this <a href="../plugins/specific/dynmap.html#dynmap-optimization">here</a>.</p>
+<h2 id="conectivity"><a class="header" href="#conectivity">Connectivity</a></h2>
+<p>Connectivity refers to the interconnection of devices (computers).</p>
+<p>The most important factor of connectivity is usually its stability and speed that is usually stated in Mbps (megabits per second), but you may also see MB/s (megabytes per second; or MBps, which is the same as MB/s).</p>
+<p>Mb (megabit) and MB (megabyte) are different units. A megabit is one-eighth of a megabyte. This means that 8 Mbps is equal to 1 MB/s.</p>
+<p>Fortunately, you will only be concerned about connectivity if you are hosting the server yourself at home, as internet speeds may not be sufficient if your internet is slow. The connectivity provided by hosting services is almost always absolutely sufficient for a Minecraft server, and so it is usually not even listed.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../general/pregeneration.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../administration/backups.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../general/pregeneration.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../administration/backups.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../theme/ko-fi.js"></script>
+        <script src="../theme/hints.js"></script>
+
+
+    </div>
+    </body>
+</html>
