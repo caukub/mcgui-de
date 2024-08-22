@@ -1,5 +1,5 @@
 # mcgui-de
-An extensive Minecraft Server Handbook (400,000+ characters) which you can read [here](https://mcguide.caukub.dev).
+An extensive Minecraft Server Handbook (400,000+ characters) which you can read [here](https://mcgui.de).
 
 ## Installation
 > [!IMPORTANT]  
