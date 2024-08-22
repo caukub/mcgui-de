@@ -1,9 +1,9 @@
 ## Translations {#translations}
-Překlady naleznete na následujích odkazech:
+The translations can be found at the following links:
 - [**English**](https://mcguide.caukub.dev)
 - [**Czech**](https://prirucka.caukub.dev)
 
-Knihu nelze volně překládat. Bez svolení autora není povoleno originální ani přeloženou verzi publikovat (viz [zde](#license)).
+The book is not available to be translated publicly. Neither the original nor the translated version may be published without the author's permission (see [here](#license)).
 
 ## Contributing {#contributing}
 You can contribute to this project on [GitHub](https://github.com/caukub/mcgui-de).
