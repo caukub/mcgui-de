@@ -1,7 +1,7 @@
 # Online mode (/offline mode) {#online-mode}
 Online mode determines whether the server verify connection against the database of official Minecraft accounts. In practice, this means that only players with the original Minecraft can connect when online mode is enabled, otherwise "cracked" players can also connect. If online mode is disabled (referred to as "offline mode", "cracked" or "warez"), many things follow from this, including risks - see below.
 
-Whether online mode is enabled is determined by the value of `online-mode` in `server.properties`.
+Whether online mode is enabled on standard server is determined by the value of `online-mode` in `server.properties`. On [proxy](../proxy.md) this setting is determined by the value of `online-mode`/`online_mode` in the config of given platform.
 
 ## Offline mode and its implications {#offline-mode}
 The most serious consequence of offline mode is a decrease of server security. Due to the disabling of online-mode, any player can connect as anyone, including the administrator. Read more [here](../security/offline-mode.md#offline-mode-security).

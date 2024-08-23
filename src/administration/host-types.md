@@ -22,11 +22,11 @@ These hostings are typically characterized by poor performance and a number of l
 
 2. Budget
 
-The most commonly used type of paid hosting. It provides (or should) sufficient server performance for servers with a lower (to medium, depending on the specific hosting) number of players, i.e. friends or smaller community.
+The most commonly used type of paid hosting. It provides (or should) sufficient server performance for servers with a lower (to medium, depending on the specific hosting) number of players, i.e. friends and smaller communities.
 
 3. Power/performance/plans with dedicated (extra) performance
 
-This type is usually suitable for large servers or heavy modpacks.
+This type is usually suitable for large servers and heavy modpacks.
 
 ## Dedicated (physical) server {#dedicated}
 A dedicated server works the same way as a VPS in terms of administration, i.e. you get access to the entire (operating) system, the management of which is entirely in your control. However, unlike a VPS, you don't get only a part of the server resources, but the performance of the entire physical server.
@@ -49,4 +49,4 @@ It is important to make sure that you have [sufficient connection speed and its 
 
 For instructions on how to set up a Minecraft server on your Windows machine, check out this link: <https://paper-chan.moe/paper-self-hosting/>
 
-In case you can't port forward (e.g. ISP doesn't allow it) or don't want to, you can use "tunnels" like [ngrok](https://ngrok.com/product/secure-tunnels), [playit.gg](https://playit.gg) or tunnel from [Cloudflare](https://cloudflare.com) (paid).
+In case you can't [port forward](../general/address-ports.md#port-forwarding) (which is required; e.g. ISP doesn't allow it) or don't want to, you can use "tunnels" like [ngrok](https://ngrok.com/product/secure-tunnels), [playit.gg](https://playit.gg) or tunnel from [Cloudflare](https://cloudflare.com) (paid).
