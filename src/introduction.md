@@ -1,5 +1,5 @@
 # Introduction {#introduction}
-I dare say this is a unique, truly extensive book (415,000 characters) in which you should find almost everything you need.
+I dare say this is a unique, truly extensive book (415,000 characters - 6+ hours of silent reading) in which you should find almost everything you need.
 
 This book is for _everyone_. It serves as a knowledge base for anyone who knows nothing about Minecraft servers, as well as for those who are interested and want to learn more about how they work in more depth. It is intended for all who have some gaps in their knowledge and need to fill them, but also for those who write guides, try to help others either on Discord or through support tickets, and instead of explaining (not just) the basics, can simply refer to this book instead. The content of the book can also be used, for example, for integration into AI tools, for which suitable data in a wide range of topics in this field is lacking.
 
@@ -16,7 +16,7 @@ or
 - BTC: `36AN1YB9QrmD4A6UhnYSE6gB6wtXf17Pft`
 
 Thanks to all supporters:
-- Tossik, LixCisCZ, kub4k
+- Tossik, LixCis, kub4k
 
 I also thank Tossik for early reports.
 

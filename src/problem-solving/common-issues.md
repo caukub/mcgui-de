@@ -191,6 +191,8 @@ You can see which Java version corresponds to which class file version [here](ht
 
 So the error below means that the *WorldGuard* plugin needs at least Java version 21 (class file version 65) to work, while Java version 17 (class file version 61) is used.
 
+Typically the solution is to update Java to required version.
+
 ```log
 [21:52:22] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Could not load plugin 'worldguard-bukkit-7.0.10-dist.jar' in folder 'plugins'
 org.bukkit.plugin.InvalidPluginException: java.lang.UnsupportedClassVersionError: com/sk89q/worldguard/bukkit/WorldGuardPlugin has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0

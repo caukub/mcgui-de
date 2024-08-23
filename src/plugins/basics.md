@@ -62,7 +62,7 @@ Conversely, if the file name contains "CLI" (e.g. [here](https://ci.athion.net/j
 The word "legacy" refers to a version of the plugin intended for a deprecated version of Minecraft (which version the "legacy" version is intended for will most likely be stated on the page).
 
 ## Dependencies {#plugin-dependencies}
-Many plugins need another plugin to work. Such plugin that is required by the another plugin to work is called a dependency. It can be a library that does nothing by itself (such as ProtocolLib or CMILib), or any normal plugin.
+Many plugins require another plugin to work. Such plugin (which is required) is called a dependency. This can be a library that does nothing by itself (e.g. ProtocolLib or CMILib), or any normal plugin.
 
 If the dependency is not installed, the plugin that needs it will not work.
 
