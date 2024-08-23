@@ -16,7 +16,9 @@ or
 - BTC: `36AN1YB9QrmD4A6UhnYSE6gB6wtXf17Pft`
 
 Thanks to all supporters:
-- kub4k
+- Tossik, LixCisCZ, kub4k
+
+I also thank Tossik for early reports.
 
 ## Get in touch with me
 If you notice anything is outdated, wrong, or could be improved, let me know on my [Discord server](https://discord.gg/7q6QbQfMba), or simply create Issue/Pull Request on the [GitHub page](https://github.com/caukub/mcgui-de) of the project.
