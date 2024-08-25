@@ -6,13 +6,13 @@ The translations can be found at the following links:
 The book is not available to be translated publicly. Neither the original nor the translated version may be published without the author's permission (see [here](#license)).
 
 ## Contributing {#contributing}
-You can contribute to this project on [GitHub](https://github.com/caukub/mcgui-de).
+You can contribute to this project on [GitHub](https://github.com/caukub/mcgui-de). Source of the book is located in the `/src/` directory. `/book/` directory is just output directory so ignore it.
 
 ### Conventions {#contributing-conventions}
 - instead of underscores and dots, dashes should be used in filenames and labels
 - every header must have a label
 - every image must have description
-- file names and labels must be in English
+- file names and labels must be in English no matter the book language
 
 ## License {#license}
 If you ARE NOT an individual/company/any other legal entity based in the Czech Republic, the following licence applies.

@@ -68,6 +68,9 @@ If the dependency is not installed, the plugin that needs it will not work.
 
 There term "soft dependency" refers to a plugin that is not necessarily needed for plugin that depends on it to work, but its presence enables certain functionality.
 
+## Plugin list {#plugin-list}
+To list all installed plugins, simply execute the `pl` or `plugins` command. Green plugins are working, red ones are not.
+
 ## How to configure a plugin {#plugin-configuration}
 If you want to configure the plugin, you can do so either by using the commands found in the [plugin documentation](../general/docs.md) (you must have rights, i.e. [OP](../vanilla/op.md) or set [permissions](../general/permissions.md), to execute some commands), or by editing the configuration files.
 

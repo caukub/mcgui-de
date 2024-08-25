@@ -303,6 +303,8 @@
 <p>Many plugins require another plugin to work. Such plugin (which is required) is called a dependency. This can be a library that does nothing by itself (e.g. ProtocolLib or CMILib), or any normal plugin.</p>
 <p>If the dependency is not installed, the plugin that needs it will not work.</p>
 <p>There term “soft dependency” refers to a plugin that is not necessarily needed for plugin that depends on it to work, but its presence enables certain functionality.</p>
+<h2 id="plugin-list"><a class="header" href="#plugin-list">Plugin list</a></h2>
+<p>To list all installed plugins, simply execute the <code>pl</code> or <code>plugins</code> command. Green plugins are working, red ones are not.</p>
 <h2 id="plugin-configuration"><a class="header" href="#plugin-configuration">How to configure a plugin</a></h2>
 <p>If you want to configure the plugin, you can do so either by using the commands found in the <a href="../general/docs.html">plugin documentation</a> (you must have rights, i.e. <a href="../vanilla/op.html">OP</a> or set <a href="../general/permissions.html">permissions</a>, to execute some commands), or by editing the configuration files.</p>
 <p>If the plugin generates configuration files, they will be created in the <code>/plugins/&lt;plugin&gt;/</code> folder when the plugin is first started. To reflect changes in the configuration files, the server must be restarted, or the <em>reload</em> command must be executed if the plugin has such a command. If the plugin has such <em>reload</em> command, you can find it in the documentation of the plugin. For example, for the EssentialsX plugin, the <em>reload</em> command is <code>essentials reload</code>, <a href="reload.html">do not use the <code>reload</code> command itself!</a>)</p>
