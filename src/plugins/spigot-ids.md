@@ -30,4 +30,4 @@ These are item properties like hiding enchants
 
 <https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html>
 
-It's important to remember that these names are specific to the version of Spigot, so always search the list corresponding to your version of the server, which you can easily find using Google. (Google → "Spigot 1.12.2 material list" etc.).
+It's important to keep in mind that these names are specific to the version of Spigot, so always search the list corresponding to your version of the server, which you can easily find using Google. (Google → "Spigot 1.12.2 material list" etc.).

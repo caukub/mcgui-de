@@ -182,7 +182,7 @@ Changing platforms is usually a simple process. The platform is coded in the ser
 
 Therefore, in the vast majority of cases, you just download the server file of the new platform and replace the original one.
 
-It is important to have a [server backup](../administration/backups md#backups) in case something would go wrong or you want to revert the action.
+It is important to have a [server backup](../administration/backups.md#backups) in case something would go wrong or you want to revert the action.
 
 If you are migrating from the Spigot fork to the Vanilla/modded platform, it is necessary to [migrate worlds](world.md#world-migration).
 
