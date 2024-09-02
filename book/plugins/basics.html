@@ -334,7 +334,7 @@
 <h3 id="plugin-cannot-be-deleted"><a class="header" href="#plugin-cannot-be-deleted">Plugin cannot be deleted</a></h3>
 <p>The server needs to be restarted (not reloaded!) to apply changes after deleting the plugin from the files.</p>
 <p>If the plugin cannot be deleted, make sure you delete the <code>.jar</code> file and not the plugin folder. The plugin folder contains the configuration files and plugin data, it’s not the plugin itself. If you no longer need the data of the plugin to be deleted, delete the plugin folder as well.</p>
-<p>On Purpur, Spark plugin is built-in and enabled by default and can be disabled by setting <a href="../administration/java.html#java-flags">flag</a> <code>-DPurpur.IReallyDontWantSpark</code> to <code>true</code> (its presence doesn’t matter though, performance is not affected).</p>
+<p>Since 1.21, plugin Spark is bundled in the Paper and enabled by default. This can be disabled in the <a href="https://docs.papermc.io/paper/reference/global-configuration#spark_enabled">Paper config</a> but there’s no reason to do so since performance is not affected. In older versions, Spark is also bundled in Purpur (can be disabled by setting <code>-DPurpur.IReallyDontWantSpark</code> <a href="../administration/java.html#java-flags">flag</a> to <code>true</code>).</p>
 <h2 id="plugin-disable"><a class="header" href="#plugin-disable">How to disable a plugin</a></h2>
 <p>In order for the plugin to attempt to enable, two conditions must be met</p>
 <ol>
