@@ -61,7 +61,7 @@ If such an option exists, it is advisable to use a hostname instead of an IP add
 ## How to set up a domain for a Minecraft server {#domain-minecraft-setup}
 To set up a domain to connect to a Minecraft server, just create the DNS record(s) as shown in the image(s) below. The domain name *play* means it will connect via *play.mojedomena.tld*. Of course, you can use anything else instead of *play*, such as *mc*, or allow connections via [root-domain](~root-domain) (*mojedomena.tld*) instead of [subdomain](~subdomain).
 
-If you are using IPv6, the same applies as for IPv4, just use a record of type *AAA* instead of *A* records.
+If you are using IPv6, the same applies as for IPv4, just use a record of type *AAAA* instead of *A* records.
 
 ### Java {#domain-minecraft-setup-java}
 ![Domain setup for Minecraft Java Server](/assets/diagrams/domains/javaDomainSetup.png)
