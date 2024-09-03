@@ -20,9 +20,9 @@ Make sure the icon meets all of the above requirements, including that the resul
 
 - Cache
 
-The client may have information about the old/non-functional icon temporarily cached. In this case, the icon will be displayed correctly on <https://mcsrvstat.us/>, but not on the client. If you see the icon correctly on <https://mcsrvstat.us/> but not in the client, you usually just need to restart the client.
+The client may have information about the old/non-functional icon temporarily cached. In this case, the icon will be displayed correctly on <https://mcsrvstat.us/>, but not in the client. If you see the icon correctly on <https://mcsrvstat.us/> but not in the client, you usually just need to restart the client.
 
-- The file is not valid *PNG* format
+- The file is not valid *PNG*
 
 If you originally had the icon in a different format, such as *JPEG*, and you "converted" the icon to *PNG* by overwriting the extension, the icon is not a valid *PNG* file. To convert another format to *PNG*, you need to use a converter (there are many online converters available on the internet).
 
