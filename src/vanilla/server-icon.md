@@ -29,3 +29,9 @@ If you originally had the icon in a different format, such as *JPEG*, and you "c
 - Plugin
 
 Some plugins can affect the icon settings, and thus the vanilla icon will not work (usually [MOTD](motd.md#motd) plugins have this feature, which should be disableable in the plugin configuration).
+
+- Uploading icon on backend server when running a proxy
+
+If you run a proxy, the icon must be uploaded on the proxy server, not some of the [backend](~backend-server) ones.
+
+<!-- bit depth over 32 bits - have to verify --->
