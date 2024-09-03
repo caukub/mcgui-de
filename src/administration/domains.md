@@ -95,18 +95,18 @@ As shown in the figure below, in simple terms, when a client (Minecraft client, 
 
 ![How DNS works](/assets/diagrams/domains/dns.png)
 
-So, in principle, domains are used for translation. This implies that the service provider to which the domain points is not related to the domain and therefore has no influence on its functionality (it can have in certain situations, but for example, this is not the case for Minecraft servers).
+So, in principle, domains are used for translation. This implies that the service provider to which the domain points is not related to the domain and therefore has no influence on its functionality (it can be related in certain situations, but for Minecraft servers, this is not the case).
 
-At the same time, it follows that DNS records are resolved only by the client itself, the server knows nothing about them, and therefore it is useless to restart the service (server) after setting DNS records.
+At the same time, it follows that DNS records are resolved only by the client itself, the server knows nothing about them. Therefore it is useless to restart the service (Minecraft server) after setting DNS records.
 
 ## Domain not working (how to debug a domain that doesn't work) {#domain-debugging}
 Before troubleshooting a domain, make sure the service itself is available on the default address.
 
-If you are using <https://mcsrvstat.us> for testing, also test the availability of the server on the default address directly from that page, as the server may not be available directly from that page due to firewall etc.
+If you are using <https://mcsrvstat.us> for testing, also test the availability of the server on the default address directly from mcsrvstat.us, as the server may not be available directly from that page due to firewall etc.
 
-If the server appears after typing the domain into <https://mcsrvstat.us>, it is almost certainly a problem with the [client cache](#domain-cache). Less often, it's issue with domain propagation, where a particular user's DNS changes may take much longer to propagate than others depending on the DNS resolver they are using, most often due to the cache of the DNS resolver itself.
+If the server appears after entering the domain into <https://mcsrvstat.us>, it is almost certainly a problem with the [client cache](#domain-cache). Less often, it's issue with domain propagation, where a particular user's DNS changes may take much longer to propagate than others depending on the DNS resolver they are using, most often due to the cache of the DNS resolver itself.
 
-If the server from <https://mcsrvstat.us> is not available, probably [the changes are not yet propagated fully](#domain-propagation). In this case, just wait. But if that's not the cause, the problem may be [duplicate records](#double-records), or [the client itself has a problem with DNS](#bad-dns-resolvers), or [exceptionally, the domain then has a status that makes the domain unusable](#inactive-domain).
+If the server from <https://mcsrvstat.us> is not available, probably [the changes are not yet propagated fully](#domain-propagation). In this case, just wait. But if that's not the cause, the problem may be ["double records"](#double-records), or [the client itself has a problem with DNS](#bad-dns-resolvers), or [exceptionally, the domain then has a status that makes the domain not work](#inactive-domain).
 
 ### Domain propagation {#domain-propagation}
 Changes to DNS records may not take effect immediately. How long propagation takes usually depends on where you manage the domain. It takes 48 hours for the changes to take effect across the Internet. However, it's usually much sooner for almost all users, at most within hours.
