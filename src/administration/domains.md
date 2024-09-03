@@ -40,7 +40,7 @@ This step is unnecessary (for exceptions where you are limited by the registrar 
 Cloudflare provides benefits at no charge over many registrars, including:
 - friendly administration
 - DNS record changes are almost always reflected immediately
-- page rules (e.g. the ability to redirect a subdomain (*discord.mojedomena.tld*) to a Discord invitation without the need for web hosting)
+- page rules (e.g. the ability to redirect a subdomain (*discord.mydomain.tld*) to a Discord invitation without the need for web hosting)
 - the possibility of protection, proxy (= hiding the address of the server on which the page is running)
 - website caching and analytics
 - possibility to easily create an email address on the domain (only for receiving)
@@ -59,7 +59,7 @@ If you manage the service yourself (e.g. on a VPS), it's useful to know the basi
 If such an option exists, it is advisable to use a hostname instead of an IP address for DNS records, as the IP address can change. If the IP address changes, the DNS record(s) would need to be modified. If this is not done, the domain pointing to the old IP address would stop working (and after this change, the address may not work for some users for some time, even if the record points to the correct address, due to [cache](#domain-cache))
 
 ## How to set up a domain for a Minecraft server {#domain-minecraft-setup}
-To set up a domain to connect to a Minecraft server, just create the DNS record(s) as shown in the image(s) below. The domain name *play* means it will connect via *play.mojedomena.tld*. Of course, you can use anything else instead of *play*, such as *mc*, or allow connections via [root-domain](~root-domain) (*mojedomena.tld*) instead of [subdomain](~subdomain).
+To set up a domain to connect to a Minecraft server, just create the DNS record(s) as shown in the image(s) below. The domain name *play* means it will connect via *play.mydomain.tld*. Of course, you can use anything else instead of *play*, such as *mc*, or allow connections via [root-domain](~root-domain) (*mydomain.tld*) instead of [subdomain](~subdomain).
 
 If you are using IPv6, the same applies as for IPv4, just use a record of type *AAAA* instead of *A* records.
 

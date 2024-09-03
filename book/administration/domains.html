@@ -285,7 +285,7 @@
 <ul>
 <li>friendly administration</li>
 <li>DNS record changes are almost always reflected immediately</li>
-<li>page rules (e.g. the ability to redirect a subdomain (<em>discord.mojedomena.tld</em>) to a Discord invitation without the need for web hosting)</li>
+<li>page rules (e.g. the ability to redirect a subdomain (<em>discord.mydomain.tld</em>) to a Discord invitation without the need for web hosting)</li>
 <li>the possibility of protection, proxy (= hiding the address of the server on which the page is running)</li>
 <li>website caching and analytics</li>
 <li>possibility to easily create an email address on the domain (only for receiving)</li>
@@ -298,7 +298,7 @@
 <p>If you manage the service yourself (e.g. on a VPS), it’s useful to know the basic types of DNS records. You can read more about them at the following link: <a href="https://www.cloudflare.com/learning/dns/dns-records/">https://www.cloudflare.com/learning/dns/dns-records/</a></p>
 <p>If such an option exists, it is advisable to use a hostname instead of an IP address for DNS records, as the IP address can change. If the IP address changes, the DNS record(s) would need to be modified. If this is not done, the domain pointing to the old IP address would stop working (and after this change, the address may not work for some users for some time, even if the record points to the correct address, due to <a href="#domain-cache">cache</a>)</p>
 <h2 id="domain-minecraft-setup"><a class="header" href="#domain-minecraft-setup">How to set up a domain for a Minecraft server</a></h2>
-<p>To set up a domain to connect to a Minecraft server, just create the DNS record(s) as shown in the image(s) below. The domain name <em>play</em> means it will connect via <em>play.mojedomena.tld</em>. Of course, you can use anything else instead of <em>play</em>, such as <em>mc</em>, or allow connections via <span class="hint" hint="root-domain">root-domain</span> (<em>mojedomena.tld</em>) instead of <span class="hint" hint="subdomain">subdomain</span>.</p>
+<p>To set up a domain to connect to a Minecraft server, just create the DNS record(s) as shown in the image(s) below. The domain name <em>play</em> means it will connect via <em>play.mydomain.tld</em>. Of course, you can use anything else instead of <em>play</em>, such as <em>mc</em>, or allow connections via <span class="hint" hint="root-domain">root-domain</span> (<em>mydomain.tld</em>) instead of <span class="hint" hint="subdomain">subdomain</span>.</p>
 <p>If you are using IPv6, the same applies as for IPv4, just use a record of type <em>AAAA</em> instead of <em>A</em> records.</p>
 <h3 id="domain-minecraft-setup-java"><a class="header" href="#domain-minecraft-setup-java">Java</a></h3>
 <p><img src="/assets/diagrams/domains/javaDomainSetup.png" alt="Domain setup for Minecraft Java Server" /></p>
