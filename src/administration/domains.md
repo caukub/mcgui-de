@@ -4,9 +4,9 @@ Services (web, game server, ...) on the Internet run on a so-called IP address, 
 Such a domain can be, for example, `google.com`. In layman's terms, a domain is an address on the Internet expressed "in human language".
 
 ## Basics {#domain-basics}
-It is important to note that domains are registered centrally and so are not tied to any service. That means that when you purchase a Minecraft server or web hosting service, it doesn't mean that you will also have any domain at your disposal. A domain is a service that needs to be purchased separately. The moment you own the domain, you can direct the domain to as many services as you need.
+It is important to note that domains are registered centrally and so are not tied to any service. That means that when you purchase a Minecraft server or web hosting service, it doesn't mean that you can use any domain you want. A domain is a service that needs to be purchased separately. The moment you own the domain, you can point the domain to as many services as you need.
 
-It also follows that if no service runs on the domain you want, it does not mean that you can register the domain and use it for your project. There may be no service available on the domain, but it can still be registered, and thus no one else can register and therefore use it, since as mentioned, domains are registered centrally, and even if they are registered, the domain does not have to point to any service. The availability of a domain can be verified using [WHOIS](#whois) (or simply by trying to register the domain).
+It also implies that if no service runs on the domain you want, it does not automatically mean that you can register the domain and use it for your project. There may be no service available on the domain, but it can still be registered, and thus no one else can register and therefore use it, since as mentioned, domains are registered centrally, and even if they are registered, the domain does not have to point to any service. The availability of a domain can be verified using [WHOIS](#whois) (or simply by trying to register the domain).
 
 ## Domain registration {#domain-registration}
 It happens that one wants to register a subdomain, e.g. `mc.domain.tld` or `play.domain.tld`. However, only the domain itself (the root domain) is registered, i.e. `domain.tld`. Subdomains, such as `mc.domain.tld`, can be set up as many as you need after domain registration using [DNS records](#how-domains-work).
@@ -160,6 +160,8 @@ In the case where you are trying to connect to a domain address that is pointed 
 WHOIS allows you to find out information about the domain owner and the domain itself (e.g. registration and expiration time).
 
 You can use either generic tools that work for all [TLDs](~tld) (<https://www.whois.com/whois/>, <https://who.is/>) or a WHOIS tool from the [TLD](~tld) administrator itself. For example, for the *.eu* domain, you can find the official WHOIS [here](https://eurid.eu). These WHOIS tools (specific to [TLD](~tld)) may contain more information than generic WHOIS tools.
+
+<!-- official whois -->
 
 ### Privacy {#whois-privacy}
 WHOIS may contain sensitive information about the domain owner.

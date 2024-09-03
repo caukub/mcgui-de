@@ -17,8 +17,9 @@
   node((-1,3), [*CNAME record*\ _name_: `play`\ _target_: `<server hostname>`], name: <hostnamecname>),
   node((0,3), [
     *SRV record*\ 
-    _name_: `_minecraft._tcp.play`\ _priority_: `0`\
-    _weight_: `5`\ _port_: `<server port>`\ _target_: `<server hostname>`
+    _name_: `play`\ _service_: `_minecraft` \ _protocol_: `TCP`\
+    _priority_: `0`\ _weight_: `5`\
+    _port_: `<server port>`\ _target_: `<server hostname>`
   ], name: <hostnamesrv>, shape: rect),
   node((0,2), [*A record*\ _name_: `play`\ _target_: `<server's IPv4>`], name: <ipv4a>),
   node((1,3), [*A record*\ _name_: `<something>`\ _target_: `<server's IPv4>`], name: <ipv4asrv>),
