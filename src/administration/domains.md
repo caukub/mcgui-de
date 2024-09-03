@@ -28,7 +28,7 @@ There are very cheap [TLDs](~tld), such as *.fun*, *.online*, *.site*, *.space*,
 
 There are even free domains, such as *.tk* or *.cf*, which can be registered with the registrar Freenom. These domains can be problematic for other reasons, but if it is a serious project, they are not suitable even on the principle of trustworthiness, as they are often used by scammers. If you are serious about your project, it is advisable to consider buying a domain with a typical ending such as `.com` or `.net` which is more credible and does not carry any hidden hooks.
 
-Once a domain is registered, sensitive data of the domain owner can be seen in the [WHOIS](#whois) registry. Read more [here](#whois-privacy). However, it may not be a good idea to fill in false information during registration for this reason. You may be either automatically or purposely prompted to verify your details, and since you are in breach of the terms of registration, you run the risk of losing your domain. However, you would probably only be prompted to correct the details.
+Once a domain is registered, sensitive data of the domain owner can be seen in the [WHOIS](#whois) registry. Read more [here](#whois-privacy). However, it may not be a good idea to fill in false information during registration for this reason. You may be either automatically or purposely asked to verify your details, and since you are in breach of the terms of registration, you run the risk of losing your domain. However, you would probably only be asked to correct the details.
 
 Domains with some TLDs may only be registered for a specific purpose or for persons/organisations based in a specific area, see e.g. [TLD *.us*](https://developers.cloudflare.com/registrar/top-level-domains/us-domains/#registration-requirements-for-us-domains). Failure to do so will result in a breach of the terms of registration, for which the domain may be cancelled.
 
@@ -67,15 +67,15 @@ If you are using IPv6, the same applies as for IPv4, just use a record of type *
 ![Domain setup for Minecraft Java Server](/assets/diagrams/domains/javaDomainSetup.png)
 
 #### Pitfalls of using SRV record {#srv-pitfall}
-In the case where an SRV record is used to point a domain (= port is not the default, i.e. *25565*), it is important to note that this address is supposed to be used to connect through the Minecraft client only.
+In the case where an *SRV* record is used to point to a domain (= port is not the default, i.e. *25565*), it is important to note that this address is supposed to be used to connect through the Minecraft client only!
 
-The *A*/*CNAME* record is good in that almost any program will translate this record automatically (in the implementation of almost any programming language, the operating system itself will take care of this). However, this is not the case with the *SRV* record. The client must have support for this record manually implemented. This is why, for example, the *SRV* address does not work in the Velocity/BungeeCord config, the browser to look up Dynmap, the Votifier address, or the *ping* command in the command line. In the past, even some unofficial Minecraft clients have had problems with *SRV* records.
+The *A*/*CNAME* records are good because almost any program will translate this record automatically (in the implementation of almost any programming language, the operating system itself will take care of this). However, this is not the case with the *SRV* record. The client must have support for this record manually implemented. This is why, for example, the *SRV* address does not work in the Velocity/BungeeCord config, the browser to show Dynmap, the Votifier address, or the *ping* command in the command line (terminal). In the past, even some unofficial Minecraft clients have had problems with *SRV* records.
 
-So, as mentioned, a custom domain using an *SRV* record is only for connecting players, and if the client/service in question does not have support for the *SRV* record implemented for Minecraft, the domain address will not work.
+So, as mentioned, a domain pointed to a service using a *SRV* record is intended only for players connecting through a Minecraft client. If the client/service does not have support for the (Minecraft) *SRV* record manually implemented, the domain address will not work.
 
 At the same time, some DNS resolvers (especially the default one from ISPs) may not support *SRV* records.
 
-These are the reasons why, when the server is running on the default port, the *A*/*CNAME* record should be preferred over the *SRV* record.
+These are the reasons why, when the server is running on the default port (25565), the *A*/*CNAME* record should be preferred over the *SRV* record.
 
 ### Bedrock (Geyser) {#domain-minecraft-setup-bedrock}
 ![Domain setup for Minecraft Bedrock Server](/assets/diagrams/domains/bedrockDomainSetup.png)
@@ -114,7 +114,7 @@ Changes to DNS records may not take effect immediately. How long propagation tak
 ### Cache {#domain-cache}
 It may happen that an address works, but a user who tried to connect to it before it worked cannot connect to it. This happens because, in layman's terms, the computer "remembers" that there is nothing on the domain and has this information temporarily stored.
 
-In this case, just wait, or on a Windows operating system, the DNS cache can be cleared by executing `ipconfig /flushdns` at the command prompt.
+In this case, just wait, or on a Windows operating system, the DNS cache can be cleared by executing `ipconfig /flushdns` at the command prompt (terminal).
 
 Not only the operating system itself can have this information cached, but also the client (e.g. Minecraft client or browser). In that case, it is usually enough to restart the client.
 
@@ -147,11 +147,11 @@ The name of the record itself should be *mydomain.com*. How to create a record f
 So if the field can be left blank and you want to create a record for the root domain, presumably the *Name* field should be left blank and only used when you want to create a DNS record for [subdomain](~subdomain).
 
 ### Bad DNS resolvers {#bad-dns-resolvers}
-Use of some DNS resolvers - especially the default ones from Internet Service Provider (ISP) - can cause a broken domain for the particular user using those resolvers.
+Use of some DNS resolvers - especially the default ones from Internet Service Provider (ISP) - can make the domain not work for the particular user using those resolvers.
 
-In this case, the solution is to set up better DNS resolvers on the operating system. Examples of these include those from Cloudflare, Google, or OpenDNS.
+In this case, the solution is to use better DNS resolvers. Those includes for example the Cloudflare, Google or OpenDNS ones.
 
-There are many instructions on how to set up these DNS resolvers.
+There are many tutorials on the internet on how to use these DNS resolvers.
 
 ### Connecting through a domain routed through an SRV record outside of the Minecraft client {#bad-srv-usage}
 In the case where you are trying to connect to a domain address that is pointed via *SRV* record outside of the Minecraft client (e.g. to Dynmap address in browser), the Minecraft *SRV* record is probably not supported by the client (for the Dynmap, the client is the browser). In this case, you need to use the default server address. Read more about the cause [here](#srv-pitfall).
@@ -168,11 +168,11 @@ WHOIS may contain sensitive information about the domain owner.
 
 Usually TLDs like *.com* or *.net* won't expose much private information, however, some regional TLDs expose very sensitive information like first name, last name, e-mail, or even address.
 
-For example, for the *.cz* extension, the first name, last name, and by default the address can be seen (can be seen by clicking on the domain holder or contacting the NSSET technical administrator). The address can be hidden by verifying, but the first and last name cannot.
+For example, for the *.cz* extension, the first name, last name, and by default the address can be seen (can be seen by clicking on the domain holder or the NSSET technical administrator contact). The address can be hidden by verifying, but the first and last name cannot.
 
-On the other hand, for the *.eu* extension, the first name, last name and address are not public information, but the same cannot be said for email.
+On the other hand, for the *.eu* [TLD](~tld), the first name, last name and address are not public information, but the same cannot be said about email.
 
-It may not be a good idea to fill in false information when registering for this reason. You may be either automatically or purposely prompted to verify the information, and since you are in violation of the terms of registration, you run the risk of losing your domain. However, you would almost certainly only be prompted to correct the details.
+It may not be a good idea to fill in false information when registering for this reason. You may be either automatically or purposely asked to verify the information, and since you violate of the terms of registration, you run the risk of losing your domain. However, you would almost certainly only be asked to correct the details.
 
 However, there are (Trustee) services where you have full access to the domain, but the domain is officially registered to someone else (a company).
 
