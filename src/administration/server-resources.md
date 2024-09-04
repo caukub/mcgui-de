@@ -93,7 +93,7 @@ Minecraft (and Java) needs additional memory on top of that Xmx parameter. It is
 
 Do you have 8GB of memory? Use 6500MB for safety. But you may also ask your host if they will cover this overhead for you and give you 9500M instead. Some hosts will! Just ask."
 
-### Memory indicators (RAM vs RAM) {#memory-indicator}
+### Memory indicators (memory vs memory) {#memory-indicator}
 When talking about memory (RAM), it can be very important what kind of memory is being talked about. You may encounter the following:
 
 - heap memory used 
@@ -117,7 +117,7 @@ However, on some hosts you may have a plugin/mode installed that communicates wi
 The values shown are intented for 1.21. Older versions (=< 1.12) can easily get with less RAM and the requirements will increase over time.
 
 ### Impact of memory on performance and lack of memory {#memory-performance}
-If you have at least 6 GB of heap memory allocated on a small to medium sized Paper server and you have a noticeable server performance problem, the problem is probably not lack of memory. Although providing more RAM would improve performance in the case of 6 GB, there is almost certainly not so little memory to cause a significant negative impact on the server performance. From 10 onwards, you can be almost always sure of this (except for extremely memory heavy servers). You can read more about server performance [here](../general/performance.md#performance-optimization).
+If you have at least 6 GB (actually even less memory like 4 GB should be fine) of heap memory allocated on a small to medium sized Paper server and you have a noticeable server performance problem, the problem is probably not lack of memory. Although providing more RAM would improve performance in the case of 6 GB, there is almost certainly not so little memory to cause a significant negative impact on the server performance. From 10 onwards, you can be almost always sure of this (except for extremely memory heavy servers). You can read more about server performance [here](../general/performance.md#performance-optimization).
 
 So as far as Paper is used, allocating more than 10 GB of heap memory is (except for *really* large and heavy servers) almost always unnecessary, regardless of the number of players and plugins. For modded servers, this limit is pushed a bit higher, but still, from a certain point on, increasing RAM doesn't help with performance.
 

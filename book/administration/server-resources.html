@@ -323,7 +323,7 @@
 <p>When setting the Xms and Xmx values, if your host says you have 8GB of memory, do not use 8GB!</p>
 <p>Minecraft (and Java) needs additional memory on top of that Xmx parameter. It is recommended to reduce your Xmx and Xms by about 1000-1500MB to avoid running out of memory or OOMKiller killing your server. This also leaves room for the operating system to use memory too.</p>
 <p>Do you have 8GB of memory? Use 6500MB for safety. But you may also ask your host if they will cover this overhead for you and give you 9500M instead. Some hosts will! Just ask.“</p>
-<h3 id="memory-indicator"><a class="header" href="#memory-indicator">Memory indicators (RAM vs RAM)</a></h3>
+<h3 id="memory-indicator"><a class="header" href="#memory-indicator">Memory indicators (memory vs memory)</a></h3>
 <p>When talking about memory (RAM), it can be very important what kind of memory is being talked about. You may encounter the following:</p>
 <ul>
 <li>heap memory used</li>
@@ -348,7 +348,7 @@
 </div>
 <p>The values shown are intented for 1.21. Older versions (=&lt; 1.12) can easily get with less RAM and the requirements will increase over time.</p>
 <h3 id="memory-performance"><a class="header" href="#memory-performance">Impact of memory on performance and lack of memory</a></h3>
-<p>If you have at least 6 GB of heap memory allocated on a small to medium sized Paper server and you have a noticeable server performance problem, the problem is probably not lack of memory. Although providing more RAM would improve performance in the case of 6 GB, there is almost certainly not so little memory to cause a significant negative impact on the server performance. From 10 onwards, you can be almost always sure of this (except for extremely memory heavy servers). You can read more about server performance <a href="../general/performance.html#performance-optimization">here</a>.</p>
+<p>If you have at least 6 GB (actually even less memory like 4 GB should be fine) of heap memory allocated on a small to medium sized Paper server and you have a noticeable server performance problem, the problem is probably not lack of memory. Although providing more RAM would improve performance in the case of 6 GB, there is almost certainly not so little memory to cause a significant negative impact on the server performance. From 10 onwards, you can be almost always sure of this (except for extremely memory heavy servers). You can read more about server performance <a href="../general/performance.html#performance-optimization">here</a>.</p>
 <p>So as far as Paper is used, allocating more than 10 GB of heap memory is (except for <em>really</em> large and heavy servers) almost always unnecessary, regardless of the number of players and plugins. For modded servers, this limit is pushed a bit higher, but still, from a certain point on, increasing RAM doesn’t help with performance.</p>
 <p>You can find out how to determine if you need more memory in this article:
 <a href="https://docs.pufferfish.host/general/why-is-my-ram-all-used/#how-do-i-know-if-i-need-more-ram">https://docs.pufferfish.host/general/why-is-my-ram-all-used/#how-do-i-know-if-i-need-more-ram</a></p>
