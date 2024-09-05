@@ -15,16 +15,16 @@ On a Windows operating system, you can create a *.zip* archive as follows:
 On macOS, you can create a *.zip* archive simply by right-clicking on the file and then clicking *Compress*.
 
 ## File extensions and the file icon does not indicate the file extension {#file-extensions}
-The Windows operating system does not display file extensions by default, so you need to right-click on the file and select *Properties* to see the extension. Since some users do not realize that the file already has an extension, when instructed to name the file, they create a "double extension", e.g. `server-icon.png.png`. Showing extensions is also better in terms of easier navigation, as you automatically see the file extension immediately.
+Windows does not display file extensions by default, so you need to right-click on the file and select *Properties* to see the extension. Since some users do not realize that the file already has an extension, when instructed to name the file, they create a "double extension", e.g. `server-icon.png.png`. Showing extensions is also better in terms of easier navigation, as you automatically see the file extension immediately.
 
 You can enable extension display in File Explorer, as shown in the image below.
 
 ![image showing how to disable file extensions on windows](/assets/images/other/windows-file-extensions.png)
 
-It is also important to note that the file icon does not indicate the file extension. Just because a WinRAR file has an icon does not mean that it is a *.rar* file. Even a *zip* file can (and probably will) have a WinRAR icon when WinRAR is installed. It just means that WinRAR is an application intended to open that type of file.
+It is also important to note that the file icon does not indicate the file extension. Just because a file has a WinRAR icon does not mean that it is a *.rar* file. Even a *zip* file can (and probably will) have a WinRAR icon when WinRAR is installed. It just means that WinRAR is an application intended to open that type of file.
 
 ## Spaces in directory names in command line {#spaces-in-path}
-If a file path contains a space (e.g. on a Windows operating system the 'Program Files' folder), it needs to be enclosed in quotes.
+If a file path contains a space (e.g. on Windows the 'Program Files' directory), it needs to be enclosed in quotes.
 
 A proper command might look like this, for example:
 
