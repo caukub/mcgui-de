@@ -24,7 +24,7 @@ You can enable extension display in File Explorer, as shown in the image below.
 It is also important to note that the file icon does not indicate the file extension. Just because a file has a WinRAR icon does not mean that it is a *.rar* file. Even a *zip* file can (and probably will) have a WinRAR icon when WinRAR is installed. It just means that WinRAR is an application intended to open that type of file.
 
 ## Spaces in directory names in command line {#spaces-in-path}
-If a file path contains a space (e.g. on Windows the 'Program Files' directory), it needs to be enclosed in quotes.
+If a file path contains a space (e.g. on Windows due to the 'Program Files' directory), it needs to be enclosed in quotes.
 
 A proper command might look like this, for example:
 
