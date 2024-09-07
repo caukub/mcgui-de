@@ -58,7 +58,7 @@ When SSD space fills up very quickly for no apparent reason, the cause is most o
 The most common cause of an extremely spammed log is [using a new version of Java for old Minecraft versions](../administration/java.md#new-java-old-version), but the cause of a spammed log can be a plugin or a mod too.
 
 ## Memory (RAM) {#memory}
-RAM is the memory that temporarily stores the data the server works with. Persistent data is later saved to [disk](#disk). The moment the server needs to work with them, they are loaded into memory.
+RAM is the memory that temporarily stores the data the server works with. Persistent data is later saved to [disk](#disk). The moment the server needs to work with the data, they are loaded into memory.
 
 ### RAM usage/keeping RAM (GC) {#memory-behavior}
 The pattern of heap memory usage behavior is that it fills up, and after some time it frees up (see the figure below). The fact that memory is filling up and freeing up does not indicate anything wrong. This is standard behavior in garbage collected languages.
@@ -108,7 +108,7 @@ in this case two values can be meant - the current size of (allocated) heap memo
 
 if you are looking at the memory usage values via the admin (web)panel (Pterodactyl) or a system command (*top*, *htop*, *ps*)/*Task Manager*, this value is almost always irrelevant.
 
-However, on some hosts you may have a plugin/mode installed that communicates with the panel, so you will see the same value in the admin panel as Spark would show (heap memory used).
+However, on some hosts you may have a plugin/mod installed that communicates with the panel, so you will see the same value in the admin panel as Spark would show (heap memory used).
 
 ### Amount of memory {#memory-amount}
 > [!IMPORTANT]  

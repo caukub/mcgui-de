@@ -296,7 +296,7 @@
 <p>When SSD space fills up very quickly for no apparent reason, the cause is most often a spammed log. Therefore, in this case you should first look in the <code>/logs/</code> folder for the size of the log files. If their size is in the hundreds of megabytes, or even gigabytes, this is a problem that needs to be resolved. Logs should be in units of MB, at most a dozen (but even that is a lot, and the log is spammed with errors you should fix).</p>
 <p>The most common cause of an extremely spammed log is <a href="../administration/java.html#new-java-old-version">using a new version of Java for old Minecraft versions</a>, but the cause of a spammed log can be a plugin or a mod too.</p>
 <h2 id="memory"><a class="header" href="#memory">Memory (RAM)</a></h2>
-<p>RAM is the memory that temporarily stores the data the server works with. Persistent data is later saved to <a href="#disk">disk</a>. The moment the server needs to work with them, they are loaded into memory.</p>
+<p>RAM is the memory that temporarily stores the data the server works with. Persistent data is later saved to <a href="#disk">disk</a>. The moment the server needs to work with the data, they are loaded into memory.</p>
 <h3 id="memory-behavior"><a class="header" href="#memory-behavior">RAM usage/keeping RAM (GC)</a></h3>
 <p>The pattern of heap memory usage behavior is that it fills up, and after some time it frees up (see the figure below). The fact that memory is filling up and freeing up does not indicate anything wrong. This is standard behavior in garbage collected languages.</p>
 <p><img src="/assets/images/resources/sawtooth-pattern.png" alt="Java Memory (Sawtooth) Pattern" /></p>
@@ -337,7 +337,7 @@
 <li>system indicator</li>
 </ul>
 <p>if you are looking at the memory usage values via the admin (web)panel (Pterodactyl) or a system command (<em>top</em>, <em>htop</em>, <em>ps</em>)/<em>Task Manager</em>, this value is almost always irrelevant.</p>
-<p>However, on some hosts you may have a plugin/mode installed that communicates with the panel, so you will see the same value in the admin panel as Spark would show (heap memory used).</p>
+<p>However, on some hosts you may have a plugin/mod installed that communicates with the panel, so you will see the same value in the admin panel as Spark would show (heap memory used).</p>
 <h3 id="memory-amount"><a class="header" href="#memory-amount">Amount of memory</a></h3>
 <div class="mdbook-alerts mdbook-alerts-important">
 <p class="mdbook-alerts-title">
