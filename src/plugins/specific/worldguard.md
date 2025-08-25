@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> This page does not serve as [documentation](../../general/docs.md) for the plugin. This page contains summaries, clarifications of certain topics, frequently referenced sections, etc. If you are generally looking for information on how to use the plugin, how to set it up, and how it works, you should always refer to the [documentation](../../general/docs.md) of the plugin.
+
 # WorldGuard Plugin {#worldguard}
 In case you want to protect server builds such as spawn, the most common solution for that is [WorldGuard](https://dev.bukkit.org/projects/worldguard) plugin.
 

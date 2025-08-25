@@ -2,7 +2,7 @@
 The icon must meet the following requirements:
 
 - size of 64x64 pixels
-- file name *server_icon*
+- file name *server-icon*
 - format (and extension) *png*
 
 If the icon does not meet the required size, the online "resize" tools can be used to adjust the icon size.

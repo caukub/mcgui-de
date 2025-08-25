@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> This page does not serve as [documentation](../../general/docs.md) for the plugin. This page contains summaries, clarifications of certain topics, frequently referenced sections, etc. If you are generally looking for information on how to use the plugin, how to set it up, and how it works, you should always refer to the [documentation](../../general/docs.md) of the plugin.
+
 # WorldEdit Plugin {#worldedit}
 The WorldEdit plugin is one of the most famous, if not the most famous plugin (and mod) used to easily manipulate blocks in the world. For that reason, this section does not cover basic WorldEdit features, there are countless WorldEdit tutorials on the internet in various forms.
 

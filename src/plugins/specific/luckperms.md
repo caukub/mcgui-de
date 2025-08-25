@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> This page does not serve as [documentation](../../general/docs.md) for the plugin. This page contains summaries, clarifications of certain topics, frequently referenced sections, etc. If you are generally looking for information on how to use the plugin, how to set it up, and how it works, you should always refer to the [documentation](../../general/docs.md) of the plugin.
+
 # Plugin LuckPerms {#luckperms}
 LuckPerms is a plugin/mod (hereafter referred to as plugin) which allows setting permissions for players and groups you can assign players to. Permissions basically determine "who is allowed to do what" (e.g. execute commands, perform certain tasks, ...). You learn more about permissions [here](../../general/permissions.md#permissions).
 

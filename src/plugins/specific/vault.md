@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> This page does not serve as [documentation](../../general/docs.md) for the plugin. This page contains summaries, clarifications of certain topics, frequently referenced sections, etc. If you are generally looking for information on how to use the plugin, how to set it up, and how it works, you should always refer to the [documentation](../../general/docs.md) of the plugin.
+
 # Vault Plugin {#vault}
 As it says in the description on the [plugin page](https://www.spigotmc.org/resources/vault.34315/) - "Vault is a Permissions, Chat, & Economy API to give plugins easy hooks into these systems without needing to hook or depend on each individual plugin themselves.."
 

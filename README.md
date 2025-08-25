@@ -16,11 +16,10 @@ After performing `mdbook build` command, static content will be generated in `/b
 1. Install *mdbook*: https://rust-lang.github.io/mdBook/guide/installation.html
 2. Install preprocessors
 ```sh
-$ cargo install mdbook-catppuccin && mdbook-catppuccin install
 $ cargo install mdbook-alerts && echo "[preprocessor.alerts]" >> book.toml
 $ cargo install mdbook-hints && echo "[preprocessor.hints]" >> book.toml
 ```
-3. Copy *hints.css*, *hints.js* (eventually *ko-fi.js*) files from `/theme/` directory in this repository into the mdBook's `/theme/` directory
+3. Copy *hints.css*, *hints.js*, *tippy.min.js*, *popperjs-core.min.js* files from `/theme/` directory in this repository into the mdBook's `/assets/` directory
 and update `additional-css` and `additional-js` keys within the `book.toml` as shown below
 ```diff
 [output.html]
@@ -37,15 +36,8 @@ and update `additional-css` and `additional-js` keys within the `book.toml` as s
     <i id="translation" class="fa fa-language"></i>
   </a>
 {{/if}}
-``` 
-and following lines before the custom JS scripts
-```html
-<!-- Here -->
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script src="https://unpkg.com/tippy.js@6"></script>
-
-<!-- Custom JS scripts -->
 ```
+
 5. Create `hints.toml` file in your mdBook's root directory (same location where the *book.toml* lives)
 6. Build the book using `mdbook build` command
 
@@ -59,6 +51,7 @@ Following tools must be installed:
 - ImageMagick
 - Typst
 - exiftool
+
 ## Contributing
 More information about contributing can be found [here](/src/appendix.md#contributing).
 

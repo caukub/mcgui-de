@@ -179,7 +179,7 @@ It is the number of chunks loaded and all the actions performed in them that has
 
 This is why, for example, a BoxFight or BedWars server will use noticeably less memory than Survival server.
 
-Thus, if a server had 70 players in one place, it would use significantey less memory than a server with 70 players spread all over the world. At the same time, on a server with 70 players, adjusting the simulation distance would also have a noticeable impact on memory usage, as the number of chunks updated would change noticebly.
+Thus, if a server had 70 players in one place, it would use significantey less memory than a server with 70 players spread all over the world. At the same time, on a server with 70 players, adjusting the simulation distance would also have a noticeable impact on memory usage, as the number of chunks updated would increase noticeably.
 
 As explained, the number of chunks loaded is crucial. The number of worlds doesn't play that much of a role. While each world has spawn chunks that are automatically loaded even when no one is in the world, the number of these chunks is not very insignificant (also it's possible to disable the loading spawn chunks [in Paper config](https://docs.papermc.io/paper/reference/world-configuration#spawn_keep_spawn_loaded)).
 

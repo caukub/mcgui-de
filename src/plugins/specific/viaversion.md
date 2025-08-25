@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> This page does not serve as [documentation](../../general/docs.md) for the plugin. This page contains summaries, clarifications of certain topics, frequently referenced sections, etc. If you are generally looking for information on how to use the plugin, how to set it up, and how it works, you should always refer to the [documentation](../../general/docs.md) of the plugin.
+
 # ViaVersion Plugin {#viaversion}
 ViaVersion (and its addon plugins ViaBackwards and ViaRewind) is a plugin that allows connections from a different version of Minecraft than the server version.
 

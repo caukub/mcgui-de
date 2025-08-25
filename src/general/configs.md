@@ -284,7 +284,7 @@ MiniMessage is a modern standard that the vast majority of updated plugins suppo
 <https://docs.advntr.dev/minimessage/format.html>
 
 To easily preview MiniMessage messages, you can use the
-<https://docs.advntr.dev/minimessage/format.html>
+<https://webui.advntr.dev/>
 
 ### Color codes {#color-codes}
 Before the MiniMessage format was created, virtually the only way to color a message was with color codes, using the `&` character (or `§` for some plugins/server configuration files) - `&4&lThis text is dark red and thick. &0This part is black.`

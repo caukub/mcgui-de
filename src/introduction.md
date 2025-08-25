@@ -8,15 +8,14 @@ If you are a complete beginner in Minecraft servers, the [Getting Started](quick
 ## Support me {#support}
 If you value my work (and want to support further work) on this book, you can support me through:
 
-<a href='https://ko-fi.com/V7V2YKN8Z' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+<a href='https://ko-fi.com/V7V2YKN8Z' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 or
 
 - XMR: `86A4mMoj6jkZkh56K2zPGSPtP76Z432SV8NcvxqmCwrRcFrHbsxXAbbe7UV4eKx4oqAAaVqjas85JG5knHhgvGEg95XQQGD`
-- BTC: `36AN1YB9QrmD4A6UhnYSE6gB6wtXf17Pft`
 
-Thanks to all supporters:
-- Tossik, LixCis, kub4k
+Thanks to all the supporters:
+- Tossik, LixCis, kub4k, Krtecek
 
 Also thanks Tossik for early (bug)reports.
 

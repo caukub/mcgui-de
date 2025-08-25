@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> This page does not serve as [documentation](../../general/docs.md) for the plugin. This page contains summaries, clarifications of certain topics, frequently referenced sections, etc. If you are generally looking for information on how to use the plugin, how to set it up, and how it works, you should always refer to the [documentation](../../general/docs.md) of the plugin.
+
 # Multiverse-Core Plugin {#multiverse-core}
 Multiverse-Core is a plugin used to manage worlds. You can find everything you need in the [plugin documentation](https://github.com/Multiverse/Multiverse-Core/wiki). Below are the most frequently referenced questions/topics.
 

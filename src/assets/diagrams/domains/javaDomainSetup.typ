@@ -1,4 +1,4 @@
-#import "@preview/fletcher:0.4.3" as fletcher: diagram, node, edge, shapes
+#import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge, shapes
 #import fletcher.shapes: rect
 
 #{

@@ -2,7 +2,7 @@
 ## Which platform to use? {#what-platform}
 Specific platforms are discussed in more detail below. This section provides a simplified description of the platform you are most likely to need.
 
-### I want a pure Vanilla server {#what-vanilla}
+### I want a Vanilla server {#what-vanilla}
 In the case where you want a server with a pure Vanilla experience, the most reasonable choice is [Fabric](#fabric-forge) with the mode [Lithium](https://modrinth.com/mod/lithium) (optimization mode, which doesn't affect Vanilla drives).
 
 ### I want plugins on the server {#what-plugins}
@@ -182,7 +182,7 @@ Changing platforms is usually a simple process. The platform is coded in the ser
 
 Therefore, in the vast majority of cases, you just download the server file of the new platform and replace the original one.
 
-It is important to have a [server backup](../administration/backups.md#backups) in case something would go wrong or you want to revert the action.
+It is important to have a [server backup](../administration/backups.md#backups) in case something would go wrong or you want to revert the change.
 
 If you are migrating from the Spigot fork to the Vanilla/modded platform, it is necessary to [migrate worlds](world.md#world-migration).
 

@@ -1,23 +1,22 @@
 [book]
 authors = ["caukub"]
 language = "en"
-multilingual = false
 src = "src"
+multilingual = false
 title = "caukub's Minecraft Server Handbook"
 
 [build]
 create-missing = false
 
 [output.html]
-additional-css = ["theme/ko-fi.css", "theme/hints.css", "./theme/catppuccin.css", "./theme/catppuccin-admonish.css"]
-additional-js = ["theme/ko-fi.js", "theme/hints.js"]
-default-theme = "mocha"
-preferred-dark-theme = "mocha"
+additional-css = ["assets/hints.css"]
+additional-js = ["assets/hints.min.js", "assets/popperjs-core.min.js", "assets/tippy.min.js"]
 mathjax-support = false
 no-section-label = false
 smart-punctuation = true
 git-repository-url = "https://github.com/caukub/mcgui-de"
 git-repository-icon = "fa-github"
+preferred-dark-theme = "navy"
 
 [output.html.fold]
 enable = true
@@ -29,7 +28,3 @@ enable = false
 [preprocessor.hints]
 
 [preprocessor.alerts]
-
-[preprocessor.catppuccin]
-assets_version = "2.1.0" # DO NOT EDIT: Managed by `mdbook-catppuccin install`
-
